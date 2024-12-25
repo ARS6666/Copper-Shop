@@ -9,8 +9,8 @@ const PrivateRoute = ({ children }) => {
             return <Navigate to="/login" />;
         }
     }
-    if (window.location.href.includes('login') || window.location.href.includes('signin')) {
-        if (token) {
+    if (token) {
+        if (window.location.href.includes('login') || window.location.href.includes('signin')) {
             return <Navigate to="/" />;
         }
     }
