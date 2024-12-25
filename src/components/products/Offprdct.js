@@ -37,11 +37,13 @@ const ProductCarousel = () => {
 
   const handleResize = () => {
     if (window.innerWidth < 1024) {
-      setSlidesToShow(1);
+      setSlidesToShow(3);
     } else {
-      setSlidesToShow(4);
+      setSlidesToShow(5);
     }
   };
+
+
 
   const settings = {
     dots: false,
@@ -71,7 +73,7 @@ const ProductCarousel = () => {
   return (
     <>
       {!OffDis && (
-        <>
+        <div className="container">
           <div className="col-md-12 col-12 d-flex justify-content-center remove p-3">
             <div className="d-flex justify-content-end col-md-11 col-11 border-bottom remove">
               <span className="fontr h3 align-self-center">تخفیف ها</span>
@@ -98,10 +100,10 @@ const ProductCarousel = () => {
                       <img src={c.pic} className="Image col-12" alt={c.name} />
                     </div>
                     <div className="d-flex justify-content-center pt-3">
-                      <span className="h5 fontr text-center">{c.name}</span>
+                      <span className="h5 fontr text-center product-name">{c.name}</span>
                     </div>
                     <div className=" d-flex justify-content-center">
-                      <span className=" fontr h5 pt-1">{addCommas(c.price)} تومان</span>
+                      <span className=" fontr h5 pt-1 product-name">{addCommas(c.price)} تومان</span>
                     </div>
                   </div>
                   <a href={`pi?id=${c.id}#${c.name}`} className=" hrefb align-self-center" aria-label={`View ${c.name}`}>
@@ -122,7 +124,7 @@ const ProductCarousel = () => {
               {">"}
             </Button>
           </div>
-        </>
+        </div>
       )}
     </>
   );

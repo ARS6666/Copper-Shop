@@ -1,20 +1,22 @@
+
 .Imge {
     object-fit: contain;
-    height: 300px;
+    width: 100%; 
+    height: auto; 
 }
 
-.bpe {
-    padding-top: 45%;
-}
 
 .product-carde {
     height: 375px;
-    transition: transform .5s;
+    transition: transform 0.5s ease;
+    position: relative;
 }
+
 
 .product-carde:hover {
     transform: scale(1.05);
 }
+
 
 .hover-detailse {
     position: absolute;
@@ -33,13 +35,13 @@
     display: block;
 }
 
+
 @media (max-width: 1024px) {
     .hover-detailse {
         top: 0;
         left: 0;
         right: 0;
         height: 100%;
-
     }
 
     .Imge {
@@ -53,9 +55,8 @@
     .bpe {
         height: 200px;
     }
-
-
 }
+
 
 @media (max-width: 756px) {
     .hover-detailse {
@@ -63,7 +64,6 @@
         left: 0;
         right: 0;
         height: 100%;
-
     }
 
     .Imge {
@@ -77,48 +77,58 @@
     .bpe {
         height: 300px;
     }
-
-
 }
 
-.Anim {
-    animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-}
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
+@media (max-width: 240px) {
+    .hover-detailse {
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0px);
+    .Imge {
+        height: 250px; 
+    }
+
+    .product-carde {
+        height: 250px; 
+    }
+
+    .bpe {
+        height: 250px; 
     }
 }
 
-.out-of-stock {
-    text-decoration: line-through;
-    pointer-events: none;
-    filter: opacity(50%);
-    color: red;
-    font-style: italic;
+
+.product-name {
+    font-size: 1.2rem;
 }
 
-.discountDisplay {
-    z-index: 1;
-    display: flex;
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    border: 2px solid red;
-    border-radius: 100%;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    color: red;
+@media (max-width: 1200px) {
+    .product-name {
+        font-size: 1.1rem;
+    }
 }
+
+@media (max-width: 992px) {
+    .product-name {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-name {
+        font-size: 0.97rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-name {
+        font-size: 0.8rem; 
+    }
+}
+
+
+

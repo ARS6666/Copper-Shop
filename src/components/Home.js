@@ -9,7 +9,7 @@ function Home(theme) {
     <Example />
     <Cat theme={theme}/>
     <Prod theme={theme}/>
-    {/* <div class="coll-md-12 col-12 justify-content-end m-0"><OFF theme={theme}/></div> */}
+    <div class="coll-md-12 col-12 justify-content-end m-0"><OFF theme={theme}/></div>
   </>);
 }
 

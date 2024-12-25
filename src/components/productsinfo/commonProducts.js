@@ -4,9 +4,9 @@ import "../../assets/css/hide.css";
 import "../../assets/css/productsinfo/commonprod.css";
 import url from "../../config.json";
 
-const CommonProducts = (theme) => {
+const CommonProducts = ({ theme }) => {
   const [products, setProducts] = useState([]);
-  const [categoryId, setCategoryId] = useState(['']);
+  const [categoryId, setCategoryId] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const location = useLocation();
   const [id, setId] = useState('');
@@ -79,15 +79,17 @@ const CommonProducts = (theme) => {
     return null;
   };
 
+  const slideWidth = products.length < 4 ? 100 / products.length : 25;
+
   return (
-    <div className="slider-container pt-5 remove p-4 fontr">
+    <div className="slider-container pt-5  p-4 fontr">
       <div className="border-bottom border-dark col-md-12 row m-0">
         <div className="d-flex justify-content-start col-md-6">
           <div className="m-1 fontr">
             <button
-              className={theme.theme.theme === "dark" ? "btn btn-outline-light" : "btn btn-outline-dark"}
+              className={theme.theme === "dark" ? "btn btn-outline-light" : "btn btn-outline-dark"}
               onClick={nextSlide}
-              disabled={currentIndex >= products.length - 3}
+              disabled={currentIndex >= products.length - 1}
               aria-label="Next"
             >
               بعدی
@@ -95,7 +97,7 @@ const CommonProducts = (theme) => {
           </div>
           <div className="m-1 fontr">
             <button
-              className={theme.theme.theme === "dark" ? "btn btn-outline-light" : "btn btn-outline-dark"}
+              className={theme.theme === "dark" ? "btn btn-outline-light" : "btn btn-outline-dark"}
               onClick={prevSlide}
               disabled={currentIndex === 0}
               aria-label="Previous"
@@ -110,9 +112,9 @@ const CommonProducts = (theme) => {
       </div>
       <div className="product-sl">
         <div className="col-md-12 row m-0" dir="rtl">
-          <div className="slider" style={{ transform: `translateX(${currentIndex * (100 / 4)}%)` }}>
+          <div className="slider" style={{ transform: `translateX(-${currentIndex * slideWidth}%)` }}>
             {products?.map((product) => (
-              <div key={product.id} className="p-3 col-md-3" style={{ minWidth: `(-${(100 / 4)}%)` }}>
+              <div key={product.id} className="p-3 col-md-3" style={{ minWidth: `${slideWidth}%` }}>
                 <div className={product.count === 0 ? 'out-of-stock col-md-12' : 'product-carde'}>
                   <div className="row m-0 d-flex justify-content-end">
                     {product.discount !== 0 && (
@@ -128,10 +130,10 @@ const CommonProducts = (theme) => {
                       />
                     </div>
                     <div className="d-flex justify-content-center pt-2">
-                      <span className="h5 fontr text-center">{product.name}</span>
+                      <span className="h5 fontr text-center product-name">{product.name}</span>
                     </div>
                     <div className="d-flex justify-content-center">
-                      <span className="h5 fontr pt-1" dir="rtl">
+                      <span className="h5 fontr pt-1 product-name" dir="rtl">
                         {addCommas(product.price)} هزار تومن
                       </span>
                     </div>
