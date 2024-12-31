@@ -66,14 +66,10 @@ const AppContent = () => {
               <Panel theme={theme} />
             </PrivateRoute>} />
           <Route path='/signin' element={
-            <PrivateRoute>
-              <Signin theme={theme} />
-            </PrivateRoute>
+            <Signin theme={theme} />
           } />
           <Route path='/login' element={
-            <PrivateRoute>
-              <Login theme={theme} />
-            </PrivateRoute>
+            <Login theme={theme} />
           } />
           <Route path='/cart' element={
             <PrivateRoute>

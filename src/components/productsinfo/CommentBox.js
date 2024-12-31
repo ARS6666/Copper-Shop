@@ -14,7 +14,7 @@ const Comments = (theme) => {
   const [ButtContent, setButtContent] = useState("مشاهده بیشتر ...");
   const [ButtDisable, setButtDisable] = useState(false);
   const token = localStorage.getItem('token');
-  const [Islogin, setIslogin] = useState(false)
+  const [Islogin, setIslogin] = useState(true)
   const [hasName, sethasName] = useState(true)
 
   useEffect(() => {
@@ -41,11 +41,11 @@ const Comments = (theme) => {
         .then((response) => response.json())
         .then((result) => setName(result.name))
         .catch((error) => console.error(error));
-      if (name === null) {
+      if (name == null) {
         sethasName(false)
       }
     } else {
-      setIslogin(true)
+      setIslogin(false)
     }
   }, []);
 
@@ -150,8 +150,12 @@ const Comments = (theme) => {
   console.log(hasName)
 
   return (
-    <div className="container col-12 d-flex justify-content-center pt-5 pb-3 " >
-      <div className={Islogin ? "col-md-11 col-11 fontr shadow notlogin" : hasName ? "col-md-11 col-11 fontr shadow" : "col-md-11 col-11 fontr shadow noName"} dir="rtl" >
+    <div className="container-xl col-12 d-flex justify-content-center pt-5 pb-5 " >
+      <div className={
+        Islogin ?
+          (hasName ? "col-md-11 col-11 fontr shadow " : "col-md-11 col-11 fontr shadow noName")
+          : "col-md-11 col-11 fontr shadow notlogin"
+      } dir="rtl">
         <div className="col-md-12 row m-0 p-5">
           <div className="col-md-6 pt-2 col-12 p-0 m-0">
             {Array.isArray(comments) && comments.length > 0 &&

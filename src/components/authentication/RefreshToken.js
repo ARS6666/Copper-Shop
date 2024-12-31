@@ -9,10 +9,10 @@ function RefreshToken() {
 
   useEffect(() => {
     const verifyToken = async () => {
-      // if (window.location.href.includes('account') && !token || !refresh) {
-      //   navigate('/login');
-      //   return;
-      // }
+      if (window.location.href.includes('account' || 'cart') && !token || !refresh) {
+        navigate('/login');
+        return;
+      }
 
       const myHeaders = new Headers();
       myHeaders.append("Accept", "application/json");
@@ -52,9 +52,9 @@ function RefreshToken() {
             if (refreshResponse.ok) {
               localStorage.setItem('token', refreshResult.access);
             } else {
-              navigate('/login');
+              navigate('/login')
             }
-          } 
+          }
         }
       } catch (error) {
         console.error(error);
