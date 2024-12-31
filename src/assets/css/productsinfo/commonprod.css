@@ -1,8 +1,7 @@
-
 .Imge {
     object-fit: contain;
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
 }
 
 
@@ -89,15 +88,15 @@
     }
 
     .Imge {
-        height: 250px; 
+        height: 250px;
     }
 
     .product-carde {
-        height: 250px; 
+        height: 250px;
     }
 
     .bpe {
-        height: 250px; 
+        height: 250px;
     }
 }
 
@@ -126,9 +125,15 @@
 
 @media (max-width: 480px) {
     .product-name {
-        font-size: 0.8rem; 
+        font-size: 0.8rem;
     }
 }
 
 
 
+
+@media only screen and (max-width: 768px) {
+    .product-sl .col-md-3 {
+        min-width: 100% !important;
+    }
+}

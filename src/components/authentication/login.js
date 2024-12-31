@@ -42,7 +42,6 @@ function Login(theme) {
 
             if (!response.ok) {
                 const errorResponse = await response.json();
-                console.log(errorResponse);
                 setErrorMessage("Login failed: " + (errorResponse.detail || response.statusText));
                 setSuccessMessage("");
                 setisLoading(false)

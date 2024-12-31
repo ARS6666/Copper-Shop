@@ -63,6 +63,7 @@ const CommonProducts = ({ theme }) => {
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+    console.log(currentIndex)
   };
 
   useEffect(() => {
@@ -79,12 +80,31 @@ const CommonProducts = ({ theme }) => {
     return null;
   };
 
-  const slideWidth = products.length < 4 ? 100 / products.length : 25;
+  const [slideWidth, setSlideWidth] = useState(25);
+
+  const handleResize = () => {
+    if (window.innerWidth < 1024) {
+      setSlideWidth(100);
+    } else {
+      setSlideWidth(25);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  console.log(slideWidth)
 
   return (
-    <div className="slider-container pt-5  p-4 fontr">
-      <div className="border-bottom border-dark col-md-12 row m-0">
-        <div className="d-flex justify-content-start col-md-6">
+    <div className="slider-container pt-5 p-4 fontr">
+      <div className="border-bottom border-dark col-md-12 col-12 row m-0">
+        <div className="d-flex justify-content-start col-md-6 col-6">
           <div className="m-1 fontr">
             <button
               className={theme.theme === "dark" ? "btn btn-outline-light" : "btn btn-outline-dark"}
@@ -106,13 +126,13 @@ const CommonProducts = ({ theme }) => {
             </button>
           </div>
         </div>
-        <div className="d-flex justify-content-end col-md-6">
+        <div className="d-flex justify-content-end col-md-6 col-6">
           <span className="fontr h3 align-self-center">محصولات مشابه</span>
         </div>
       </div>
       <div className="product-sl">
         <div className="col-md-12 row m-0" dir="rtl">
-          <div className="slider" style={{ transform: `translateX(-${currentIndex * slideWidth}%)` }}>
+          <div className="slider" style={{ transform: `translateX(${currentIndex * slideWidth}%)` }}>
             {products?.map((product) => (
               <div key={product.id} className="p-3 col-md-3" style={{ minWidth: `${slideWidth}%` }}>
                 <div className={product.count === 0 ? 'out-of-stock col-md-12' : 'product-carde'}>
