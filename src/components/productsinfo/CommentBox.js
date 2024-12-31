@@ -146,8 +146,7 @@ const Comments = (theme) => {
       }
     }
   };
-  console.log(name)
-  console.log(hasName)
+
 
   return (
     <div className="container-xl col-12 d-flex justify-content-center pt-5 pb-5 " >
