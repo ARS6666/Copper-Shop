@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../../assets/css/home/category.css";
+import "../../assets/css/products/productPage.css";
 import url from "../../config.json";
 
 const ProductCarousel = () => {
@@ -37,13 +37,11 @@ const ProductCarousel = () => {
 
   const handleResize = () => {
     if (window.innerWidth < 1024) {
-      setSlidesToShow(3);
+      setSlidesToShow(2);
     } else {
       setSlidesToShow(5);
     }
   };
-
-
 
   const settings = {
     dots: false,
@@ -74,11 +72,11 @@ const ProductCarousel = () => {
     <>
       {!OffDis && (
         <div className="container">
-          <div className="col-md-12 col-12 d-flex justify-content-center remove p-3">
-            <div className="d-flex justify-content-end col-md-11 col-11 border-bottom remove">
-              <span className="fontr h3 align-self-center">تخفیف ها</span>
+          <header className="col-md-12 col-12 remove p-3">
+            <div className="d-flex justify-content-end col-md-12 col-12 border-bottom remove">
+              <h2 className="fontr h3 align-self-center">تخفیف ها</h2>
             </div>
-          </div>
+          </header>
           <div className="carousel-container m-0">
             <Button
               className="carousel-button border-0 left"
@@ -89,7 +87,7 @@ const ProductCarousel = () => {
             </Button>
             <Slider ref={sliderRef} {...settings}>
               {products.map((c) => (
-                <div key={c.id} className={`col-1 col-md-3 productt-card Anim m-0 ${c.count === 0 ? 'out-of-stock' : ''}`}>
+                <article key={c.id} className={`col-1 col-md-3 productt-card Anim m-0 p-1 ${c.count === 0 ? 'out-of-stock' : ''}`}>
                   <div className="row m-0">
                     {c.discount !== 0 && c.count !== 0 && (
                       <div className="discountDisplay">
@@ -100,20 +98,20 @@ const ProductCarousel = () => {
                       <img src={c.pic} className="Image col-12" alt={c.name} />
                     </div>
                     <div className="d-flex justify-content-center pt-3">
-                      <span className="h5 fontr text-center product-name">{c.name}</span>
+                      <h3 className="fontr text-dark text-center product-name">{c.name}</h3>
                     </div>
-                    <div className=" d-flex justify-content-center">
-                      <span className=" fontr h5 pt-1 product-name">{addCommas(c.price)} تومان</span>
+                    <div className="d-flex justify-content-center">
+                      <p className="fontr pt-1 product-name">{addCommas(c.price)} تومان</p>
                     </div>
                   </div>
-                  <a href={`pi?id=${c.id}#${c.name}`} className=" hrefb align-self-center" aria-label={`View ${c.name}`}>
-                    <div className=" hoverr-details col-12">
-                      <div className=" d-flex justify-content-center bp">
-                        <button className=" btn btn-light border-0 hover fontr" aria-label="View Product">مشاهده محصول</button>
+                  <a href={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
+                    <div className="hoverr-details col-12">
+                      <div className="d-flex justify-content-center bp">
+                        <button className="btn btn-light border-0 hover fontr" aria-label="View Product"><span className="fontr">مشاهده محصول</span></button>
                       </div>
                     </div>
                   </a>
-                </div>
+                </article>
               ))}
             </Slider>
             <Button
