@@ -14,8 +14,8 @@ const Comments = (theme) => {
   const [ButtContent, setButtContent] = useState("مشاهده بیشتر ...");
   const [ButtDisable, setButtDisable] = useState(false);
   const token = localStorage.getItem('token');
-  const [Islogin, setIslogin] = useState(true)
-  const [hasName, sethasName] = useState(true)
+  const [Islogin, setIslogin] = useState()
+  const [hasName, sethasName] = useState(false)
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -40,14 +40,20 @@ const Comments = (theme) => {
       fetch(`${url.baseUrl}/auth/profile/1/`, requestOptions)
         .then((response) => response.json())
         .then((result) => setName(result.name))
-        .catch((error) => console.error(error));
-      if (name == null) {
-        sethasName(false)
-      }
+        .catch((error) => setName(null));
+      setIslogin(true)
     } else {
       setIslogin(false)
-    }
+    };
   }, []);
+  useEffect(() => {
+    if (name) {
+      if (name.length > 0) {
+        sethasName(true)
+      }
+    }
+  }, [Islogin, name]);
+
 
   useEffect(() => {
     if (productId) {

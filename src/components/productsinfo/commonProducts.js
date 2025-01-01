@@ -63,7 +63,6 @@ const CommonProducts = ({ theme }) => {
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-    console.log(currentIndex)
   };
 
   useEffect(() => {
@@ -99,7 +98,6 @@ const CommonProducts = ({ theme }) => {
     };
   }, []);
 
-  console.log(slideWidth)
 
   return (
     <div className="slider-container pt-5 p-4 fontr">

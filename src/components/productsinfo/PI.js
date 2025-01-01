@@ -105,7 +105,6 @@ function ProductInfo(theme) {
     }
     return null;
   };
-
   const [transformOrigin, setTransformOrigin] = useState('center center');
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
