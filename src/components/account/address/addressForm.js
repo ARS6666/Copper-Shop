@@ -238,16 +238,16 @@ function Address(theme) {
                             <div class="justify-content-end col-12 col-md-12 d-flex" style={{ height: "25px" }}>
                                 <button class="btn btn-lg border-0" onClick={handleOverlay}><i class="fa fa-times" aria-hidden="true"></i></button>
                             </div>
-                            <span class="text-dark">افزودن آدرس جدید</span>
+                            <span class="text-dark pb-3">افزودن آدرس جدید</span>
                         </div>
                         <div class="col-md-12 text-end">
-                            <span class="text-dark h5 p-1">نام آدرس مورد نظر:*</span>
-                            <div class="pt-2 col-md-12 p-3">
+                            <span class="text-dark h5 p-4">نام آدرس مورد نظر:*</span>
+                            <div class="pt-2 col-md-12 p-4">
                                 <input class="form-control form-control-lg border-dark rounded-0" onChange={handleName}></input>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="fontr row m-0 pt-2" dir="rtl" style={{ color: "#000000" }}>
+                            <div class="fontr row m-0 pt-1 p-4 pb-2" dir="rtl" style={{ color: "#000000" }}>
                                 <div class="col-md-6 col-6 ">
                                     <label class="h5">
                                         انتخاب استان:
@@ -281,20 +281,20 @@ function Address(theme) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12"><span class="text-dark" style={{ paddingRight: "10px" }}>اگر شهر مورد نظر شما در لیست نیست آن ر در آدرس پستی درج کنید.</span></div>
+                        <div class="col-md-12"><span class="text-dark p-4" style={{ paddingRight: "10px" }}>اگر شهر مورد نظر شما در لیست نیست آن ر در آدرس پستی درج کنید.</span></div>
                         <div class="co-md-12 row m-0 pt-2">
-                            <div class="col-md-6 text-end">
-                                <span class="text-dark h5">کد پستی*</span>
+                            <div class="col-md-6 text-end p-4 pt-2 pb-0">
+                                <span class="text-dark h5 p-3">کد پستی*</span>
                                 <div class="pt-2 col-md-12 p-1">
                                     <input class="form-control form-control-lg border-dark rounded-0" onChange={HandlePostCode} dir="ltr"></input>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 p-3 text-end">
-                            <span class="text-dark h5">آدرس پستی *</span>
+                        <div class="col-md-12 p-4 text-end">
+                            <span class="text-dark h5 p-2">آدرس پستی *</span>
                             <textarea
                                 rows="4"
-                                class="form-control border-dark rounded-0 textarea pt-3"
+                                class="form-control border-dark rounded-0 textarea pt-3 "
                                 placeholder="آدرس تحویل گیرنده را وارد کنید"
                                 onChange={handleAddress}
                             />
