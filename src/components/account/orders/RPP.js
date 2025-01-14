@@ -107,7 +107,7 @@ const RecentOrders = (theme) => {
                     <div className="product-details">
                       <div className="text-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
                         <h4 className={theme.theme === "dark" ? "text-light" : "text-dark"}>{truncateString(c.product.name)}</h4>
-                        {show && <span className="float-text text-center">{c.product.name}</span>}
+                        {show && <span className={theme.theme === "dark" ? "text-light float-text text-center" : "text-dark float-text text-center"}>{c.product.name}</span>}
                       </div>
                       <p>{c.product.category}</p>
                       <p>قیمت: {addCommas(c.product.price)} تومان</p>
