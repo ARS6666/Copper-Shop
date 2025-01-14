@@ -238,7 +238,7 @@ function Address(theme) {
                             <div class="justify-content-end col-12 col-md-12 d-flex" style={{ height: "25px" }}>
                                 <button class="btn btn-lg border-0" onClick={handleOverlay}><i class="fa fa-times" aria-hidden="true"></i></button>
                             </div>
-                            <span class="text-dark pb-3">افزودن آدرس جدید</span>
+                            <span class="text-dark pb-3 d-flex justify-content-center "><div className=' pb-2 border-bottom border-danger border-3'>افزودن آدرس جدید</div></span>
                         </div>
                         <div class="col-md-12 text-end">
                             <span class="text-dark h5 p-4">نام آدرس مورد نظر:*</span>
@@ -291,7 +291,7 @@ function Address(theme) {
                             </div>
                         </div>
                         <div class="col-md-12 p-4 text-end">
-                            <span class="text-dark h5 p-2">آدرس پستی *</span>
+                            <span class="text-dark h5 p-2">آدرس پستی*</span>
                             <textarea
                                 rows="4"
                                 class="form-control border-dark rounded-0 textarea pt-3 "
@@ -303,7 +303,7 @@ function Address(theme) {
                         <div class="col-md-12 col-12 row m-1">
                             <div class="col-md-10 col-8"></div>
                             <div class="col-md-1 col-2 "><button class="btn rounded-0  text-light" style={{ backgroundColor: "#000000" }} onClick={handleOverlay}>انصراف</button></div>
-                            <div class="col-md-1 col-2 "><button class="btn  rounded-0  text-light" style={{ backgroundColor: "#000000" }} onClick={STS}>ثبت</button></div>
+                            <div class="col-md-1 col-2 "><button class="btn btn-success rounded-0  text-light" style={{ backgroundColor: "#000000" }} onClick={STS}>ثبت</button></div>
 
                         </div>
                     </div>
