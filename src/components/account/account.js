@@ -6,7 +6,9 @@ import Address from './address';
 import RPP from './orders/RPP';
 import Order from './orders/order';
 import "../../assets/css/href.css";
-import "https://kit.fontawesome.com/6c2a0de8a3.js";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@fortawesome/fontawesome-free/js/all.js';
+
 import url from "../../config.json";
 
 const Panel = (theme) => {
