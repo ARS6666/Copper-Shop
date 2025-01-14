@@ -7,15 +7,11 @@ import url from "../../../config.json";
 function Order(theme) {
     var jalaali = require('jalaali-js');
     const [isOrder, setIsOrder] = useState(false);
-    const [showProducts, setShowProducts] = useState(false);
     const token = localStorage.getItem('token');
     const [orderDetail, setOrderDetail] = useState({ items: [] });
     const [iranianDate, setIranianDate] = useState('');
     const [show, setShow] = useState(false);
 
-    const toggleProducts = () => {
-        setShowProducts(!showProducts);
-    };
 
     const addCommas = (number) => {
         if (number !== undefined) {
@@ -95,38 +91,35 @@ function Order(theme) {
                     <div className="col-md-12 d-flex justify-content-center">
                         <h2 className="border-bottom border-4 border-danger p-3 col-md-3 col-9 text-center">سفارش در جریان</h2>
                     </div>
-                    <div className="order-header p-2" onClick={toggleProducts}>
+                    <div className="order-header p-2">
                         <p className="p-1">آیدی سفارش : {orderDetail.id}<i className="fa-solid fa-cart-shopping m-2"></i></p>
                         <p>قیمت کل: {addCommas(orderDetail.total)} تومان</p>
                         <p>تعداد محصولات : {orderDetail.items.length}</p>
                         <p><span dir="rtl">{iranianDate}</span> : تاریخ سفارش </p>
                         <p>در حال ارسال</p>
-                        <button className="btn btn-outline-primary">
-                            {showProducts ? <i className="fa-solid fa-chevron-up"><span className="fontr">بستن</span></i> : <i className="fa-solid fa-chevron-down"><span className="fontr">مشاهده سفارشات</span></i>}
-                        </button>
+                        <span></span>
                     </div>
-                    {showProducts && (
-                        <div className="order-products pt-2 border-top">
-                            <ul style={{ maxHeight: '400px', overflowY: 'auto' }}>
-                                {orderDetail.items.map((c) => (
-                                    <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href={`pi?id=${c.product.id}#${c.product.name}`} key={c.product.id} style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "white" }}>
-                                        <li className="product-item">
-                                            <img src={`${url.baseUrl}/${c.product.pic}`} alt={c.product.name} className="product-image" />
-                                            <div className="product-details">
-                                                <div className="text-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-                                                    <h4 className={theme.theme === "dark" ? "text-light" : "text-dark"}>{truncateString(c.product.name)}</h4>
-                                                    {show && <span className={theme.theme === "dark" ? "text-light float-text text-center" : "text-dark float-text text-center"}>{c.product.name}</span>}
-                                                </div>
-                                                <p>{c.product.category}</p>
-                                                <p>قیمت: {addCommas(c.product.price)} تومان</p>
-                                                <p>تعداد: {c.quantity}</p>
+
+                    <div className="pt-4 border-top">
+                        <ul style={{ maxHeight: '400px', overflowY: 'auto' }}>
+                            {orderDetail.items.map((c) => (
+                                <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href={`pi?id=${c.product.id}#${c.product.name}`} key={c.product.id} style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "white" }}>
+                                    <li className="product-item">
+                                        <img src={`${url.baseUrl}/${c.product.pic}`} alt={c.product.name} className="product-image" />
+                                        <div className="product-details">
+                                            <div className="text-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+                                                <h4 className={theme.theme === "dark" ? "text-light" : "text-dark"}>{truncateString(c.product.name)}</h4>
+                                                {show && <span className={theme.theme === "dark" ? "text-light float-text text-center" : "text-dark float-text text-center"}>{c.product.name}</span>}
                                             </div>
-                                        </li>
-                                    </a>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
+                                            <p>{c.product.category}</p>
+                                            <p>قیمت: {addCommas(c.product.price)} تومان</p>
+                                            <p>تعداد: {c.quantity}</p>
+                                        </div>
+                                    </li>
+                                </a>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             ) : (
                 <div className="col-md-12 text-center pt-3 d-flex justify-content-center row p-0 m-0 pt-5 fontr">
