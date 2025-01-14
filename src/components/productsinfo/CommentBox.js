@@ -171,14 +171,14 @@ const Comments = (theme) => {
                 </div>
               ))}
             <div className="col-md-12 pt-3 col-12">
-              <button className={theme.theme.theme === "dark" ? "btn btn-light hover rounded-0 col-md-12 col-12" : "btn btn-dark hover rounded-0 col-md-12 col-12"} onClick={HandleShow} disabled={ButtDisable} aria-label="Show More Comments">
+              <button className="btn btn-outline-primary rounded-0 col-md-12 col-12" onClick={HandleShow} disabled={ButtDisable} aria-label="Show More Comments">
                 {ButtContent}
               </button>
             </div>
           </div>
           <div className="col-md-6 col-12">
             <div className="d-flex justify-content-center">
-              <div className="col-md-11 col-11 d-flex align-items-center pt-3 row m-0">
+              <div className="col-md-12 col-12 d-flex align-items-center pt-3 row m-0">
                 <span className="col-md-12 col-12 pb-1">نام :</span>
                 <input
                   id="name"
@@ -190,7 +190,7 @@ const Comments = (theme) => {
               </div>
             </div>
             <div className="d-flex justify-content-center">
-              <div className="col-md-11 col-11 rounded pt-1 d-flex align-items-center">
+              <div className="col-md-12 col-12 rounded pt-1 d-flex align-items-center">
                 <textarea
                   id="comment"
                   rows="3"

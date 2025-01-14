@@ -51,9 +51,9 @@ const Filter = ({ onFilterChange }) => {
   }, []);
 
   return (
-    <div className="col-md-12 fontr d-flex justify-content-center border" style={{borderRadius:"10px"}} dir='rtl'>
-      <div className="rounded fix col-md-12 col-12 p-3">
-        <div className="p-1">
+    <div className="col-md-12 fontr d-flex justify-content-center pb-3" dir='rtl'>
+      <div className="rounded col-md-12 col-12">
+        <div className='border col-md-12 p-3' style={{ borderRadius: "10px" }}>
           <div className="filter-header">فیلتر محصولات</div>
           <div className="filter-input">
             <label className="filter-label">جستجو</label>

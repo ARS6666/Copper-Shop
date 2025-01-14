@@ -55,7 +55,7 @@ function HProducts() {
                 <img src={c.pic} class="Imgee col-12" alt={c.name} />
               </div>
               <div class="d-flex justify-content-center pt-3">
-                <span class="h5 fontr text-center col-md-8">{c.name}</span>
+                <span class="h5 fontr text-center col-md-8" style={{wordSpacing : "0.2rem"}}>{c.name}</span>
               </div>
               <div class="d-flex justify-content-center">
                 <span class="fontr pt-1" dir="rtl">

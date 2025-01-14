@@ -95,18 +95,20 @@ function Products() {
   const displayedProducts = Object.values(groupedProducts).flatMap(products => products);
 
   const [content, setContent] = useState(
-    <button
-      className="btn btn-dark col-md-12 col-12 add"
-      onClick={() => {
-        handleClick(); changeContent(
-          <div className="col-md-12 col-12">
-            <Filter onFilterChange={handleFilterChange} />
-          </div>
-        )
-      }}
-      aria-label="Apply Filters"
-    ><span className="h5 fontr">اعمال فیلتر</span>
-    </button>);
+    <div className="col-md-12 pb-3 add">
+      <button
+        className="btn btn-outline-primary col-md-12 col-12  d-flex justify-content-center"
+        onClick={() => {
+          handleClick(); changeContent(
+            <div className="col-md-12 col-12">
+              <Filter onFilterChange={handleFilterChange} />
+            </div>
+          )
+        }}
+        aria-label="Apply Filters"
+      ><span className="h5 fontr align-self-center">اعمال فیلتر</span>
+      </button>
+    </div>);
 
   const changeContent = (newContent) => {
     setContent(newContent);
@@ -172,7 +174,7 @@ function Products() {
                         <img src={c.pic} className="Img col-12" alt={c.name} />
                       </div>
                       <div className="d-flex justify-content-center pt-3">
-                        <span className="h5 fontr text-center">{c.name}</span>
+                        <span className="h5 fontr text-center" style={{ wordSpacing: "0.2rem" }}>{c.name}</span>
                       </div>
                       <div className="d-flex justify-content-center">
                         <span className="fontr pt-1">{addCommas(c.price)} تومان</span>
