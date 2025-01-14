@@ -4,14 +4,14 @@ import "../../../assets/css/account/order.css";
 import Img from "../../../assets/media/logo.jpg";
 import url from "../../../config.json";
 
-
 function Order(theme) {
-    var jalaali = require('jalaali-js')
-    const [isOrder, setisOrder] = useState(false);
+    var jalaali = require('jalaali-js');
+    const [isOrder, setIsOrder] = useState(false);
     const [showProducts, setShowProducts] = useState(false);
     const token = localStorage.getItem('token');
-    const [Orderdetail, setOrderdetail] = useState({ items: [] });
+    const [orderDetail, setOrderDetail] = useState({ items: [] });
     const [iranianDate, setIranianDate] = useState('');
+    const [show, setShow] = useState(false);
 
     const toggleProducts = () => {
         setShowProducts(!showProducts);
@@ -73,20 +73,20 @@ function Order(theme) {
             .then((response) => response.json())
             .then((result) => {
                 if (result && result.length > 0) {
-                    setOrderdetail(result[0]);
-                    setisOrder(true);
+                    setOrderDetail(result[0]);
+                    setIsOrder(true);
                 } else {
-                    setisOrder(false);
+                    setIsOrder(false);
                 }
             })
             .catch((error) => console.error(error));
     }, [token]);
 
     useEffect(() => {
-        if (Orderdetail && Orderdetail.created_at) {
-            setIranianDate(convertToIranianDate(Orderdetail.created_at));
+        if (orderDetail && orderDetail.created_at) {
+            setIranianDate(convertToIranianDate(orderDetail.created_at));
         }
-    }, [Orderdetail]);
+    }, [orderDetail]);
 
     return (
         <div className="col-md-12 fontr" dir="rtl">
@@ -96,9 +96,9 @@ function Order(theme) {
                         <h2 className="border-bottom border-4 border-danger p-3 col-md-3 col-9 text-center">سفارش در جریان</h2>
                     </div>
                     <div className="order-header p-2" onClick={toggleProducts}>
-                        <p className="p-1">آیدی سفارش : {Orderdetail.id}<i className="fa-solid fa-cart-shopping m-2"></i></p>
-                        <p>قیمت کل: {addCommas(Orderdetail.total)} تومان</p>
-                        <p>تعداد محصولات : {Orderdetail.items.length}</p>
+                        <p className="p-1">آیدی سفارش : {orderDetail.id}<i className="fa-solid fa-cart-shopping m-2"></i></p>
+                        <p>قیمت کل: {addCommas(orderDetail.total)} تومان</p>
+                        <p>تعداد محصولات : {orderDetail.items.length}</p>
                         <p><span dir="rtl">{iranianDate}</span> : تاریخ سفارش </p>
                         <p>در حال ارسال</p>
                         <button className="btn btn-outline-primary">
@@ -108,12 +108,15 @@ function Order(theme) {
                     {showProducts && (
                         <div className="order-products pt-2 border-top">
                             <ul style={{ maxHeight: '400px', overflowY: 'auto' }}>
-                                {Orderdetail.items.map((c) => (
-                                    <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href={`pi?id=${c.product.id}#${c.product.name}`} key={c.product.id} style={{backgroundColor : theme.theme === "dark" ? "#121212" : "white"}}>
-                                        <li className="product-item" >
+                                {orderDetail.items.map((c) => (
+                                    <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href={`pi?id=${c.product.id}#${c.product.name}`} key={c.product.id} style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "white" }}>
+                                        <li className="product-item">
                                             <img src={`${url.baseUrl}/${c.product.pic}`} alt={c.product.name} className="product-image" />
-                                            <div className="product-details" >
-                                                <h4 className={theme.theme === "dark" ? "text-light" : "text-dark"}>{truncateString(c.product.name)}</h4>
+                                            <div className="product-details">
+                                                <div className="text-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+                                                    <h4 className={theme.theme === "dark" ? "text-light" : "text-dark"}>{truncateString(c.product.name)}</h4>
+                                                    {show && <span className="float-text text-center">{c.product.name}</span>}
+                                                </div>
                                                 <p>{c.product.category}</p>
                                                 <p>قیمت: {addCommas(c.product.price)} تومان</p>
                                                 <p>تعداد: {c.quantity}</p>

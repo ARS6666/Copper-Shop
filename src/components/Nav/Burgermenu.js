@@ -34,11 +34,6 @@ const BurgerMenu = (theme) => {
                         </a>
                     </li>
                     <li className="col-12 d-flex justify-content-start">
-                        <a className={theme.theme.theme === "dark" ? "hrefw" : "hrefb"} href="/categories">
-                            <span className="col-3 h5 ah">دسته بندی</span>
-                        </a>
-                    </li>
-                    <li className="col-12 d-flex justify-content-start">
                         <a className={theme.theme.theme === "dark" ? "hrefw" : "hrefb"} href="/about">
                             <span className="col-3 h5 ah">درباره ما</span>
                         </a>

@@ -13,6 +13,8 @@ const RecentOrders = (theme) => {
   const [Orderhistory, setOrderhistory] = useState([{ items: [] }])
   const [OrderItems, setOrderItems] = useState([])
   const [ISOrderhistory, setISOrderhistory] = useState(true)
+  const [show, setShow] = useState(false);
+
 
   useEffect(() => {
     const myHeaders = new Headers();
@@ -103,7 +105,10 @@ const RecentOrders = (theme) => {
                   <li className="product-item">
                     <img src={`${c.product.pic}`} alt={c.product.name} className="product-image" />
                     <div className="product-details">
-                      <h4>{truncateString(c.product.name)}</h4>
+                      <div className="text-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+                        <h4 className={theme.theme === "dark" ? "text-light" : "text-dark"}>{truncateString(c.product.name)}</h4>
+                        {show && <span className="float-text text-center">{c.product.name}</span>}
+                      </div>
                       <p>{c.product.category}</p>
                       <p>قیمت: {addCommas(c.product.price)} تومان</p>
                       <p>تعداد: {c.quantity}</p>

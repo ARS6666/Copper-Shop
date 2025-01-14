@@ -73,7 +73,7 @@ const CustomNavbar = (theme) => {
             <div className="col-3 pt-1">
               <a className="hrefb" href="/">
                 <img
-                  style={{ height: "35px", marginRight: "30px" }}
+                  style={{ height: "45px", marginRight: "30px" }}
                   src={logo}
                   alt="Company Logo"
                   className="col"
@@ -83,7 +83,6 @@ const CustomNavbar = (theme) => {
             <div className="col-8 align-self-center d-flex justify-content-between">
               <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href="/"><span className="col-3 h5 ah">خانه</span></a>
               <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href="/products"><span className="col-3 h5 ah">محصولات</span></a>
-              <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href="/products"><span className="col-3 h5 ah">دسته بندی</span></a>
               <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href="/about"><span className="col-3 h5 ah">درباره ما</span></a>
             </div>
           </div>
