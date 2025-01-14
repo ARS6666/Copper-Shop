@@ -51,12 +51,13 @@ function RefreshToken() {
 
             if (refreshResponse.ok) {
               localStorage.setItem('token', refreshResult.access);
+            } else {
+              localStorage.removeItem('token');
             }
           }
         }
       } catch (error) {
-        console.error(error);
-        navigate('/login');
+        localStorage.removeItem('token')
       }
     };
 

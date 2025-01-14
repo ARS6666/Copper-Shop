@@ -120,7 +120,7 @@ function ProductInfo(theme) {
         <div className="row m-0 col-md-12">
           <div className="col-md-6 d-flex flex-column">
             <div className="row m-0">
-              <div className="col-md-2 d-flex flex-column align-items-end romove">
+              <div className="col-md-2 d-flex flex-column align-items-end remove">
                 {IMG?.slice(0, 4).map((c) => (
                   <img key={c.image} className="img-fluid m-1 remove" src={c.image} alt="Product Thumbnail" />
                 ))}

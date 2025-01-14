@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Carousel from 'react-bootstrap/Carousel';
-import img from "../../assets/media/vid.mp4"
+// import img from "../../assets/media/vid.mp4"
 import 'bootstrap/dist/css/bootstrap.css';
 import "../../assets/css/home/slider.css"
 import url from "../../config.json"

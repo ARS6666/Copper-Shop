@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import IMg from "../../../assets/media/s1.jpg"
 import "../../../assets/css/account/cart.css"
 import "../../../assets/css/hide.css"
 import url from "../../../config.json"
@@ -219,7 +218,7 @@ function Cart(theme) {
                                     <div class="col-md-2 p-3 remove">
                                         <img src={`${url.baseUrl}/${c.product.pic}`} alt="" class="col-md-12" style={{ height: "70px", objectFit: "cover" }} />
                                     </div>
-                                    <div class="col-md-3 col-2 p-3"><a href={"pi?id=" + c.product.id}>{truncateString(c.product.name)}</a></div>
+                                    <div class="col-md-3 col-2 p-3"><a href={"pi?id=" + c.product.id + c.product.name}>{(c.product.name)}</a></div>
                                     <div class="col-md-2 col-3 p-3">{addCommas(c.product.price)}تومان</div>
                                     <div class="col-md-1 col-2 p-3 row m-0 text-center d-flex justify-content-center">
                                         <button class="btn-circle btn" onClick={() => AddItem(c.product.id)} disabled={buttonDisabled}><i className={theme.theme === "dark" ? "fa-solid fa-arrow-up text-white" : "fa-solid fa-arrow-up"}></i></button>
