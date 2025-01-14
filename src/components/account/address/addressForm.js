@@ -302,8 +302,8 @@ function Address(theme) {
                         {Error ? <div class="col-md-12 d-flex justify-content-center" style={{ paddingRight: "10px" }} dir=" rtl"><h4 class="text-light bg-danger">{Error}</h4></div> : <></>}
                         <div class="col-md-12 col-12 row m-1">
                             <div class="col-md-10 col-8"></div>
-                            <div class="col-md-1 col-2 "><button class="btn rounded-0  text-light" style={{ backgroundColor: "#000000" }} onClick={handleOverlay}>انصراف</button></div>
-                            <div class="col-md-1 col-2 "><button class="btn button1 rounded-0  text-light" style={{ backgroundColor: "#000000" }} onClick={STS}>ثبت</button></div>
+                            <div class="col-md-1 col-2 "><button className="btn rounded-0  text-light" style={{ backgroundColor: "#000000" }} onClick={handleOverlay}>انصراف</button></div>
+                            <div class="col-md-1 col-2 "><button className="btn button1 rounded-0  text-light" style={{ backgroundColor: "#000000" }} onClick={STS}>ثبت</button></div>
 
                         </div>
                     </div>

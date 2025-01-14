@@ -13,5 +13,9 @@
 
 
 .button1{
-    background-color: rgb(1, 99, 1) !important;
+    background-color: rgb(21, 131, 21) !important;
+}
+.button1:hover{
+    background-color: rgb(26, 181, 96) !important;
+    transform: scale(1.05) !important
 }
