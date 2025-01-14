@@ -2,29 +2,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top: 12%;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: hsl(220deg 29% 90% / 50%);
+    background: hsla(0, 0%, 0%, 0.5);
     z-index: 100;
 }
 
 .loader-image {
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     border-radius: 50%;
-    animation: spin 1s infinite linear;
+    animation: spin .75s infinite linear;
     object-fit: cover;
     margin-bottom: 20px;
-    /* Adds space between the image and text */
 }
 
 .loader span {
-    font-size: 18px;
+    font-size: 24px;
     color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    border-left: 0.15em solid orange;
+    /* Optional: gives a cursor effect on the left side */
+    animation: typing 3s steps(14, end), blink-caret 0.75s step-end infinite;
+    text-align: right;
+    direction: rtl;
+    /* Align text to the right */
 }
 
 @keyframes spin {
@@ -34,5 +41,27 @@
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100px;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: orange;
     }
 }
