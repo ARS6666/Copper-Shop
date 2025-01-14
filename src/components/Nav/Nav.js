@@ -160,7 +160,7 @@ const CustomNavbar = (theme) => {
                   <button className="btn border-0 bg-transparent cart-icon" aria-label="Cart">
                     <a className="hrefb" href="/cart">
                       <i className={theme.theme === "dark" ? "text-white fa-solid fa-cart-shopping ah" : "text-dark fa-solid fa-cart-shopping ah"} style={{ fontSize: "1.1rem" }}></i>
-                      <span className="cart-count text-dark">{CartItems?.length}</span>
+                      <span className="cart-count text-danger">{CartItems?.length}</span>
                     </a>
                   </button>
                 </>

@@ -231,9 +231,7 @@ function Address(theme) {
         {isOverlayOpen ? <>
             <div class="overlay row m-0 fontr" dir="rtl">
                 <div class="col-md-12 d-flex justify-content-center">
-                    <div class=" col-md-8 " style={{ backgroundColor: "#ffffff" }}>
-                        <div class="col-md-12">()
-                        </div>
+                    <div class=" col-md-8 p-3" style={{ backgroundColor: "#ffffff" }}>
                         <div class="col-md-12  text-center p-1 h4 row m-0">
                             <div class="justify-content-end col-12 col-md-12 d-flex" style={{ height: "25px" }}>
                                 <button class="btn btn-lg border-0" onClick={handleOverlay}><i class="fa fa-times" aria-hidden="true"></i></button>

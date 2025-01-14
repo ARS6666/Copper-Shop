@@ -120,7 +120,7 @@ const RecentOrders = (theme) => {
           </div>
         ) : (
           <div className="recent-orders-list col-12">
-            <h2>سفارشات گذشته</h2>
+            <h2 style={{marginBottom: "20px"}} className='border-bottom border-4 border-danger col-md-3 col-12 pb-2'>سفارشات گذشته</h2>
             <ul className="recent-order-summary-list col-12">
               {Orderhistory?.map((order) => (
                 <li key={order.id} className="recent-order-summary col-12" onClick={() => handleOrderClick(order.id)}>

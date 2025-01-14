@@ -12,7 +12,7 @@ import url from "../../config.json";
 const Panel = (theme) => {
     const [Prop, setProp] = useState([]);
     const token = localStorage.getItem('token');
-    const [content, setContent] = useState(<Profile theme={theme}/>);
+    const [content, setContent] = useState(<Profile theme={theme} />);
     const [isChecked, setIsChecked] = useState(true);
     const [isChecked2, setIsChecked2] = useState(false);
     const [isChecked3, setIsChecked3] = useState(false);
@@ -67,7 +67,7 @@ const Panel = (theme) => {
     };
     return (
         <div className="fontr col-md-12 row m-0 pb-2 pt-2" dir="rtl">
-            <div className="col-md-3 border" style={{ borderRadius: "10px" }}>
+            <div className="col-md-3 border" style={{ borderRadius: "10px", height: "100%" }}>
                 <div className="d-flex justify-content-center pt-4">
                     <img src={Prop.image || pfp} alt="Profile" className="pfp rounded-circle" />
                 </div>
@@ -76,7 +76,7 @@ const Panel = (theme) => {
                 </div>
                 <div className="pt-3">
                     <div className="col-md-12 border-top border-bottom part">
-                        <button onClick={() => { handleClick(); changeContent(<Profile theme={theme.theme}/>); }}
+                        <button onClick={() => { handleClick(); changeContent(<Profile theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
                             style={{ backgroundColor: isChecked ? '#7a7a7a' : '', width: "100%" }}>
                             <h5 className={theme.theme === "dark" ? "p-2 text-white" : "p-2 text-dark"}>
