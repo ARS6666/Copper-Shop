@@ -33,7 +33,7 @@ function ImageSlider() {
     <div class="col-md-12 m-0">      
       <Carousel interval={3000}>
         {SliderPic.map(Pic =>
-          <Carousel.Item>
+          <Carousel.Item key={Pic.id}>
             <img src={Pic.image} style={{ height: "500px", width: "100%", objectFit: "cover" }} />
           </Carousel.Item>
         )}
