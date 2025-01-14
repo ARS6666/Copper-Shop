@@ -51,8 +51,6 @@ function RefreshToken() {
 
             if (refreshResponse.ok) {
               localStorage.setItem('token', refreshResult.access);
-            } else {
-              navigate('/login')
             }
           }
         }

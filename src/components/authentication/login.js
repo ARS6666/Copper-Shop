@@ -74,10 +74,10 @@ function Login(theme) {
                     <div className="col-md-4 pt-5">
                         <div className="col-md-12 p-5 shadow bg-light" style={{ borderRadius: "20px" }}>
                             <div className="d-flex justify-content-center">
-                                <span className="h2 col-md-12 border-bottom border-dark text-center p-1"> ورود </span>
+                                <span className="h2 col-md-12 border-bottom border-dark text-center p-1 text-dark"> ورود </span>
                             </div>
                             <div className="pt-3">
-                                <label className="h5">شماره تلفن همراه:</label>
+                                <label className="h5 text-dark">شماره تلفن همراه:</label>
                             </div>
                             <div className="pt-1" dir="ltr">
                                 <input
@@ -90,7 +90,7 @@ function Login(theme) {
                                 />
                             </div>
                             <div className="pt-3">
-                                <label className="h5">رمز عبور:</label>
+                                <label className="h5 text-dark">رمز عبور:</label>
                             </div>
                             <div className="pt-1" style={{position:"relative"}}>
                                 <button className="btn btn-outline-transparent eye" onClick={toggleShowPassword} type="button">
@@ -116,7 +116,7 @@ function Login(theme) {
                             {errorMessage && <div className="text-danger pt-3" dir="ltr">{errorMessage}</div>}
                             {successMessage && <div className="text-success pt-3" dir="ltr">{successMessage}</div>}
 
-                            <div className="col-md-12 d-flex justify-content-end pt-2">
+                            <div className="col-md-12 d-flex justify-content-end pt-2 text-dark">
                                 <span>اکانت ندارید؟</span>
                                 <a href="/signin">ثبت نام کنید</a>
                             </div>
