@@ -10,3 +10,8 @@
     justify-content: center;
     align-items: center;
 }
+
+
+.button1{
+    background-color: rgb(1, 99, 1) !important;
+}
