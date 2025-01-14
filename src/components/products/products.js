@@ -192,7 +192,7 @@ function Products() {
               )}
               {!NoResult && (
                 <div className="col-12 text-center py-5">
-                  <button className="btn btn-dark hover rounded-0 col-md-6 col-12" dir="rtl" onClick={showMoreProducts} disabled={ButtDisable} aria-label="Show More Products">
+                  <button className="btn buttonn2 text-light hover rounded-0 col-md-6 col-12" dir="rtl" onClick={showMoreProducts} disabled={ButtDisable} aria-label="Show More Products">
                     <span className="h5">{ButtContent}</span>
                   </button>
                 </div>
