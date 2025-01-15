@@ -75,7 +75,7 @@ function HProducts() {
           </div>
         ))}
         <div class="d-flex justify-content-center pt-4 pb-4">
-          <a class="hrefw col-md-6 col-12" href="/products"><button class="btn btn-lg buttonn col-md-12 col-10 text-light">مشاهده همه</button></a>
+          <a class="hrefw col-md-6 col-12" href="/products"><button class="btn btn-lg btn-orange col-md-12 col-10 text-light">مشاهده همه</button></a>
         </div>
       </div>
     </>

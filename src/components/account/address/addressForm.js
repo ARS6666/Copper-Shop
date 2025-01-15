@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import '@fortawesome/fontawesome-free/js/all.js';
-
+import "https://kit.fontawesome.com/6c2a0de8a3.js";
 import "../../../assets/css/account/address.css";
 import Loading from "../../loading/loading";
 import url from "../../../config.json"

@@ -4,8 +4,8 @@ import eight from "../assets/media/85.png";
 import eighto from "../assets/media/86.PNG";
 import "../assets/css/href.css";
 import "../assets/css/footer.css";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import '@fortawesome/fontawesome-free/js/all.js';
+import "https://kit.fontawesome.com/6c2a0de8a3.js";
+
 
 
 function Footer(theme) {
