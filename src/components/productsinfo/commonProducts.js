@@ -101,11 +101,11 @@ const CommonProducts = ({ theme }) => {
 
   return (
     <div className="slider-container pt-5 p-4 fontr">
-      <div className="border-bottom border-dark col-md-12 col-12 row m-0">
+      <div className="border-bottom border-2 border-theme col-md-12 col-12 row m-0">
         <div className="d-flex justify-content-start col-md-6 col-6">
           <div className="m-1 fontr">
             <button
-              className={theme.theme === "dark" ? "btn btn-outline-light" : "btn btn-outline-dark"}
+              className="btn btn-orange"
               onClick={nextSlide}
               disabled={currentIndex >= products.length - 1}
               aria-label="Next"
@@ -115,7 +115,7 @@ const CommonProducts = ({ theme }) => {
           </div>
           <div className="m-1 fontr">
             <button
-              className={theme.theme === "dark" ? "btn btn-outline-light" : "btn btn-outline-dark"}
+              className="btn btn-orange"
               onClick={prevSlide}
               disabled={currentIndex === 0}
               aria-label="Previous"
@@ -125,7 +125,7 @@ const CommonProducts = ({ theme }) => {
           </div>
         </div>
         <div className="d-flex justify-content-end col-md-6 col-6">
-          <span className="fontr h3 align-self-center">محصولات مشابه</span>
+          <span className="fontr h3 align-self-center color-theme">محصولات مشابه</span>
         </div>
       </div>
       <div className="product-sl">
@@ -159,7 +159,7 @@ const CommonProducts = ({ theme }) => {
                   <a className="hrefb align-self-center" href={`pi?id=${product.id}`} aria-label={`View ${product.name}`}>
                     <div className="hover-detailse col-md-12">
                       <div className="d-flex justify-content-center" style={{ paddingTop: "45%" }}>
-                        <button className="btn btn-light hover fontr" aria-label="View Product">
+                        <button className="btn btn-orange fontr" aria-label="View Product">
                           مشاهده محصول
                         </button>
                       </div>

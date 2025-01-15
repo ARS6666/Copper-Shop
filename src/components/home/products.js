@@ -42,9 +42,9 @@ function HProducts() {
       {IsLoading ? <Loading /> : null}
 
       <div class="d-flex justify-content-center m-0">
-        <span class="h2 fontr border-bottom border-4 border-danger p-3">
+        <h1 class="fontr border-bottom border-4 border-theme p-3">
           محصولات
-        </span>
+        </h1>
       </div>
       <div class="col-md-12 row m-0 d-flex justify-content-center fontr">
         {Product?.slice(0, 9).map((c) => (
@@ -55,7 +55,7 @@ function HProducts() {
                 <img src={c.pic} class="Imgee col-12" alt={c.name} />
               </div>
               <div class="d-flex justify-content-center pt-3">
-                <span class="h5 fontr text-center col-md-8" style={{wordSpacing : "0.2rem"}}>{c.name}</span>
+                <span class="h5 fontr text-center col-md-8" style={{ wordSpacing: "0.2rem" }}>{c.name}</span>
               </div>
               <div class="d-flex justify-content-center">
                 <span class="fontr pt-1" dir="rtl">
@@ -63,19 +63,19 @@ function HProducts() {
                 </span>
               </div>
             </div>
-          <div class="hover-detailsee col-12 ">
-            <div class="d-flex justify-content-center bpee">
-              <a class="hrefb align-self-center" href={`pi?id=${c.id}#${c.name}`}>
-                <button class="btn btn-light hover fontr">
-                  مشاهده محصول
-                </button>
-              </a>
+            <div class="hover-detailsee col-12 ">
+              <div class="d-flex justify-content-center bpee">
+                <a class="hrefb align-self-center" href={`pi?id=${c.id}#${c.name}`}>
+                  <button class="btn btn-orange fontr">
+                    مشاهده محصول
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
-          </div>
         ))}
-        <div class="d-flex justify-content-center pt-4 pb-4">
-          <a class="hrefw col-md-6 col-12" href="/products"><button class="btn btn-lg btn-orange col-md-12 col-10 text-light">مشاهده همه</button></a>
+        <div class="d-flex justify-content-center pt-5 pb-3">
+          <a class="hrefw col-md-6 col-12" href="/products"><button class="btn btn-lg btn-orange col-md-12 col-10">مشاهده همه</button></a>
         </div>
       </div>
     </>

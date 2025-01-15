@@ -127,13 +127,6 @@
     color: red;
 }
 
-.btn-orange {
-    background-color: rgb(187, 70, 15) !important;
-    color: white;
-}
-
-.btn-orange:hover {
-    background-color: white !important;
-    color: rgb(187, 70, 15) !important;
-    border-color: rgb(187, 70, 15) !important;
+.border-theme {
+    border-color: #DB5C28 !important;
 }

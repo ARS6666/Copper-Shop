@@ -135,7 +135,7 @@ function ProductInfo(theme) {
                       </Carousel.Item>
                     ))}
                   </Carousel>
-                </div>  
+                </div>
               </div>
             </div>
           </div>
@@ -163,7 +163,7 @@ function ProductInfo(theme) {
                 </div>
               </div>
               <div className="pt-4">
-                <button className={theme.theme.theme === "dark" ? "btn rounded-0 btn-lg btn-outline-light w-100 add-to-cart" : "btn rounded-0 btn-lg btn-outline-dark w-100 add-to-cart"} onClick={(event) => AddItem(product.id, event)} disabled={buttonDisabled}>
+                <button className="btn rounded-0 btn-lg btn-orange w-100 add-to-cart" onClick={(event) => AddItem(product.id, event)} disabled={buttonDisabled}>
                   {buttonDisabled ?
                     <span className="text-success">به سبد خرید اضافه شد!</span>
                     :

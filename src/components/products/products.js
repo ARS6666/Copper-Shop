@@ -151,7 +151,7 @@ function Products() {
             {content}
           </div>
           <div className="col-12 text-center">
-            <span className="display-4 fontr border-bottom border-4 border-danger py-3">
+            <span className="display-5 fontr border-bottom border-4 border-theme py-3">
               محصولات
             </span>
           </div>
@@ -159,7 +159,7 @@ function Products() {
             <div className="col-12 col-md-9 row m-0 d-flex justify-content-center fontr">
               {NoResult ? (
                 <div className="col-12 text-center">
-                  <span className="display-4">!محصولی یافت نشد</span>
+                  <span className="display-5">!محصولی یافت نشد</span>
                 </div>
               ) : (
                 displayedProducts.slice(0, visibleProducts).map((c) => (
@@ -183,7 +183,7 @@ function Products() {
                     <a href={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
                       <div className="hoverr-details col-12">
                         <div className="d-flex justify-content-center bp">
-                          <button className="btn btn-light border-0 hover fontr" aria-label="View Product">مشاهده محصول</button>
+                          <button className="btn btn-orange border-0 fontr" aria-label="View Product">مشاهده محصول</button>
                         </div>
                       </div>
                     </a>
@@ -192,7 +192,7 @@ function Products() {
               )}
               {!NoResult && (
                 <div className="col-12 text-center py-5">
-                  <button className="btn btn-orange text-light hover rounded-0 col-md-6 col-12" dir="rtl" onClick={showMoreProducts} disabled={ButtDisable} aria-label="Show More Products">
+                  <button className="btn btn-orange hover col-md-9 col-12" dir="rtl" onClick={showMoreProducts} disabled={ButtDisable} aria-label="Show More Products">
                     <span className="h5">{ButtContent}</span>
                   </button>
                 </div>

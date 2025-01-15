@@ -10,7 +10,7 @@ import "https://kit.fontawesome.com/6c2a0de8a3.js";
 
 function Footer(theme) {
   return (
-    <div className="container-fluid border-top border-dark pt-3" style={{ backgroundColor: "#bb460f" }} dir="rtl" >
+    <div className="container-fluid pt-3" style={{ backgroundColor: "#DB5C28" }} dir="rtl" >
       <div className="row m-0">
         <div className="col-lg-8 col-md-9 col-12 row m-0">
           <div className="col-lg-3 col-md-6 col-12 mb-3">

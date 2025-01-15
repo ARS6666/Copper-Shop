@@ -68,7 +68,7 @@ const CustomNavbar = (theme) => {
   return (
     <>
       {isVisible ? (
-        <div className="col-12 fontr row m-0 " dir="rtl" style={{backgroundColor : "rgb(187, 70, 15)"}}>
+        <div className="col-12 fontr row m-0 " dir="rtl" style={{backgroundColor : "#DB5C28"}}>
           <div className="col-7 row m-0">
             <div className="col-3 pt-1">
               <a className="hrefb m-0 p-0" href="/">
@@ -126,8 +126,8 @@ const CustomNavbar = (theme) => {
                     <span> | </span>
                     <button className="btn border-0 bg-transparent cart-icon" aria-label="Cart">
                       <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href="/cart">
-                        <i className="fa-solid fa-cart-shopping ah" style={{ fontSize: "1.1rem" }}></i>
-                        <span className={theme.theme === "dark" ? "cart-count text-white" : "cart-count text-dark"} style={{backgroundColor : theme.theme === "dark" ? "#121212" : "white"}}>{CartItems?.length}</span>
+                        <i className="fa-solid fa-cart-shopping ah text-white" style={{ fontSize: "1.1rem" }}></i>
+                        <span className="cart-count text-white">{CartItems?.length}</span>
                       </a>
                     </button>
                   </>

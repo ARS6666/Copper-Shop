@@ -71,56 +71,58 @@ const ProductCarousel = () => {
   return (
     <>
       {!OffDis && (
-        <div className="container">
-          <header className="col-md-12 col-12 remove p-3">
-            <div className="d-flex justify-content-end col-md-12 col-12 border-bottom remove">
-              <h2 className="fontr h3 align-self-center">تخفیف ها</h2>
+        <div className="col-md-12 col-12 d-flex justify-content-center">
+          <div className="col-md-11 col-12">
+            <div className="col-md-12 col-12 remove p-3 justify-content-center">
+              <div className="d-flex justify-content-end col-md-12 col-12 border-bottom border-2 border-theme remove">
+                <h2 className="fontr h3 align-self-center color-theme">تخفیف ها</h2>
+              </div>
             </div>
-          </header>
-          <div className="carousel-container m-0">
-            <Button
-              className="carousel-button border-0 left"
-              onClick={() => sliderRef.current.slickPrev()}
-              aria-label="Previous"
-            >
-              {"<"}
-            </Button>
-            <Slider ref={sliderRef} {...settings}>
-              {products.map((c) => (
-                <article key={c.id} className={`col-1 col-md-3 productt-card Anim m-0 p-1 ${c.count === 0 ? 'out-of-stock' : ''}`}>
-                  <div className="row m-0">
-                    {c.discount !== 0 && c.count !== 0 && (
-                      <div className="discountDisplay">
-                        <span>{c.discount}%</span>
+            <div className="carousel-container m-0">
+              <Button
+                className="carousel-button border-0 left color-theme"
+                onClick={() => sliderRef.current.slickPrev()}
+                aria-label="Previous"
+              >
+                {"<"}
+              </Button>
+              <Slider ref={sliderRef} {...settings}>
+                {products.map((c) => (
+                  <article key={c.id} className={`col-1 col-md-3 productt-card Anim m-0 p-1 ${c.count === 0 ? 'out-of-stock' : ''}`}>
+                    <div className="row m-0">
+                      {c.discount !== 0 && c.count !== 0 && (
+                        <div className="discountDisplay">
+                          <span>{c.discount}%</span>
+                        </div>
+                      )}
+                      <div className="d-flex justify-content-center">
+                        <img src={c.pic} className="Image col-12" alt={c.name} />
                       </div>
-                    )}
-                    <div className="d-flex justify-content-center">
-                      <img src={c.pic} className="Image col-12" alt={c.name} />
-                    </div>
-                    <div className="d-flex justify-content-center pt-3">
-                      <h3 className="fontr text-dark text-center product-name">{c.name}</h3>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                      <p className="fontr pt-1 product-name">{addCommas(c.price)} تومان</p>
-                    </div>
-                  </div>
-                  <a href={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
-                    <div className="hoverr-details col-12">
-                      <div className="d-flex justify-content-center bp">
-                        <button className="btn btn-light border-0 hover fontr" aria-label="View Product"><span className="fontr">مشاهده محصول</span></button>
+                      <div className="d-flex justify-content-center pt-3">
+                        <h3 className="fontr text-dark text-center product-name">{c.name}</h3>
+                      </div>
+                      <div className="d-flex justify-content-center">
+                        <p className="fontr pt-1 product-name">{addCommas(c.price)} تومان</p>
                       </div>
                     </div>
-                  </a>
-                </article>
-              ))}
-            </Slider>
-            <Button
-              className="carousel-button border-0 right"
-              onClick={() => sliderRef.current.slickNext()}
-              aria-label="Next"
-            >
-              {">"}
-            </Button>
+                    <a href={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
+                      <div className="hoverr-details col-12">
+                        <div className="d-flex justify-content-center bp">
+                          <button className="btn btn-orange border-0 fontr" aria-label="View Product"><span className="fontr">مشاهده محصول</span></button>
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                ))}
+              </Slider>
+              <Button
+                className="carousel-button border-0 right color-theme"
+                onClick={() => sliderRef.current.slickNext()}
+                aria-label="Next"
+              >
+                {">"}
+              </Button>
+            </div>
           </div>
         </div>
       )}

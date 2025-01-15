@@ -103,6 +103,7 @@
 
 .product-name {
     font-size: 1.2rem;
+    font-weight: normal;
 }
 
 @media (max-width: 1200px) {

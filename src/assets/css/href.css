@@ -1,17 +1,43 @@
-.hrefb{
+.hrefb {
     text-decoration: none;
     color: black;
 }
-.hrefw{
+
+.hrefw {
     text-decoration: none;
     color: white;
 }
-.eye{
+
+.eye {
     position: absolute;
     z-index: 10;
     transition: transform 0.3s ease-in-out;
 
 }
-.eye:hover{
+
+.eye:hover {
     transform: scale(1.05);
+}
+
+.btn-orange {
+    background-color: #DB5C28 !important;
+    color: white !important;
+}
+
+.btn-orange:hover {
+    background-color: white !important;
+    color: #DB5C28 !important;
+    border-color: #DB5C28 !important;
+}
+
+.border-theme {
+    border-color: #DB5C28 !important;
+}
+
+.color-theme {
+    color: #DB5C28 !important;
+}
+
+.color-theme::placeholder {
+    color: #DB5C28 !important;
 }

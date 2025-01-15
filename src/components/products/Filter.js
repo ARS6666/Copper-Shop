@@ -53,16 +53,16 @@ const Filter = ({ onFilterChange }) => {
   return (
     <div className="col-md-12 fontr d-flex justify-content-center pb-3" dir='rtl'>
       <div className="rounded col-md-12 col-12">
-        <div className='border col-md-12 p-3' style={{ borderRadius: "10px" }}>
-          <div className="filter-header">فیلتر محصولات</div>
+        <div className='border border-3 border-theme col-md-12 p-3' style={{ borderRadius: "10px" }}>
+          <div className="filter-header color-theme">فیلتر محصولات</div>
           <div className="filter-input">
-            <label className="filter-label">جستجو</label>
+            <label className="filter-label color-theme">جستجو</label>
             <input
               onKeyDown={(e) => {
                 if (e.key === "Enter") handleApplyFilter();
               }}
               type="text"
-              className="form-control"
+              className="form-control border-theme border-2 color-theme"
               placeholder="کلمه مورد نظر را وارد نمایید"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -70,13 +70,13 @@ const Filter = ({ onFilterChange }) => {
             />
           </div>
           <div className="filter-input">
-            <label className="filter-label">قیمت (تومان)</label>
+            <label className="filter-label color-theme">قیمت (تومان)</label>
             <input
               onKeyDown={(e) => {
                 if (e.key === "Enter") handleApplyFilter();
               }}
               type="number"
-              className="form-control"
+              className="form-control border-theme border-2 color-theme"
               placeholder="کمترین قیمت مد نظر"
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
@@ -87,7 +87,7 @@ const Filter = ({ onFilterChange }) => {
                 if (e.key === "Enter") handleApplyFilter();
               }}
               type="number"
-              className="form-control mt-2"
+              className="form-control mt-2 border-theme border-2 color-theme"
               placeholder="بیشترین قیمت مد نظر"
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
@@ -95,16 +95,16 @@ const Filter = ({ onFilterChange }) => {
             />
           </div>
           <div className="filter-inpu fontv">
-            <label className="filter-label">دسته بندی</label>
+            <label className="filter-label color-theme">دسته بندی</label>
             <select
-              className="form-control"
+              className="form-control border-theme border-2 color-theme"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               aria-label="Category"
             >
               <option value="">انتخاب دسته بندی</option>
               {Categories.map((c) => (
-                <option key={c.name} value={c.name}>{c.name}</option>
+                <option key={c.name} value={c.name} className='color-theme color-theme'>{c.name}</option>
               ))}
             </select>
           </div>

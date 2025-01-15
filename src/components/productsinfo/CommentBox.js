@@ -171,7 +171,7 @@ const Comments = (theme) => {
                 </div>
               ))}
             <div className="col-md-12 pt-3 col-12">
-              <button className="btn btn-outline-primary rounded-0 col-md-12 col-12" onClick={HandleShow} disabled={ButtDisable} aria-label="Show More Comments">
+              <button className="btn btn-orange rounded-0 col-md-12 col-12" onClick={HandleShow} disabled={ButtDisable} aria-label="Show More Comments">
                 {ButtContent}
               </button>
             </div>

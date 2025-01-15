@@ -27,7 +27,7 @@ const ProductSlider = (theme) => {
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      Math.min(prevIndex + 1, Categories.length -1)
+      Math.min(prevIndex + 1, Categories.length - 1)
     );
   };
 
@@ -39,13 +39,13 @@ const ProductSlider = (theme) => {
   return (<>
     <div className="col-md-12 col-12 p-3 pb-3 m-0 ">
       <div className="fontr">
-        <div className="col-md-12 row m-0 border-bottom border-2 ">
+        <div className="col-md-12 row m-0 border-bottom border-2 border-theme">
           <div className="d-flex justify-content-start col-md-6 col-7">
             <div className="m-1 fontr">
               <button
-                className="btn border-0"
+                className="btn border-0 color-theme"
                 onClick={nextSlide}
-                disabled={currentIndex === Categories.length-1}
+                disabled={currentIndex === Categories.length - 1}
                 aria-label="Next"
               >
                 {`<`}
@@ -53,7 +53,7 @@ const ProductSlider = (theme) => {
             </div>
             <div className="m-1 fontr">
               <button
-                className="btn border-0"
+                className="btn border-0 color-theme"
                 onClick={prevSlide}
                 disabled={currentIndex === 0}
                 aria-label="Previous"
@@ -62,7 +62,7 @@ const ProductSlider = (theme) => {
               </button>
             </div>
           </div>
-          <div className="align-self-center text-end h3 d-flex justify-content-end col-md-6 col-5">دسته بندی ها</div>
+          <div className="align-self-center text-end h3 d-flex justify-content-end col-md-6 col-5 color-theme">دسته بندی ها</div>
         </div>
 
         <div className="slider-container col-md-12 row m-0 pt-2" dir="rtl">
@@ -72,10 +72,10 @@ const ProductSlider = (theme) => {
                 <a className="hrefb align-self-center" href={"/products?category=" + categories.name}>
                   <div className="row m-0">
                     <div className="d-flex justify-content-center ">
-                      <img src={categories.image} title ={categories.name} className="d-block col-md-11 p-2" style={{height: "200px" , width: "auto" }} alt={categories.name} />
+                      <img src={categories.image} title={categories.name} className="d-block col-md-11 p-2" style={{ height: "200px", width: "auto" }} alt={categories.name} />
                     </div>
                     <div className="d-flex justify-content-center pt-2">
-                      <h4 className={theme.theme.theme === "dark" ? "h4 fontr text-white" : "h4 fontr text-black"}>{categories.name}</h4>
+                      <h4 className="h4 fontr color-theme">{categories.name}</h4>
                     </div>
                   </div>
                 </a>
