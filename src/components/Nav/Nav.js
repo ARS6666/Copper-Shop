@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/font/font.css";
 import "../../assets/css/href.css";
 import BurgerMenu from "./Burgermenu";
-import logo from "../../assets/media/logo.jpg";
+import logo from "../../assets/media/logo.png";
 import "../../assets/css/nav/buttonn.css"
 import url from "../../config.json"
 
@@ -68,12 +68,12 @@ const CustomNavbar = (theme) => {
   return (
     <>
       {isVisible ? (
-        <div className="col-12 fontr row m-0" dir="rtl">
+        <div className="col-12 fontr row m-0 " dir="rtl" style={{backgroundColor : "rgb(187, 70, 15)"}}>
           <div className="col-7 row m-0">
             <div className="col-3 pt-1">
-              <a className="hrefb" href="/">
+              <a className="hrefb m-0 p-0" href="/">
                 <img
-                  style={{ height: "45px", marginRight: "30px" }}
+                  style={{ height: "40px", marginRight: "30px" }}
                   src={logo}
                   alt="Company Logo"
                   className="col"
@@ -81,9 +81,9 @@ const CustomNavbar = (theme) => {
               </a>
             </div>
             <div className="col-8 align-self-center d-flex justify-content-between">
-              <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href="/"><span className="col-3 h5 ah">خانه</span></a>
-              <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href="/products"><span className="col-3 h5 ah">محصولات</span></a>
-              <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href="/about"><span className="col-3 h5 ah">درباره ما</span></a>
+              <a className="hrefw" href="/"><span className="col-3 h5 ah">خانه</span></a>
+              <a className="hrefw" href="/products"><span className="col-3 h5 ah">محصولات</span></a>
+              <a className="hrefw" href="/about"><span className="col-3 h5 ah">درباره ما</span></a>
             </div>
           </div>
 
@@ -104,7 +104,7 @@ const CustomNavbar = (theme) => {
                   aria-label="Search Button"
                   style={{ backgroundColor: "#E8E7E7" }}
                 >
-                  <i className="fa-solid fa-magnifying-glass" style={{ fontSize: "1.1rem" }}></i>
+                  <i className="fa-solid fa-magnifying-glass text-white" style={{ fontSize: "1.1rem" }}></i>
                 </button>
               </a>
             </div>
@@ -113,14 +113,14 @@ const CustomNavbar = (theme) => {
               <span>
                 {Login ? (
                   <>
-                    <a href="/login" className="hrefb h5 ah">ورود</a>
-                    <span> | </span>
+                    <a href="/login" className="hrefw text-white h5 ah">ورود</a>
+                    <span className="text-white"> | </span>
                   </>
                 ) : null}
-                <a href="/account" className="hrefb h5 ah">حساب کاربری</a>
+                <a href="/account" className="hrefw text-white h5 ah">حساب کاربری</a>
                 {!Login && (
                   <>
-                    <button className={theme.theme === "dark" ? "btn border-0 bg-transparent text-white" : "btn border-0 bg-transparent text-dark"} onClick={logout} aria-label="Logout">
+                    <button className={theme.theme === "dark" ? "btn border-0 bg-transparent text-white" : "btn border-0 bg-transparent text-white"} onClick={logout} aria-label="Logout">
                       <i className="fas fa-sign-out-alt ah"></i>
                     </button>
                     <span> | </span>

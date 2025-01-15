@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "../../../assets/css/href.css";
 import "../../../assets/css/account/order.css";
-import Img from "../../../assets/media/logo.jpg";
+import Img from "../../../assets/media/logo.png";
 import url from "../../../config.json";
 
 function Order(theme) {
