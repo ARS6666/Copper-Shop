@@ -69,7 +69,7 @@ const Panel = (theme) => {
     };
     return (
         <div className="fontr col-md-12 row m-0 pb-2 pt-2" dir="rtl">
-            <div className="col-md-3 border" style={{ borderRadius: "10px", height: "100%" }}>
+            <div className="col-md-3 border border-theme" style={{ borderRadius: "10px", height: "100%" }}>
                 <div className="d-flex justify-content-center pt-4">
                     <img src={Prop.image || pfp} alt="Profile" className="pfp rounded-circle" />
                 </div>
@@ -77,40 +77,40 @@ const Panel = (theme) => {
                     <span className="h4">{Prop.name}</span>
                 </div>
                 <div className="pt-3">
-                    <div className="col-md-12 border-top border-bottom part">
+                    <div className="col-md-12 border-top border-bottom border-theme part">
                         <button onClick={() => { handleClick(); changeContent(<Profile theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
-                            style={{ backgroundColor: isChecked ? '#7a7a7a' : '', width: "100%" }}>
+                            style={{ backgroundColor: isChecked ? '#DB5C28' : '', width: "100%" }}>
                             <h5 className={theme.theme === "dark" ? "p-2 text-white" : "p-2 text-dark"}>
                                 <i className="p-1 fa fa-user" aria-hidden="true"></i>
                                 تغییر جزییات حساب کاربری
                             </h5>
                         </button>
                     </div>
-                    <div className="col-md-12 border-top border-bottom part">
+                    <div className="col-md-12 border-top border-bottom border-theme part">
                         <button onClick={() => { handleClick2(); changeContent(<Order theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
-                            style={{ backgroundColor: isChecked2 ? '#7a7a7a' : '', width: "100%" }}>
+                            style={{ backgroundColor: isChecked2 ? '#DB5C28' : '', width: "100%" }}>
                             <h5 className={theme.theme === "dark" ? "p-2 text-white" : "p-2 text-dark"}>
                                 <i className="fas fa-shopping-basket p-1"></i>
                                 سفارشات
                             </h5>
                         </button>
                     </div>
-                    <div className="col-md-12 border-top border-bottom part">
+                    <div className="col-md-12 border-top border-bottom border-theme part">
                         <button onClick={() => { handleClick3(); changeContent(<Address theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
-                            style={{ backgroundColor: isChecked3 ? '#7a7a7a' : '', width: "100%" }}>
+                            style={{ backgroundColor: isChecked3 ? '#DB5C28' : '', width: "100%" }}>
                             <h5 className={theme.theme === "dark" ? "p-2 text-white" : "p-2 text-dark"}>
                                 <i className="fas fa-map p-1"></i>
                                 آدرس‌ها
                             </h5>
                         </button>
                     </div>
-                    <div className="col-md-12 border-top border-bottom part">
+                    <div className="col-md-12 border-top border-bottom border-theme part">
                         <button onClick={() => { handleClick4(); changeContent(<RPP theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
-                            style={{ backgroundColor: isChecked4 ? '#7a7a7a' : '', width: "100%" }}>
+                            style={{ backgroundColor: isChecked4 ? '#DB5C28' : '', width: "100%" }}>
                             <h5 className={theme.theme === "dark" ? "p-2 text-white" : "p-2 text-dark"}>
                                 <i className="fas fa-folder-open p-1"></i>
                                 سفارشات گذشته

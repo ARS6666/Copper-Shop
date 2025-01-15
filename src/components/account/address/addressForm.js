@@ -9,116 +9,6 @@ function Address(theme) {
     const token = localStorage.getItem('token');
     const [IsLoading, setisLoading] = useState(false)
     const [Error, setError] = useState("")
-    const data = {
-        تهران: {
-            cities: ['تهران', 'شهریار', 'ملارد', 'ری', 'اسلامشهر', 'پردیس'],
-            counties: ['تهران', 'شمیرانات', 'ری', 'اسلامشهر', 'پردیس']
-        },
-        اصفهان: {
-            cities: ['اصفهان', 'کاشان', 'نجف‌آباد', 'خمینی‌شهر', 'دولت‌آباد'],
-            counties: ['اصفهان', 'خمینی‌شهر', 'نجف‌آباد', 'کاشان', 'دولت‌آباد']
-        },
-        فارس: {
-            cities: ['شیراز', 'مرودشت', 'جهرم', 'فسا', 'نی‌ریز'],
-            counties: ['شیراز', 'مرودشت', 'جهرم', 'فسا', 'نی‌ریز']
-        },
-        خراسان_رضوی: {
-            cities: ['مشهد', 'نیشابور', 'سبزوار', 'تربت حیدریه', 'کاشمر'],
-            counties: ['مشهد', 'نیشابور', 'سبزوار', 'تربت حیدریه', 'کاشمر']
-        },
-        آذربایجان_شرقی: {
-            cities: ['تبریز', 'مراغه', 'آذرشهر', 'اهر', 'بستان‌آباد'],
-            counties: ['تبریز', 'مراغه', 'آذرشهر', 'اهر', 'بستان‌آباد']
-        },
-        آذربایجان_غربی: {
-            cities: ['ارومیه', 'خوی', 'ماکو', 'پلدشت', 'سلماس'],
-            counties: ['ارومیه', 'خوی', 'ماکو', 'پلدشت', 'سلماس']
-        },
-        البرز: {
-            cities: ['کرج', 'ساوجبلاغ', 'نظرآباد', 'طالقان'],
-            counties: ['کرج']
-        },
-        بوشهر: {
-            cities: ['بوشهر', 'گناوه', 'دیلم', 'دشتستان'],
-            counties: ['بوشهر']
-        },
-        چهارمحال_وبختیاری: {
-            cities: ['شهرکرد', 'بروجن', 'فارسان'],
-            counties: ['شهرکرد']
-        },
-        خراسان_شمالی: {
-            cities: ['بجنورد', 'اسفراین', 'شیروان'],
-            counties: ['بجنورد']
-        },
-        زنجان: {
-            cities: ['زنجان', 'خرمدره', 'طارم', 'ابهر'],
-            counties: ['زنجان']
-        },
-        سمنان: {
-            cities: ['سمنان', 'شاهرود', 'دامغان'],
-            counties: ['سمنان']
-        },
-        سیستان_و_بلوچستان: {
-            cities: ['زاهدان', 'زابل', 'خاش', 'ایرانشهر', 'چابهار'],
-            counties: ['زاهدان', 'زابل', 'خاش', 'ایرانشهر', 'چابهار']
-        },
-        قزوین: {
-            cities: ['قزوین', 'البرز', 'بوئین‌زهرا'],
-            counties: ['قزوین']
-        },
-        قم: {
-            cities: ['قم'],
-            counties: ['قم']
-        },
-        کردستان: {
-            cities: ['سنندج', 'قروه', 'بیجار'],
-            counties: ['سنندج']
-        },
-        کرمان: {
-            cities: ['کرمان', 'رفسنجان', 'زرند', 'بم', 'سیرجان'],
-            counties: ['کرمان', 'رفسنجان', 'زرند', 'بم', 'سیرجان']
-        },
-        کرمانشاه: {
-            cities: ['کرمانشاه', 'سنقر و کلیایی'],
-            counties: ['کرمانشاه']
-        },
-        کهگیلویه_و_بویراحمد: {
-            cities: ['یاسوج', 'گچساران', 'دوگنبدان'],
-            counties: ['یاسوج', 'گچساران', 'دوگنبدان']
-        },
-        گلستان: {
-            cities: ['گرگان', 'گنبد کاووس', 'علی‌آباد', 'آق‌قلا', 'کلاله'],
-            counties: ['گرگان', 'گنبد کاووس', 'علی‌آباد', 'آق‌قلا', 'کلاله']
-        },
-        گیلان: {
-            cities: ['رشت', 'لاهیجان', 'آستارا', 'بندر انزلی', 'رودسر'],
-            counties: ['رشت', 'لاهیجان', 'آستارا', 'بندر انزلی', 'رودسر']
-        },
-        مازندران: {
-            cities: ['ساری', 'بابل', 'آمل', 'قائم‌شهر', 'بهشهر'],
-            counties: ['ساری', 'بابل', 'آمل', 'قائم‌شهر', 'بهشهر']
-        },
-        هرمزگان: {
-            cities: ['بندرعباس', 'قشم', 'میناب', 'بندر لنگه', 'کیش'],
-            counties: ['بندرعباس', 'قشم', 'میناب', 'بندر لنگه', 'کیش']
-        },
-        یزد: {
-            cities: ['یزد', 'اردکان', 'میبد', 'مهریز', 'ابرکوه'],
-            counties: ['یزد', 'اردکان', 'میبد', 'مهریز', 'ابرکوه']
-        },
-        همدان: {
-            cities: ['همدان', 'ملایر', 'نهاوند', 'کبودرآهنگ', 'رزن'],
-            counties: ['همدان', 'ملایر', 'نهاوند', 'کبودرآهنگ', 'رزن']
-        },
-        لرستان: {
-            cities: ['خرم‌آباد', 'بروجرد', 'دورود', 'کوهدشت', 'الیگودرز'],
-            counties: ['خرم‌آباد', 'بروجرد', 'دورود', 'کوهدشت', 'الیگودرز']
-        },
-        خوزستان: {
-            cities: ['اهواز', 'آبادان', 'خرمشهر', 'دزفول', 'ماهشهر'],
-            counties: ['اهواز', 'آبادان', 'خرمشهر', 'دزفول', 'ماهشهر']
-        }
-    };
 
     const [Profile_id, setProfile_id] = useState("")
     useEffect(() => {
@@ -138,19 +28,6 @@ function Address(theme) {
             .then((result) => setProfile_id(result.id))
             .catch((error) => console.error(error));
     }, []);
-
-    const [selectedProvince, setSelectedProvince] = useState('');
-    const [cities, setCities] = useState([]);
-    const [counties, setCounties] = useState([]);
-    const [Ostan, setOstan] = useState("")
-
-    const handleProvinceChange = (event) => {
-        const province = event.target.value;
-        setSelectedProvince(province);
-        setCities(data[province]?.cities || []);
-        setCounties(data[province]?.counties || []);
-        setOstan(event.target.value);
-    };
     const [Name, setName] = useState("")
     const handleName = (event) => {
         setName(event.target.value);
@@ -159,22 +36,14 @@ function Address(theme) {
     const handleAddress = (event) => {
         setAddress(event.target.value);
     };
-    const [Phone, setPhone] = useState()
-    const handlePhone = (event) => {
-        setPhone(event.target.value);
-    };
 
-    const [Shahr, setShahr] = useState("")
-    const handleShahr = (event) => {
-        setShahr(event.target.value);
-    };
     const [PostCode, setPostCode] = useState("")
     const HandlePostCode = (event) => {
         setPostCode(event.target.value);
     };
 
     function STS() {
-        if (!Profile_id || !Name || !Address || !Ostan || !Shahr || !PostCode) {
+        if (!Profile_id || !Name || !Address || !PostCode) {
             setError("اطلاعات خواسته شده را تکمیل کنید!");
             return;
         }
@@ -189,8 +58,8 @@ function Address(theme) {
             "profile": Profile_id,
             "name": Name,
             "address": Address,
-            "ostan": Ostan,
-            "shahr": Shahr,
+            "ostan": "Ostan",
+            "shahr": "Shahr",
             "postcode": PostCode,
         });
 
@@ -241,46 +110,10 @@ function Address(theme) {
                         <div class="col-md-12 text-end">
                             <span class="text-dark h5 p-4">نام آدرس مورد نظر:*</span>
                             <div class="pt-2 col-md-12 p-4">
-                                <input class="form-control form-control-lg border-dark rounded-0" onChange={handleName}></input>
+                                <input class="form-control form-control-lg border-dark rounded-0" placeholder='مثال : خانه , محل کار , ...' onChange={handleName}></input>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="fontr row m-0 pt-1 p-4 pb-2" dir="rtl" style={{ color: "#000000" }}>
-                                <div class="col-md-6 col-6 ">
-                                    <label class="h5">
-                                        انتخاب استان:
-                                        <div class="pt-2">
-                                            <select class="form-select rounded-0" value={selectedProvince} onChange={handleProvinceChange}>
-                                                <option value="">انتخاب کنید</option>
-                                                {Object.keys(data).map((province) => (
-                                                    <option key={province} value={province}>
-                                                        {province}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="col-md-6 col-6">
-                                    <label class="h5">
-                                        انتخاب شهر:
-                                        <div class="pt-2">
-
-                                            <select class="form-select rounded-0" disabled={!selectedProvince} onClick={handleShahr}>
-                                                <option value="">انتخاب کنید</option>
-                                                {cities.map((city) => (
-                                                    <option key={city} value={city} >
-                                                        {city}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12"><span class="text-dark p-4" style={{ paddingRight: "10px" }}>اگر شهر مورد نظر شما در لیست نیست آن ر در آدرس پستی درج کنید.</span></div>
-                        <div class="co-md-12 row m-0 pt-2">
+                        <div class="co-md-12 row m-0">
                             <div class="col-md-6 text-end p-4 pt-2 pb-0">
                                 <span class="text-dark h5 p-3">کد پستی*</span>
                                 <div class="pt-2 col-md-12 p-1">
@@ -293,15 +126,15 @@ function Address(theme) {
                             <textarea
                                 rows="4"
                                 class="form-control border-dark rounded-0 textarea pt-3 "
-                                placeholder="آدرس تحویل گیرنده را وارد کنید"
+                                placeholder="آدرس به این صورت است : استان ، شهرستان ، خیابان ، کوچه ، پلاک ، واحد,..."
                                 onChange={handleAddress}
                             />
                         </div>
                         {Error ? <div class="col-md-12 d-flex justify-content-center" style={{ paddingRight: "10px" }} dir=" rtl"><h4 class="text-light bg-danger">{Error}</h4></div> : <></>}
                         <div class="col-md-12 col-12 row m-1">
                             <div class="col-md-10 col-8"></div>
-                            <div class="col-md-1 col-2 "><button className="btn rounded-0  text-light" style={{ backgroundColor: "#000000" }} onClick={handleOverlay}>انصراف</button></div>
-                            <div class="col-md-1 col-2 "><button className="btn button1 rounded-0  text-light" style={{ backgroundColor: "#000000" }} onClick={STS}>ثبت</button></div>
+                            <div class="col-md-1 col-2 "><button className="btn btn-primary text-light" onClick={handleOverlay}>انصراف</button></div>
+                            <div class="col-md-1 col-2 "><button className="btn btn-danger text-light" onClick={STS}>ثبت</button></div>
 
                         </div>
                     </div>
@@ -311,5 +144,6 @@ function Address(theme) {
         </> : <></>}
     </>);
 }
+
 
 export default Address;

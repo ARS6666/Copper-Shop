@@ -86,25 +86,25 @@ const ProfProp = (theme) => {
     return (
         <>
             {IsLoading ? <Loading /> : null}
-            <div className="col-md-12 pt-2 fontr border" dir="rtl" style={{ borderRadius: "10px" }}>
+            <div className="col-md-12 pt-2 fontr border border-theme border-2" dir="rtl" style={{ borderRadius: "10px" }}>
                 <div className="col-md-12">
                     <div className="col-md-12 p-3 row m-0">
                         <div className="col-md-6 d-flex justify-content-start col-9">
-                            <span className="h4 col-md-2 border-bottom border-2 border-dark p-2">پروفایل</span>
+                            <span className="h4 col-md-2 border-bottom border-theme border-3 border-dark p-2">پروفایل</span>
                         </div>
                         <div className="col-md-6 d-flex justify-content-end col-3">
-                            <button className={theme.theme.theme === "dark" ? "btn btn-light btn-sm rounded-0" : "btn btn-dark btn-sm rounded-0"} onClick={reset}>بازیابی</button>
+                            <button className="btn btn-orange btn-sm" onClick={reset}>بازیابی</button>
                         </div>
                         <div className="col-md-12 row m-0 pt-3 d-flex justify-content-center">
                             <div className="col-md-12">
                                 <span className={theme.theme.theme === "dark" ? "text-white" : "text-dark"}>نام:</span>
                                 <div className="pt-2 col-md-12">
-                                    <input className="form-control form-control-lg border-dark rounded-0" onChange={handleName} value={Name} required />
+                                    <input className="form-control form-control-lg border-theme " onChange={handleName} value={Name} required />
                                 </div>
                                 <div className="col-md-12 col-12 pt-3">
                                     <span className={theme.theme.theme === "dark" ? "text-white pt-1" : "text-dark pt-1"}>نام خانوادگی:</span>
                                     <div className="pt-2 col-md-12">
-                                        <input className="form-control form-control-lg border-dark rounded-0" onChange={handleLastName} value={LastName} required />
+                                        <input className="form-control form-control-lg border-theme " onChange={handleLastName} value={LastName} required />
                                     </div>
                                 </div>
                             </div>
@@ -112,11 +112,11 @@ const ProfProp = (theme) => {
                                 <span className={theme.theme.theme === "dark" ? "text-white pt-1" : "text-dark pt-1"}>عکس پروفایل:</span>
                             </div>
                             <div className="pt-2 col-md-12 col-12">
-                                <input type="file" id="imageInput" accept="image/*" dir="rtl" className="form-control form-control-lg border-dark rounded-0" onChange={handleFileChange} required />
+                                <input type="file" id="imageInput" accept="image/*" dir="rtl" className="form-control form-control-lg border-theme color-theme " onChange={handleFileChange} required />
                             </div>
                             <div className="col-md-12 col-12 d-flex justify-content-center pt-4">
                                 <div className="col-md-10 col-10 pt-2">
-                                    <button className="col-md-12 col-12 btn btn-lg btn-outline-success rounded-0 border-4" onClick={handleSubmit}>ثبت اطلاعات</button>
+                                    <button className="col-md-12 col-12 btn btn-lg btn-outline-success  border-2" onClick={handleSubmit}>ثبت اطلاعات</button>
                                 </div>
                             </div>
                         </div>

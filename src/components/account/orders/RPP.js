@@ -92,7 +92,7 @@ const RecentOrders = (theme) => {
   }
 
   return (
-    <div className={ISOrderhistory ? "p-3 shadow-0 fontr" : " p-3 shadow-0 fontr border"} dir="rtl" style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "white", borderRadius: "10px" }}>
+    <div className={ISOrderhistory ? "p-3 shadow-0 fontr" : " p-3 shadow-0 fontr border border-theme"} dir="rtl" style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "white", borderRadius: "10px" }}>
       {ISOrderhistory ?
         <>{selectedOrder ? (
           <div className="recent-order-details">
@@ -102,7 +102,7 @@ const RecentOrders = (theme) => {
             <ul className="recent-product-list col-12">
               {OrderItems.map((c) => (
                 <a className="hrefb" href={`pi?id=${c.product.id}#${c.product.name}`} key={c.product.id}>
-                  <li className="product-item">
+                  <li className="product-item border-theme">
                     <img src={`${c.product.pic}`} alt={c.product.name} className="product-image" />
                     <div className="product-details">
                       <div className="text-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
@@ -120,15 +120,15 @@ const RecentOrders = (theme) => {
           </div>
         ) : (
           <div className="recent-orders-list col-12">
-            <h2 style={{marginBottom: "20px"}} className='border-bottom border-4 border-danger col-md-3 col-12 pb-2'>سفارشات گذشته</h2>
+            <h2 style={{ marginBottom: "20px" }} className='border-bottom border-4 border-theme col-md-3 col-12 pb-2'>سفارشات گذشته</h2>
             <ul className="recent-order-summary-list col-12">
               {Orderhistory?.map((order) => (
-                <li key={order.id} className="recent-order-summary col-12" onClick={() => handleOrderClick(order.id)}>
+                <li key={order.id} className="recent-order-summary border-theme col-12" onClick={() => handleOrderClick(order.id)}>
                   <div className="col pt-1"><p>آیدی سفارش: <span className="order-id">{order.id}</span></p></div>
                   <div className="col pt-1"><p>قیمت کل: <span className="order-amount">{addCommas(order.total)} تومان</span></p></div>
                   <div className="col pt-1"><p>تاریخ سفارش: <span className="order-date ">{convertToIranianDate(order.created_at)}</span></p></div>
                   <div className="col pt-1 d-flex justify-content-end">
-                    <button className="btn btn-outline-primary">مشاهده جزییات</button>
+                    <button className="btn btn-orange">مشاهده جزییات</button>
                   </div>
                 </li>))}
             </ul>
