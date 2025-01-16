@@ -87,7 +87,7 @@ const AppContent = () => {
               </div>
             </PrivateRoute>} />
           <Route path='/about' element={<About />} />
-          <Route path='/blog' element={<Blog theme={theme}/>} />
+          <Route path='/blogs' element={<Blog theme={theme}/>} />
           <Route path='/blogpage' element={<Blogpage theme={theme}/>} />
         </Routes >
         {showFooter ? <Footer theme={theme} /> : null
