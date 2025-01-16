@@ -12,6 +12,8 @@ import PrivateRoute from "./components/authentication/PrivateRoute";
 import RefreshToken from "./components/authentication/RefreshToken";
 import Footer from './components/footer';
 import Chatbot from './components/chatbot';
+import Blog from "./components/blog/blog";
+import Blogpage from "./components/blog/blogpage";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import About from './components/CornerPages/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,6 +24,8 @@ const AppContent = () => {
   const location = useLocation();
   const hideFooterPaths = ['/login', '/signin', '/test', '/account ', '/cart'];
   const showFooter = !hideFooterPaths.includes(location.pathname);
+  const hideChatbotPaths = ['/login', '/signin', '/test', '/account ', '/cart'];
+  const showChatbot = !hideFooterPaths.includes(location.pathname);
   const [theme, setTheme] = useState(localStorage.getItem('theme'));
 
   useEffect(() => {
@@ -57,7 +61,8 @@ const AppContent = () => {
           <div className="description fontr" dir="rtl">بعد از هر تغییر تم ریلود کنید.</div>
         </div>
         <Nav theme={theme} />
-        <Chatbot />
+        {showChatbot ? <Chatbot theme={theme} /> : null
+        }
         <Routes>
           <Route path='' element={<Home theme={theme} />} />
           <Route path='*' element={<NotFoundPage />} />
@@ -82,7 +87,8 @@ const AppContent = () => {
               </div>
             </PrivateRoute>} />
           <Route path='/about' element={<About />} />
-          <Route path='/chatbot' element={<Chatbot />} />
+          <Route path='/blog' element={<Blog theme={theme}/>} />
+          <Route path='/blogpage' element={<Blogpage theme={theme}/>} />
         </Routes >
         {showFooter ? <Footer theme={theme} /> : null
         }
