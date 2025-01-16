@@ -11,6 +11,7 @@ import Panel from './components/account/account';
 import PrivateRoute from "./components/authentication/PrivateRoute";
 import RefreshToken from "./components/authentication/RefreshToken";
 import Footer from './components/footer';
+import Chatbot from './components/chatbot';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import About from './components/CornerPages/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -56,6 +57,7 @@ const AppContent = () => {
           <div className="description fontr" dir="rtl">بعد از هر تغییر تم ریلود کنید.</div>
         </div>
         <Nav theme={theme} />
+        <Chatbot />
         <Routes>
           <Route path='' element={<Home theme={theme} />} />
           <Route path='*' element={<NotFoundPage />} />
@@ -80,6 +82,7 @@ const AppContent = () => {
               </div>
             </PrivateRoute>} />
           <Route path='/about' element={<About />} />
+          <Route path='/chatbot' element={<Chatbot />} />
         </Routes >
         {showFooter ? <Footer theme={theme} /> : null
         }
