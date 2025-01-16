@@ -165,7 +165,7 @@ function ProductInfo(theme) {
               <div className="pt-4">
                 <button className="btn rounded-0 btn-lg btn-orange w-100 add-to-cart" onClick={(event) => AddItem(product.id, event)} disabled={buttonDisabled}>
                   {buttonDisabled ?
-                    <span className="text-success">به سبد خرید اضافه شد!</span>
+                    <span className="text-white">به سبد خرید اضافه شد!</span>
                     :
                     <span>افزودن به سبد خرید</span>}</button>
               </div>

@@ -18,8 +18,8 @@ const BlogList = (theme) => {
             </div>
             <div className='container-xl'>
                 {blogs.map((blog) => (
-                    <a className={theme.theme == 'light' ? "hrefb" : "hrefw"}>
-                        <div key={blog.id} className="blog border border-2 border-theme">
+                    <a className={theme.theme == 'light' ? "hrefb" : "hrefw"} href={`/blogpage?id=${blog.id}`}>
+                        <div key={blog.id} className="blog border border-2 border-theme cat-hover">
                             <h2>{blog.title}</h2>
                             <p><strong>Author:</strong> {blog.author}</p>
                             <p>{blog.content}</p>
