@@ -5,7 +5,7 @@ import url from "../config.json";
 
 
 const preprocessText = (text) => {
-    const stopWords = ['است', 'در', 'به', 'از', 'و', 'یک', 'تا', 'میخواستم', 'با', 'سلام', 'دارید', '.', '؟', 'یدونه', 'عدد','سلام','مسی','مس'];
+    const stopWords = ['است', 'در', 'به', 'از', 'و', 'یک', 'تا', 'میخواستم', 'با', 'سلام', 'دارید', '.', '؟', 'یدونه', 'عدد','سلام','مسی','مس', 'میخوام'];
     return text
         .toLowerCase()
         .split(' ')
@@ -44,7 +44,7 @@ const ChatBot = (theme) => {
 
         const userInput = input.toLowerCase();
 
-        if (userInput.includes('سلام') || userInput.includes('درود')) {
+        if (userInput.includes('سلام')) {
             const botResponse = 'سلام! چطور می‌توانم به شما کمک کنم؟';
             setMessages(prevMessages => [...prevMessages, { sender: 'bot', text: botResponse }]);
             setInput('');
@@ -58,7 +58,7 @@ const ChatBot = (theme) => {
             return;
         }
 
-        if (userInput.includes('متشکرم') || userInput.includes('ممنون')) {
+        if (userInput.includes('متشکرم') || userInput.includes('ممنون') || userInput.includes('مرسی')) {
             const botResponse = 'خواهش می‌کنم! اگر سوال دیگری دارید، بفرمایید.';
             setMessages(prevMessages => [...prevMessages, { sender: 'bot', text: botResponse }]);
             setInput('');
