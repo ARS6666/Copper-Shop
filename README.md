@@ -28,15 +28,15 @@ Welcome to the **React E-Commerce Website**! This project is a fully functional 
   - React
   - Redux (for state management)
   - React Router (for navigation)
-  - Axios (for API calls)
+  - Fetch (for API calls)
   - Styled Components (for styling)
 
 - **Backend:**
-  - Firebase (for authentication and database)
+  - Django (for authentication and database)
 
 ## Demo
 
-Check out the live demo of the application here: [Live Demo](https://your-demo-link.com)
+There is no demo yet...
 
 ## Installation
 
@@ -45,25 +45,16 @@ To get a local copy up and running, follow these steps:
 1. Clone the repository:
    bash
    git clone https://github.com/yourusername/react-ecommerce-website.git
-   2. Navigate to the project directory:
+
+2. Navigate to the project directory:
    bash
    cd react-ecommerce-website
-   3. Install the required dependencies:
+
+3. Install the required dependencies:
    bash
    npm install
-   
-4. Set up Firebase:
-   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
-   - Add your Firebase configuration to your project. Create a .env file in the root directory and add your Firebase config:
-     plaintext
-     REACTAPPFIREBASEAPIKEY=yourapikey
-     REACTAPPFIREBASEAUTHDOMAIN=yourauthdomain
-     REACTAPPFIREBASEPROJECTID=yourprojectid
-     REACTAPPFIREBASESTORAGEBUCKET=yourstoragebucket
-     REACTAPPFIREBASEMESSAGINGSENDERID=yourmessagingsenderid
-     REACTAPPFIREBASEAPPID=yourappid
      
-5. Start the development server:
+4. Start the development server:
    bash
    npm start
    
