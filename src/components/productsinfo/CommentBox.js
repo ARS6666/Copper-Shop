@@ -116,7 +116,6 @@ const Comments = (theme) => {
       })
       .then(() => {
         setComment("");
-        setName("");
         fetch(`${url.baseUrl}/comments/comment/?product_id=` + productId)
           .then((response) => {
             if (!response.ok) {
@@ -140,18 +139,14 @@ const Comments = (theme) => {
 
 
   const HandleShow = () => {
-    if (comments.length === 0) {
-      setButtContent("کامنتی وجود ندارد ...");
+    if (ShowCount >= comments.length) {
+      setButtContent("کامنت ها به پایان رسیدند ...");
     } else {
-      if (ShowCount >= comments.length) {
-        setShowCount(comments.length - 2);
-        setButtContent("مشاهده بیشتر ...");
-      } else {
-        setShowCount(ShowCount + 2);
-        setButtContent("مشاهده کمتر ...");
-      }
+      setShowCount(ShowCount + 2);
+      setButtContent("مشاهده بیشتر ...");
     }
   };
+
 
 
   return (
