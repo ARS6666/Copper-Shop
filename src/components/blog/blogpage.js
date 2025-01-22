@@ -33,10 +33,10 @@ const Blog = () => {
             redirect: "follow"
         };
 
-        fetch(`${url.baseUrl}/blog/${id}`, requestOptions)
+        fetch(`${url.baseUrl}/blog/` + id, requestOptions)
             .then((response) => response.json())
             .then((result) => {
-                setBlog(result[0]);
+                setBlog(result);
                 setIsLoading(false);
             })
             .catch((error) => {
@@ -47,7 +47,7 @@ const Blog = () => {
 
     useEffect(() => {
         if (blog && blog.content) {
-            setContents(blog.content);
+            setContents(blog);
         }
     }, [blog]);
 
@@ -57,11 +57,11 @@ const Blog = () => {
             <div className='col-md-12 fontr' dir="rtl">
                 <div className='col-md-12 pt-3'>
                     <div className='col-md-12 text-white d-flex justify-content-center align-items-center' style={{ height: "80px", backgroundColor: "#DB5C28" }}>
-                        <h2 className='align-self-center'>{blog.title || "منتظر باشید ..."}</h2>
+                        <h2 className='align-self-center'>{contents.title || "منتظر باشید ..."}</h2>
                     </div>
                     <div className='container pt-3'>
                         <div className='h5 text-dark' style={{ lineHeight: "2rem", wordSpacing: "0.4rem", fontSize: "1.4rem" }}>
-                            {contents ? parser(contents) : "منتظر باشید ..."}
+                            {contents.content ? parser(contents.content) : "منتظر باشید ..."}
                         </div>
                     </div>
                     <div className='col-md-12 pb-3'>

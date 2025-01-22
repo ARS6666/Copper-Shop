@@ -54,14 +54,10 @@ function AddressDisplay(theme) {
         <>
             {IsLoading ? <Loading /> : null}
             {Prop.map((c) => (
-                <div className="col-md-6 p-1 fontr text-end" dir="rtl" style={{color : theme.theme === "dark" ? "#000000" : "gray"}} key={c.id}>
+                <div className="col-md-6 p-1 fontr text-end" dir="rtl" style={{ color: theme.theme === "dark" ? "#000000" : "gray" }} key={c.id}>
                     <div className="border border-3 border-dark text-end" style={{ borderStyle: "double" }}>
                         <div className="col-md-12 p-3">
                             <span className="h3">{c.name}</span>
-                        </div>
-                        <div className="col-md-12 col-12 row m-0 fontr pt-2">
-                            <div className="col-md-6 col-6 text-end h5 p-1">استان: {c.ostan}</div>
-                            <div className="col-md-6 col-6 text-end h5">شهرستان: {c.shahr}</div>
                         </div>
                         <div className="col-md-11 col-12 pt-2 text-end">
                             <span className="h5 p-2">کد پستی: {c.postcode}</span>
