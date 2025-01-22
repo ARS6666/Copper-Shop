@@ -5,7 +5,7 @@ import url from "../config.json";
 
 
 const preprocessText = (text) => {
-    const stopWords = ['است', 'در', 'به', 'از', 'و', 'یک', 'تا', 'میخواستم', 'با', 'سلام', 'دارید', '.', '؟', 'یدونه', 'عدد','سلام','مسی','مس', 'میخوام'];
+    const stopWords = ['است', 'در', 'به', 'از', 'و', 'یک', 'تا', 'میخواستم', 'با', 'سلام', 'دارید', '.', '؟', 'یدونه', 'عدد','سلام','مسی','مس', 'میخوام', 'دارین'];
     return text
         .toLowerCase()
         .split(' ')
@@ -84,7 +84,7 @@ const ChatBot = (theme) => {
 
         if (suggestedProduct.product) {
             const productLink = `<a href="/pi?id=${suggestedProduct.product.id}#${suggestedProduct.product.name}" target="_blank">${suggestedProduct.product.name}</a>`;
-            botResponse = `بر اساس گفته‌های شما، من پیشنهاد می‌کنم: ${productLink}. قیمت آن ${addCommas(suggestedProduct.product.price)} هزار تومان است. آیا مایلید جزئیات بیشتری بدانید؟`;
+            botResponse = `بر اساس گفته‌های شما، من پیشنهاد می‌کنم: ${productLink}. قیمت آن ${addCommas(suggestedProduct.product.price)} تومان است. آیا مایلید جزئیات بیشتری بدانید؟`;
             setSelectedProduct(suggestedProduct.product);
         } else {
             botResponse = 'متاسفانه نتوانستم محصولی را که مطابق با توضیحات شما باشد پیدا کنم. لطفا جزئیات بیشتری ارائه دهید یا پرسش دیگری مطرح کنید.';
