@@ -74,14 +74,27 @@ const RecentOrders = (theme) => {
 
     return `${jalaliDate.jy}-${String(jalaliDate.jm).padStart(2, '0')}-${String(jalaliDate.jd).padStart(2, '0')} ${hours}:${minutes}:${seconds}`;
   }
+
   const addCommas = (number) => {
     if (number !== undefined) {
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
       let [integer] = number.toString().split('.');
       integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      integer = integer.replace(/\d/g, (digit) => persianDigits[digit]);
       return integer;
     }
     return null;
   };
+
+  const convertToPersian = (number) => {
+    if (number !== undefined) {
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+      return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+    }
+    return null;
+  };
+
+
   function truncateString(str) {
     const words = str.split(' ');
     if (words.length <= 6) {
@@ -111,7 +124,7 @@ const RecentOrders = (theme) => {
                       </div>
                       <p>{c.product.category}</p>
                       <p>قیمت: {addCommas(c.product.price)} تومان</p>
-                      <p>تعداد: {c.quantity}</p>
+                      <p>تعداد: {convertToPersian(c.quantity)}</p>
                     </div>
                   </li>
                 </a>
@@ -124,9 +137,9 @@ const RecentOrders = (theme) => {
             <ul className="recent-order-summary-list col-12">
               {Orderhistory?.map((order) => (
                 <li key={order.id} className="recent-order-summary border-theme col-12" onClick={() => handleOrderClick(order.id)}>
-                  <div className="col pt-1"><p>آیدی سفارش: <span className="order-id">{order.id}</span></p></div>
+                  <div className="col pt-1"><p>آیدی سفارش: <span className="order-id">{convertToPersian(order.id)}</span></p></div>
                   <div className="col pt-1"><p>قیمت کل: <span className="order-amount">{addCommas(order.total)} تومان</span></p></div>
-                  <div className="col pt-1"><p>تاریخ سفارش: <span className="order-date ">{convertToIranianDate(order.created_at)}</span></p></div>
+                  <div className="col pt-1"><p>تاریخ سفارش: <span className="order-date ">{convertToPersian(convertToIranianDate(order.created_at))}</span></p></div>
                   <div className="col pt-1 d-flex justify-content-end">
                     <button className="btn btn-orange">مشاهده جزییات</button>
                   </div>

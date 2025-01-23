@@ -64,11 +64,16 @@ const CustomNavbar = (theme) => {
         .catch((error) => console.error(error));
     }
   }, [token]);
+  const convertToPersian = (number) => {
+    const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+    return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+  };
+
 
   return (
     <>
       {isVisible ? (
-        <div className="col-12 fontr row m-0 " dir="rtl" style={{backgroundColor : "#DB5C28"}}>
+        <div className="col-12 fontr row m-0 " dir="rtl" style={{ backgroundColor: "#DB5C28" }}>
           <div className="col-7 row m-0">
             <div className="col-3 pt-1">
               <a className="hrefb m-0 p-0" href="/">
@@ -115,7 +120,7 @@ const CustomNavbar = (theme) => {
                 {Login ? (
                   <>
                     <a href="/login" className="hrefw text-white h5 ah">ورود</a>
-                    <span className="text-white"> | </span>
+                    <span style={{ color: "#ffffff" }}> | </span>
                   </>
                 ) : null}
                 <a href="/account" className="hrefw text-white h5 ah">حساب کاربری</a>
@@ -128,7 +133,7 @@ const CustomNavbar = (theme) => {
                     <button className="btn border-0 bg-transparent cart-icon" aria-label="Cart">
                       <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href="/cart">
                         <i className="fa-solid fa-cart-shopping ah text-white" style={{ fontSize: "1.1rem" }}></i>
-                        <span className="cart-count text-white">{CartItems?.length}</span>
+                        <span className="cart-count text-white">{convertToPersian(CartItems?.length)}</span>
                       </a>
                     </button>
                   </>
@@ -141,7 +146,7 @@ const CustomNavbar = (theme) => {
       <div className="col-12 row m-0 add fontr" dir="rtl">
         <div className="col-12 m-0 d-flex">
           <div className="col-5 d-flex justify-content-start">
-            <BurgerMenu theme={theme}/>
+            <BurgerMenu theme={theme} />
           </div>
           <div className="col-6 m-0 d-flex justify-content-end align-self-center">
             <span>

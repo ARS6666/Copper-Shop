@@ -108,21 +108,17 @@ function Cart(theme) {
             .catch((error) => console.error(error));
     }
 
+
     const addCommas = (number) => {
-        let [integer] = number.toString().split('.');
-
-        integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-
-        return integer;
-    };
-    function truncateString(str) {
-        const words = str.split(' ');
-        if (words.length <= 4) {
-            return str;
+        if (number !== undefined) {
+            const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+            let [integer] = number.toString().split('.');
+            integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            integer = integer.replace(/\d/g, (digit) => persianDigits[digit]);
+            return integer;
         }
-        const truncated = words.slice(0, 4).join(' ');
-        return `${truncated}...`;
-    }
+        return null;
+    };
 
     function CreateOrder() {
         setIsLoading(true)

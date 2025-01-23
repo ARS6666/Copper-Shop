@@ -27,11 +27,11 @@ function ImageSlider() {
 
   return (
     <div className="col-md-12 m-0">
-      <Carousel interval={5000}>
+      <Carousel interval={3000}>
         {SliderPic.map(Pic =>
           <Carousel.Item key={Pic.id}>
             <div className="carousel-inner">
-              <img src={Pic.image} style={{ height: "500px", width: "100%", objectFit: "cover" }} />
+              <img src={Pic.image} style={{ height: "500px", width: "100%", objectFit: "cover" }} alt={`sliderpic${Pic.id}`}/>
               <div className="carousel-title" dir="rtl">
                 <h1 className="fontr fw-bold">فروشگاه مس هنر زنجان</h1>
               </div>

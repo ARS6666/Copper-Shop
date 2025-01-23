@@ -9,6 +9,12 @@ import "https://kit.fontawesome.com/6c2a0de8a3.js";
 
 
 function Footer(theme) {
+  const convertToPersian = (number) => {
+    const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+    return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+  };
+
+
   return (
     <div className="container-fluid pt-3" style={{ backgroundColor: "#DB5C28" }} dir="rtl" >
       <div className="row m-0">
@@ -31,7 +37,7 @@ function Footer(theme) {
                 <a className="hrefw" href="https://balad.ir/p/%D8%AA%D9%88%D9%84%DB%8C%D8%AF%DB%8C-%D8%B5%D9%86%D8%A7%DB%8C%D8%B9-%D9%85%D8%B3-%D9%87%D9%86%D8%B1-%D8%B2%D9%86%D8%AC%D8%A7%D9%86_shopping-mall-1Ig31uJf1AYih8#15/36.70521/48.4318"><i className="bi bi-geo-alt-fill"></i> استان زنجان، زنجان، بلوار پرفسور ثبوتی</a>
               </p>
               <p className="mb-3">
-                <i className="bi bi-telephone-fill text-white"></i><span className="text-white">09128414413</span>
+                <i className="bi bi-telephone-fill text-white"></i><span className="text-white">{convertToPersian("09128414413")}</span>
               </p>
               <p className="mb-3">
                 <i className="bi bi-envelope-at-fill"></i><span className="text-white">ساخته شده توسط تیم LARS</span>

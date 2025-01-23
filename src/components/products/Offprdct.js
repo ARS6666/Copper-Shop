@@ -63,11 +63,24 @@ const ProductCarousel = () => {
   }, []);
 
   const addCommas = (number) => {
-    let [integer] = number.toString().split('.');
-    integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return integer;
+    if (number !== undefined) {
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+      let [integer] = number.toString().split('.');
+      integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      integer = integer.replace(/\d/g, (digit) => persianDigits[digit]);
+      return integer;
+    }
+    return null;
   };
 
+  const convertToPersian = (number) => {
+    if (number !== undefined) {
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+      return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+    }
+    return null;
+  };
+  
   return (
     <>
       {!OffDis && (
@@ -99,7 +112,7 @@ const ProductCarousel = () => {
                         <img src={c.pic} className="Image col-12" alt={c.name} />
                       </div>
                       <div className="d-flex justify-content-center pt-3">
-                        <h3 className="fontr text-dark text-center product-name">{c.name}</h3>
+                        <h3 className="fontr text-dark text-center product-name">{convertToPersian(c.name)}</h3>
                       </div>
                       <div className="d-flex justify-content-center">
                         <p className="fontr pt-1 product-name">{addCommas(c.price)} تومان</p>

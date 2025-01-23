@@ -15,12 +15,22 @@ function Order(theme) {
 
     const addCommas = (number) => {
         if (number !== undefined) {
+            const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
             let [integer] = number.toString().split('.');
             integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            integer = integer.replace(/\d/g, (digit) => persianDigits[digit]);
             return integer;
         }
         return null;
     };
+
+    const convertToPersian = (number) => {
+        const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+        return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+    };
+
+
+
 
     function convertToIranianDate(isoDate) {
         if (!isoDate) {
@@ -92,10 +102,10 @@ function Order(theme) {
                         <h2 className="border-bottom border-4 border-theme p-3 col-md-3 col-9 text-center">سفارش در جریان</h2>
                     </div>
                     <div className="order-header p-2">
-                        <p className="p-1">آیدی سفارش : {orderDetail.id}<i className="fa-solid fa-cart-shopping m-2"></i></p>
+                        <p className="p-1"><i className="fa-solid fa-cart-shopping m-2"></i>آیدی سفارش : {convertToPersian(orderDetail.id)}</p>
                         <p>قیمت کل: {addCommas(orderDetail.total)} تومان</p>
-                        <p>تعداد محصولات : {orderDetail.items.length}</p>
-                        <p><span dir="rtl">{iranianDate}</span> : تاریخ سفارش </p>
+                        <p>تعداد محصولات : {convertToPersian(orderDetail.items.length)}</p>
+                        <p><span dir="rtl">{convertToPersian(iranianDate)}</span> : تاریخ سفارش </p>
                         <p>در حال ارسال</p>
                         <span></span>
                     </div>
@@ -113,7 +123,7 @@ function Order(theme) {
                                             </div>
                                             <p>{c.product.category}</p>
                                             <p>قیمت: {addCommas(c.product.price)} تومان</p>
-                                            <p>تعداد: {c.quantity}</p>
+                                            <p>تعداد: {convertToPersian(c.quantity)}</p>
                                         </div>
                                     </li>
                                 </a>

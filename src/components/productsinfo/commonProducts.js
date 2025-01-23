@@ -72,9 +72,19 @@ const CommonProducts = ({ theme }) => {
 
   const addCommas = (number) => {
     if (number !== undefined) {
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
       let [integer] = number.toString().split('.');
       integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      integer = integer.replace(/\d/g, (digit) => persianDigits[digit]);
       return integer;
+    }
+    return null;
+  };
+
+  const convertToPersian = (number) => {
+    if (number !== undefined) {
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+      return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
     }
     return null;
   };
@@ -148,7 +158,7 @@ const CommonProducts = ({ theme }) => {
                       />
                     </div>
                     <div className="d-flex justify-content-center pt-2">
-                      <span className="h5 fontr text-center product-name">{product.name}</span>
+                      <span className="h5 fontr text-center product-name">{convertToPersian(product.name)}</span>
                     </div>
                     <div className="d-flex justify-content-center">
                       <span className="h5 fontr pt-1 product-name" dir="rtl">

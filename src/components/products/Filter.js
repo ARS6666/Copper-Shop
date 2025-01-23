@@ -50,6 +50,7 @@ const Filter = ({ onFilterChange }) => {
       .catch((error) => console.error(error));
   }, []);
 
+  
   return (
     <div className="col-md-12 fontr d-flex justify-content-center pb-3" dir='rtl'>
       <div className="rounded col-md-12 col-12">

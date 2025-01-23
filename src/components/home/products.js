@@ -30,11 +30,22 @@ function HProducts() {
   }, []);
 
   const addCommas = (number) => {
-    let [integer] = number.toString().split('.');
+    if (number !== undefined) {
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+      let [integer] = number.toString().split('.');
+      integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      integer = integer.replace(/\d/g, (digit) => persianDigits[digit]);
+      return integer;
+    }
+    return null;
+  };
 
-    integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-
-    return integer;
+  const convertToPersian = (number) => {
+    if (number !== undefined) {
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+      return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+    }
+    return null;
   };
 
   return (
@@ -55,7 +66,7 @@ function HProducts() {
                 <img src={c.pic} class="Imgee col-12" alt={c.name} />
               </div>
               <div class="d-flex justify-content-center pt-3">
-                <h4 class="fontr text-center col-md-8" style={{ wordSpacing: "0.2rem" }}>{c.name}</h4>
+                <h4 class="fontr text-center col-md-8" style={{ wordSpacing: "0.2rem" }}>{convertToPersian(c.name)}</h4>
               </div>
               <div class="d-flex justify-content-center">
                 <h5 class="fontr pt-1" dir="rtl">

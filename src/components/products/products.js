@@ -137,9 +137,19 @@ function Products() {
   };
 
   const addCommas = (number) => {
-    let [integer] = number.toString().split('.');
-    integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return integer;
+    if (number !== undefined) {
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+      let [integer] = number.toString().split('.');
+      integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      integer = integer.replace(/\d/g, (digit) => persianDigits[digit]);
+      return integer;
+    }
+    return null;
+  };
+
+  const convertToPersian = (number) => {
+    const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+    return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
   };
 
   return (
@@ -174,7 +184,7 @@ function Products() {
                         <img src={c.pic} className="Img col-12" alt={c.name} />
                       </div>
                       <div className="d-flex justify-content-center pt-3">
-                        <span className="h5 fontr text-center" style={{ wordSpacing: "0.2rem" }}>{c.name}</span>
+                        <span className="h5 fontr text-center" style={{ wordSpacing: "0.2rem" }}>{convertToPersian(c.name)}</span>
                       </div>
                       <div className="d-flex justify-content-center">
                         <span className="fontr pt-1">{addCommas(c.price)} تومان</span>
