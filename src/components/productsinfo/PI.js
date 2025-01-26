@@ -124,6 +124,11 @@ function ProductInfo(theme) {
     setTransformOrigin(`${x}% ${y}%`);
   };
 
+  useEffect(() => {
+    document.title = product.name ? `${product.name}` : "مس هنر زنجان";
+  }, []);
+
+
   return (
     <>
       {IsLoading ? <Loading /> : null}

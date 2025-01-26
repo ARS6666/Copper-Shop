@@ -19,6 +19,11 @@ function Products() {
   const location = useLocation();
 
   useEffect(() => {
+    document.title = "محصولات";
+  }, []);
+
+
+  useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const paramId = searchParams.get('category');
     if (paramId) {
