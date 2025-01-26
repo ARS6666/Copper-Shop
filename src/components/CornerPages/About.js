@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Img from '../../assets/media/aboutus.png'
 
 const AboutUs = () => {
+  useEffect(() => {
+    document.title = "درباره ی ما";
+  }, []);
   return (
     <section className=" fontr" style={{ backgroundColor: '#0000', color: '#fff' }} dir='rtl'>
       <div className="container">

@@ -105,7 +105,7 @@ function Order(theme) {
                         <p className="p-1"><i className="fa-solid fa-cart-shopping m-2"></i>آیدی سفارش : {convertToPersian(orderDetail.id)}</p>
                         <p>قیمت کل: {addCommas(orderDetail.total)} تومان</p>
                         <p>تعداد محصولات : {convertToPersian(orderDetail.items.length)}</p>
-                        <p><span dir="rtl">{convertToPersian(iranianDate)}</span> : تاریخ سفارش </p>
+                        <p><span dir="ltr">{convertToPersian(iranianDate)}</span> : تاریخ سفارش </p>
                         <p>در حال ارسال</p>
                         <span></span>
                     </div>

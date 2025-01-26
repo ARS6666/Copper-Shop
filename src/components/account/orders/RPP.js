@@ -139,7 +139,7 @@ const RecentOrders = (theme) => {
                 <li key={order.id} className="recent-order-summary border-theme col-12" onClick={() => handleOrderClick(order.id)}>
                   <div className="col pt-1"><p>آیدی سفارش: <span className="order-id">{convertToPersian(order.id)}</span></p></div>
                   <div className="col pt-1"><p>قیمت کل: <span className="order-amount">{addCommas(order.total)} تومان</span></p></div>
-                  <div className="col pt-1"><p>تاریخ سفارش: <span className="order-date ">{convertToPersian(convertToIranianDate(order.created_at))}</span></p></div>
+                  <div className="col pt-1"><p>تاریخ سفارش: <span className="order-date " dir="ltr">{convertToPersian(convertToIranianDate(order.created_at))}</span></p></div>
                   <div className="col pt-1 d-flex justify-content-end">
                     <button className="btn btn-orange">مشاهده جزییات</button>
                   </div>
