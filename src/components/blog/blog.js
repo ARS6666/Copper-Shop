@@ -34,7 +34,7 @@ const BlogList = (theme) => {
     return (
         <>
             {isLoading ? <Loading /> : null}
-            <div className='col-md-12 fontr vh-100' dir="rtl">
+            <div className='col-md-12 fontr pb-4' dir="rtl">
                 <div className='col-md-12 pt-3'>
                     <div className='col-md-12 text-white d-flex justify-content-center align-items-center' style={{ height: "80px", backgroundColor: "#DB5C28" }}>
                         <h1 className='align-self-center'>وبلاگ ها و مقالات</h1>
@@ -42,7 +42,7 @@ const BlogList = (theme) => {
                 </div>
                 <div className='col-md-12 pt-1 row m-0'>
                     {blogs.map((blog) => (
-                        <div key={blog.id} className='col-md-3 col-3 pt-2'>
+                        <div key={blog.id} className='col-md-3 col-3 pt-4'>
                             <div className="blog border border-2 border-theme cat-hover row m-0">
                                 <div className='col-md-12 col d-flex justify-content-center'>
                                     <img src={blog.pic} alt={blog.title} style={{ maxHeight: "100%", maxWidth: "100%" }} className='rounded shadow' />
