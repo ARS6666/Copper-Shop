@@ -64,10 +64,14 @@ const CustomNavbar = (theme) => {
         .catch((error) => console.error(error));
     }
   }, [token]);
+
   const convertToPersian = (number) => {
-    const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
-    return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
-  };
+    if (number !== undefined) {
+        const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+        return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+    }
+    return null;
+};
 
 
   return (

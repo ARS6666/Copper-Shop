@@ -153,10 +153,13 @@ function Products() {
   };
 
   const convertToPersian = (number) => {
-    const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
-    return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+    if (number !== undefined) {
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+      return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+    }
+    return null;
   };
-
+  
   return (
     <>
       {IsLoading ? <Loading /> : null}
@@ -182,14 +185,14 @@ function Products() {
                     <div className="row m-0">
                       {c.discount !== 0 && c.count !== 0 && (
                         <div className="discountDisplay">
-                          <span>{c.discount}%</span>
+                          <span>%{convertToPersian(c.discount)}</span>
                         </div>
                       )}
                       <div className="d-flex justify-content-center">
                         <img src={c.pic} className="Img col-12" alt={c.name} />
                       </div>
                       <div className="d-flex justify-content-center pt-3">
-                        <span className="h5 fontr text-center" style={{ wordSpacing: "0.2rem" }}>{convertToPersian(c.name)}</span>
+                        <span className="h5 fontr text-center" style={{ wordSpacing: "0.3rem", lineHeight:"2rem" }}>{convertToPersian(c.name)}</span>
                       </div>
                       <div className="d-flex justify-content-center">
                         <span className="fontr pt-1">{addCommas(c.price)} تومان</span>

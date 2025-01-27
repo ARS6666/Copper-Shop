@@ -125,8 +125,8 @@ function ProductInfo(theme) {
   };
 
   useEffect(() => {
-    document.title = product.name ? `${product.name}` : "مس هنر زنجان";
-  }, []);
+    document.title = product.name;
+  }, [product.name]);
 
 
   return (
@@ -142,7 +142,7 @@ function ProductInfo(theme) {
                 ))}
               </div>
               <div className="magnify-container col-md-10 col-12 d-flex justify-content-center">
-                <div className="justify-content-start">{product.discount !== 0 && product.count !== 0 ? <div class="discountDisplay">{product.discount}%</div> : null}</div>
+                <div className="justify-content-start">{product.discount !== 0 && product.count !== 0 ? <div class="discountDisplay fontr">%{convertToPersian(product.discount)}</div> : null}</div>
                 <div className="col-md-12 col-12">
                   <Carousel>
                     {IMG.map((Pic, index) => (
@@ -159,10 +159,10 @@ function ProductInfo(theme) {
             <div className="col-md-10 col-sm-11 col-11">
               <div><h2 className={theme.theme.theme === "dark" ? "text-white" : "text-dark"}>{convertToPersian(product.name)}</h2></div>
               <div className="col-md-12 col-12 col-sm row m-0">
-                <div className="pt-2"><span className={product.discount === 0 ? theme.theme.theme === "dark" ? "text-white h3" : "text-dark h3" : "redFont col-md-2"}>{addCommas(product.price)} تومان</span></div>
+                <div className="pt-1"><span className={product.discount === 0 ? theme.theme.theme === "dark" ? "text-white h3" : "text-dark h3" : "redFont col-md-2"}>{addCommas(product.price)} تومان</span></div>
                 <div>{product.discount !== 0 ? <span className={theme.theme.theme === "dark" ? "text-white h3" : "text-dark h3"}>{addCommas(product.price - (product.price * (product.discount / 100)))} تومان</span> : null}</div>
               </div>
-              <div className="pt-2">
+              <div className="pt-4">
                 <span className="h4">توضیحات:</span>
                 <p className="h5" style={{ lineHeight: "1.9rem" }}>{product.description}</p>
               </div>

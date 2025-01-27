@@ -49,12 +49,13 @@ function AddressDisplay(theme) {
             .then(() => fetchAddresses())
             .catch((error) => console.error(error));
     }
-
     const convertToPersian = (number) => {
-        const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
-        return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+        if (number !== undefined) {
+            const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+            return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+        }
+        return null;
     };
-
 
 
     return (

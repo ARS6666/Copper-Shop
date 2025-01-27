@@ -25,8 +25,11 @@ function Order(theme) {
     };
 
     const convertToPersian = (number) => {
-        const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
-        return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+        if (number !== undefined) {
+            const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+            return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+        }
+        return null;
     };
 
 

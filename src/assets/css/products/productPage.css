@@ -176,5 +176,6 @@
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
-    color: red;
+    color: white;
+    background-color: red;
 }

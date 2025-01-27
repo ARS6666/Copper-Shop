@@ -147,7 +147,7 @@ const CommonProducts = ({ theme }) => {
                   <div className="row m-0 d-flex justify-content-end">
                     {product.discount !== 0 && (
                       <div className="discountDisplay">
-                        <span>{product.discount}%</span>
+                        <span>%{convertToPersian(product.discount)}</span>
                       </div>
                     )}
                     <div className="d-flex justify-content-center">

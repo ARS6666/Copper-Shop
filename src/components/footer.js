@@ -7,12 +7,15 @@ import "../assets/css/footer.css";
 import "https://kit.fontawesome.com/6c2a0de8a3.js";
 
 
-
+  
 function Footer(theme) {
   const convertToPersian = (number) => {
-    const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
-    return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
-  };
+    if (number !== undefined) {
+        const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+        return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+    }
+    return null;
+};
 
 
   return (
