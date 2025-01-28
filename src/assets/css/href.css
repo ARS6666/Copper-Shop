@@ -25,6 +25,11 @@
     color: white !important;
 }
 
+.bg-orange {
+    background-color: #DB5C28 !important;
+    color: white !important;
+}
+
 .btn-orange:hover {
     background-color: white !important;
     color: #DB5C28 !important;
@@ -41,4 +46,20 @@
 
 .color-theme::placeholder {
     color: #DB5C28 !important;
+}
+
+@keyframes smooth {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    to {
+        opacity: 1;
+        max-height: 1000px;
+    }
+}
+
+.an {
+    animation: smooth 2s linear;
 }
