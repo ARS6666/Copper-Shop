@@ -56,6 +56,9 @@ function Footer(theme) {
               <p className="mb-3">
                 <a className="hrefw" href="/about#faq">پرسش های متداول</a>
               </p>
+              <p className="mb-3">
+                <a className="hrefw" href="/about#contactus">ارتباط با ما</a>
+              </p>
             </div>
           </div>
           <div className="col-lg-3 col-md-6 col-12 mb-3 fontr">

@@ -2,14 +2,18 @@ import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Img from '../../assets/media/aboutus.png';
 import Faq from './faq';
+import ContactUs from './contactUs';
 
 const AboutUs = () => {
   const location = useLocation();
   const faqRef = useRef(null);
 
   useEffect(() => {
-    document.title = "درباره ی ما";
+    document.title = "خدمات مشتریان";
     if (location.hash === '#faq' && faqRef.current) {
+      faqRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
+    if (location.hash === '#contactus' && faqRef.current) {
       faqRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [location]);
@@ -70,6 +74,9 @@ const AboutUs = () => {
       </section>
       <div className='col-md-12 col-12 d-flex justify-content-center pb-3' id='faq' ref={faqRef}>
         <Faq />
+      </div>
+      <div className='col-md-12 col-12 d-flex justify-content-center pb-4' id='contactus' ref={faqRef}>
+        <ContactUs />
       </div>
     </>
   );

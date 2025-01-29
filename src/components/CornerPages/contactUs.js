@@ -21,45 +21,69 @@ const ContactUs = () => {
     };
 
     return (
-        <div className="container fontr">
-            <h2>Contact Us</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label>
-                    <input
-                        className='form-control form-control-lg'
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
+        <div className="col-md-12 col-12 fontr" dir="rtl">
+            <h1 className='col-md-12 col-12 p-4 pb-0 text-center color-theme fw-bold'>ارتباط با ما</h1>
+            <div className='col-md-12 d-flex justify-content-center row m-0'>
+                <div className='col-md-12 row m-0'>
+                    <div className='col-md-3'></div>
+                    <div className="col-md-6">
+                        <label className='h4'>نام :</label>
+                        <input
+                            className='form-control form-control-lg border-theme border-3'
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            style={{ borderRadius: "0.75rem" }}
+                        />
+                    </div>
+                    <div className='col-md-3'></div>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
+                <div className='col-md-12 row m-0'>
+                    <div className='col-md-3'></div>
+                    <div className="col-md-6">
+                        <label className='h4 pt-3'>آدرس ایمیل :</label>
+                        <input
+                            className='form-control form-control-lg border-theme border-3'
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            style={{ borderRadius: "0.75rem" }}
+                        />
+                    </div>
+                    <div className='col-md-3'></div>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="message">Message:</label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                    ></textarea>
+                <div className='col-md-12 row m-0'>
+                    <div className='col-md-3'></div>
+                    <div className="col-md-6">
+                        <label className='h4 pt-3 '>پیام :</label>
+                        <textarea
+                            className='form-control form-control-lg border-theme border-3'
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                            style={{ maxHeight: "250px", borderRadius: "0.75rem" }}
+                        ></textarea>
+                    </div>
+                    <div className='col-md-3'></div>
                 </div>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+
+                <div className='col-md-12 row m-0 pt-3'>
+                    <div className='col-md-3'></div>
+                    <div className="col-md-6">
+                        <button className='col-md-12 col-12 btn-orange btn' style={{ borderRadius: "0.75rem" }}><h4>ارسال</h4></button>
+                    </div>
+                    <div className='col-md-3'></div>
+                </div>
+            </div>
+        </div >
     );
 };
 
