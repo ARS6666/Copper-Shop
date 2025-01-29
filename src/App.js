@@ -14,11 +14,11 @@ import Footer from './components/footer';
 import Chatbot from './components/chatbot';
 import Blog from "./components/blog/blog";
 import Blogpage from "./components/blog/blogpage";
-import FAQ from "./components/CornerPages/faq"
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import About from './components/CornerPages/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
+import ContactUs from './components/CornerPages/contactUs';
 
 const AppContent = () => {
 
@@ -88,7 +88,7 @@ const AppContent = () => {
               </div>
             </PrivateRoute>} />
           <Route path='/about' element={<About />} />
-          <Route path='/faq' element={<FAQ />} />
+          <Route path='/faq' element={<ContactUs />} />
           <Route path='/blogs' element={<Blog theme={theme}/>} />
           <Route path='/blogpage' element={<Blogpage theme={theme}/>} />
         </Routes >

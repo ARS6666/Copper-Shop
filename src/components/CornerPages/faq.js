@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import "../../assets/css/href.css"
+import "../../assets/css/href.css";
+
 const Faq = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -38,16 +39,17 @@ const Faq = () => {
         }
     ];
 
-
-    return (<>
-        <div className='col-md-12 col-12 fontr d-flex justify-content-center row m-0 pt-3 pb-3'>
+    return (
+        <section className='col-md-12 col-12 fontr d-flex justify-content-center row m-0 pt-3 pb-3'>
+            <meta name="description" content="پرسش‌های متداول فروشگاه ظروف مسی. در این بخش به سوالات متداول کاربران پاسخ داده شده است." />
+            <meta name="keywords" content="ظروف مسی, فروشگاه, پرسش‌های متداول, faq" />
             <h1 className='col-md-12 col-12 p-4 text-center color-theme fw-bold'>سوالات متداول</h1>
             <div className='container d-flex justify-content-center row m-0'>
                 {faqData.map((item, index) => (
-                    <div className='col-md-12 col-12 row m-0'>
+                    <article key={index} className='col-md-12 col-12 row m-0'>
                         <div className='col-md-3'></div>
-                        <div key={index} className='col-md-6 col-12 pt-4'>
-                            <button onClick={() => toggleOpen(index)} className={`btn btn-lg col-md-12 col-12  text-end row m-0 p-4 bg-orange ${openIndex === index ? 'rounded-bottom-0' : ''}`} style={{ borderRadius: "0.75rem", alignItems: "center" }}>
+                        <div className='col-md-6 col-12 pt-4'>
+                            <button onClick={() => toggleOpen(index)} aria-expanded={openIndex === index} className={`btn btn-lg col-md-12 col-12 text-end row m-0 p-4 bg-orange ${openIndex === index ? 'rounded-bottom-0' : ''}`} style={{ borderRadius: "0.75rem", alignItems: "center" }}>
                                 <div className='col-md-12 col-12 row m-0'>
                                     <div className='col-md-1 col-1 d-flex justify-centent-start'>
                                         <span style={{ fontSize: "25px" }}>{openIndex === index ? <i className="fa-solid fa-angle-up"></i> : <i className="fa-solid fa-angle-down"></i>}</span>
@@ -58,18 +60,18 @@ const Faq = () => {
                                 </div>
                             </button>
                             {openIndex === index && (
-                                <div className={`col-md-12 col-12 d-flex justify-content-center bg-orange  ${openIndex === index ? 'rounded-top-0' : ''}`} style={{ borderRadius: "0.75rem" }}>
-                                    <span className='text-end container p-3 col-md-11 col-11' style={{ fontSize: "1.2rem", wordSpacing: "0.1rem" }}><p className={` ${openIndex === index ? 'an' : ''}`} dir="rtl">{item.answer}</p>
+                                <div className={`col-md-12 col-12 d-flex justify-content-center bg-orange ${openIndex === index ? 'rounded-top-0' : ''}`} style={{ borderRadius: "0.75rem" }}>
+                                    <span className='text-end container p-3 col-md-11 col-11' style={{ fontSize: "1.2rem", wordSpacing: "0.1rem" }}><p dir="rtl">{item.answer}</p>
                                     </span>
                                 </div>
                             )}
                         </div>
                         <div className='col-md-3'></div>
-                    </div>
+                    </article>
                 ))}
             </div>
-        </div>
-    </>);
+        </section>
+    );
 };
 
 export default Faq;
