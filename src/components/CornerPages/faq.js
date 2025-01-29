@@ -61,7 +61,7 @@ const Faq = () => {
                             </button>
                             {openIndex === index && (
                                 <div className={`col-md-12 col-12 d-flex justify-content-center bg-orange ${openIndex === index ? 'rounded-top-0' : ''}`} style={{ borderRadius: "0.75rem" }}>
-                                    <span className='text-end container p-3 col-md-11 col-11' style={{ fontSize: "1.2rem", wordSpacing: "0.1rem" }}><p dir="rtl">{item.answer}</p>
+                                    <span className='text-end container p-3 col-md-11 col-11 an' style={{ fontSize: "1.2rem", wordSpacing: "0.1rem" }}><p dir="rtl">{item.answer}</p>
                                     </span>
                                 </div>
                             )}
