@@ -77,12 +77,12 @@ const CustomNavbar = (theme) => {
   return (
     <>
       {isVisible ? (
-        <div className="col-12 fontr row m-0 " dir="rtl" style={{ backgroundColor: "#DB5C28" }}>
+        <div className="col-12 fontr row m-0 " dir="rtl" style={{ backgroundColor: "#DB5C28" , height : "60px"}} >
           <div className="col-7 row m-0">
             <div className="col-3 pt-1">
               <a className="hrefb m-0 p-0" href="/">
                 <img
-                  style={{ height: "40px", marginRight: "30px" }}
+                  style={{ height: "50px"}}
                   src={logo}
                   alt="Company Logo"
                   className="col"

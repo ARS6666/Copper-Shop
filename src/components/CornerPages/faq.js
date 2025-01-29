@@ -41,12 +41,12 @@ const Faq = () => {
 
     return (<>
         <div className='col-md-12 col-12 fontr d-flex justify-content-center row m-0 pt-3 pb-3'>
-            <h1 className='col-md-12 col-12 p-4 text-center color-theme'>سوالات متداول</h1>
+            <h1 className='col-md-12 col-12 p-4 text-center color-theme fw-bold'>سوالات متداول</h1>
             <div className='container d-flex justify-content-center row m-0'>
                 {faqData.map((item, index) => (
                     <div className='col-md-12 col-12 row m-0'>
-                        <div className='col-md-3 col-3'></div>
-                        <div key={index} className='col-md-6 col-6 pt-4'>
+                        <div className='col-md-3'></div>
+                        <div key={index} className='col-md-6 col-12 pt-4'>
                             <button onClick={() => toggleOpen(index)} className={`btn btn-lg col-md-12 col-12  text-end row m-0 p-4 bg-orange ${openIndex === index ? 'rounded-bottom-0' : ''}`} style={{ borderRadius: "0.75rem", alignItems: "center" }}>
                                 <div className='col-md-12 col-12 row m-0'>
                                     <div className='col-md-1 col-1 d-flex justify-centent-start'>
@@ -58,13 +58,13 @@ const Faq = () => {
                                 </div>
                             </button>
                             {openIndex === index && (
-                                <div className={`col-md-12 d-flex justify-content-center bg-orange  ${openIndex === index ? 'rounded-top-0' : ''}`} style={{ borderRadius: "0.75rem" }}>
-                                    <span className='text-end container p-3 pt-0 col-md-11 col-11' style={{ fontSize: "1.2rem", wordSpacing: "0.1rem" }}><p className={` ${openIndex === index ? 'an' : ''}`} dir="rtl">{item.answer}</p>
+                                <div className={`col-md-12 col-12 d-flex justify-content-center bg-orange  ${openIndex === index ? 'rounded-top-0' : ''}`} style={{ borderRadius: "0.75rem" }}>
+                                    <span className='text-end container p-3 col-md-11 col-11' style={{ fontSize: "1.2rem", wordSpacing: "0.1rem" }}><p className={` ${openIndex === index ? 'an' : ''}`} dir="rtl">{item.answer}</p>
                                     </span>
                                 </div>
                             )}
                         </div>
-                        <div className='col-md-3 col-3'></div>
+                        <div className='col-md-3'></div>
                     </div>
                 ))}
             </div>

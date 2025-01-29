@@ -42,9 +42,9 @@ const BlogList = (theme) => {
                 </div>
                 <div className='col-md-12 pt-1 row m-0'>
                     {blogs.map((blog) => (
-                        <div key={blog.id} className='col-md-3 col-3 pt-4'>
+                        <div key={blog.id} className='col-md-3 col-12 pt-4'>
                             <div className="blog border border-2 border-theme cat-hover row m-0">
-                                <div className='col-md-12 col d-flex justify-content-center'>
+                                <div className='col-md-12 col-12 col d-flex justify-content-center'>
                                     <img src={blog.pic} alt={blog.title} style={{ maxHeight: "100%", maxWidth: "100%" }} className='rounded shadow' />
                                 </div>
                                 <div className='col-md-12 col-12 d-flex justify-content-center row m-0 pt-3'>
