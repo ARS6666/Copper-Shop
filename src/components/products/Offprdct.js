@@ -80,9 +80,11 @@ const ProductCarousel = () => {
     }
     return null;
   };
-  
+
   return (
     <>
+      <meta name="description" content="فروشگاه ظروف مسی - لیست محصولات تخفیف دار" />
+      <meta name="keywords" content="ظروف مسی, خرید آنلاین, فروشگاه, محصولات" />
       {!OffDis && (
         <div className="col-md-12 col-12 d-flex justify-content-center">
           <div className="col-md-11 col-12">

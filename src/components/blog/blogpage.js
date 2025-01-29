@@ -54,22 +54,24 @@ const Blog = () => {
 
     return (
         <>
+            <meta name="description" content={blog.title ? `${blog.title} - فروشگاه ظروف مسی` : "وبلاگ فروشگاه ظروف مسی"} />
+            <meta name="keywords" content={`وبلاگ, مقالات, ظروف مسی, ${blog.title || ''}`} />
             {isLoading ? <Loading /> : null}
             <div className='col-md-12 fontr' dir="rtl">
                 <div className='col-md-12 pt-3'>
-                    <div className='col-md-12 text-white d-flex justify-content-center align-items-center' style={{ height: "80px", backgroundColor: "#DB5C28" }}>
+                    <header className='col-md-12 text-white d-flex justify-content-center align-items-center' style={{ height: "80px", backgroundColor: "#DB5C28" }}>
                         <h1 className='align-self-center'>{contents.title || "منتظر باشید ..."}</h1>
-                    </div>
+                    </header>
                     <div className='container pt-3'>
                         <article className='h5 text-dark' style={{ lineHeight: "2rem", wordSpacing: "0.4rem", fontSize: "1.4rem" }}>
                             {contents.content ? parser(contents.content) : "منتظر باشید ..."}
                         </article>
                     </div>
-                    <div className='col-md-12 pb-3'>
+                    <footer className='col-md-12 pb-3'>
                         <div className='col-md-12 d-flex justify-content-center align-content-center' style={{ backgroundColor: "#DB5C28" }}>
-                            <h5 className='p-3 text-white' style={{ fontWeight: "bold" }}>نویسنده : ARS</h5>
+                            <h5 className='p-3 text-white' style={{ fontWeight: "bold" }}>نویسنده: ARS</h5>
                         </div>
-                    </div>
+                    </footer>
                 </div>
             </div>
         </>

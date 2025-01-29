@@ -50,6 +50,8 @@ function HProducts() {
 
   return (
     <>
+     <meta name="description" content="فروشگاه ظروف مسی - لیست محصولات صفحه اصلی" />
+     <meta name="keywords" content="ظروف مسی, خرید آنلاین, فروشگاه, محصولات" />
       {IsLoading ? <Loading /> : null}
 
       <div class="d-flex justify-content-center m-0">

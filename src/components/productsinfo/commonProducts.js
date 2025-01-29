@@ -119,8 +119,9 @@ const CommonProducts = ({ theme }) => {
               onClick={nextSlide}
               disabled={currentIndex >= products.length - 1}
               aria-label="Next"
+              style={{ borderRadius: ".75rem" }}
             >
-              بعدی
+              {"<"}
             </button>
           </div>
           <div className="m-1 fontr">
@@ -129,8 +130,9 @@ const CommonProducts = ({ theme }) => {
               onClick={prevSlide}
               disabled={currentIndex === 0}
               aria-label="Previous"
+              style={{ borderRadius: ".75rem" }}
             >
-              قبلی
+              {">"}
             </button>
           </div>
         </div>

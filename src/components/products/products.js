@@ -159,9 +159,11 @@ function Products() {
     }
     return null;
   };
-  
+
   return (
     <>
+      <meta name="description" content="فروشگاه ظروف مسی - لیست محصولات" />
+      <meta name="keywords" content="ظروف مسی, خرید آنلاین, فروشگاه, محصولات" />
       {IsLoading ? <Loading /> : null}
       <div className="container-fluid p-3">
         <div className="row m-0 d-flex justify-content-center">
@@ -192,7 +194,7 @@ function Products() {
                         <img src={c.pic} className="Img col-12" alt={c.name} />
                       </div>
                       <div className="d-flex justify-content-center pt-3">
-                        <span className="h5 fontr text-center" style={{ wordSpacing: "0.3rem", lineHeight:"2rem" }}>{convertToPersian(c.name)}</span>
+                        <span className="h5 fontr text-center" style={{ wordSpacing: "0.3rem", lineHeight: "2rem" }}>{convertToPersian(c.name)}</span>
                       </div>
                       <div className="d-flex justify-content-center">
                         <span className="fontr pt-1">{addCommas(c.price)} تومان</span>

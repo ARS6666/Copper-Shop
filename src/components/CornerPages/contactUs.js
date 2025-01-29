@@ -27,7 +27,7 @@ const ContactUs = () => {
                 <div className='col-md-12 row m-0'>
                     <div className='col-md-3'></div>
                     <div className="col-md-6">
-                        <label className='h4'>نام :</label>
+                        <label style={{ fontSize: "1.2rem", wordSpacing: "0.1rem" }}>نام :</label>
                         <input
                             className='form-control form-control-lg border-theme border-3'
                             type="text"
@@ -44,7 +44,7 @@ const ContactUs = () => {
                 <div className='col-md-12 row m-0'>
                     <div className='col-md-3'></div>
                     <div className="col-md-6">
-                        <label className='h4 pt-3'>آدرس ایمیل :</label>
+                        <label className='pt-3' style={{ fontSize: "1.2rem", wordSpacing: "0.1rem" }}>آدرس ایمیل :</label>
                         <input
                             className='form-control form-control-lg border-theme border-3'
                             type="email"
@@ -61,7 +61,7 @@ const ContactUs = () => {
                 <div className='col-md-12 row m-0'>
                     <div className='col-md-3'></div>
                     <div className="col-md-6">
-                        <label className='h4 pt-3 '>پیام :</label>
+                        <label className='pt-3' style={{ fontSize: "1.2rem", wordSpacing: "0.1rem" }}>پیام :</label>
                         <textarea
                             className='form-control form-control-lg border-theme border-3'
                             id="message"
@@ -78,7 +78,7 @@ const ContactUs = () => {
                 <div className='col-md-12 row m-0 pt-3'>
                     <div className='col-md-3'></div>
                     <div className="col-md-6">
-                        <button className='col-md-12 col-12 btn-orange btn' style={{ borderRadius: "0.75rem" }}><h4>ارسال</h4></button>
+                        <button className='col-md-12 col-12 btn-orange btn' style={{ borderRadius: "0.75rem" }}><span style={{ fontSize: "1.2rem", wordSpacing: "0.1rem" }}>ارسال</span></button>
                     </div>
                     <div className='col-md-3'></div>
                 </div>

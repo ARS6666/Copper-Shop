@@ -131,6 +131,8 @@ function ProductInfo(theme) {
 
   return (
     <>
+      <meta name="description" content={`مشخصات ${product.name} - فروشگاه ظروف مسی`} />
+      <meta name="keywords" content={`ظروف مسی, ${product.name}, خرید آنلاین`} />
       {IsLoading ? <Loading /> : null}
       <div className="p-4 container-xxl pt-2" dir="rtl">
         <div className="row m-0 col-md-12">
@@ -138,7 +140,7 @@ function ProductInfo(theme) {
             <div className="row m-0">
               <div className="col-md-2 d-flex flex-column align-items-end remove">
                 {IMG?.slice(0, 4).map((c) => (
-                  <img key={c.image} className="img-fluid m-1 remove" src={c.image} alt="Product Thumbnail" />
+                  <img key={c.image} className="img-fluid m-1 remove" src={c.image} alt={`${product.name} Thumbnail`} />
                 ))}
               </div>
               <div className="magnify-container col-md-10 col-12 d-flex justify-content-center">
@@ -147,7 +149,7 @@ function ProductInfo(theme) {
                   <Carousel>
                     {IMG.map((Pic, index) => (
                       <Carousel.Item key={index}>
-                        <img className="d-block ImageProd magnify-image" src={Pic.image} alt={`Product Image ${index + 1}`} onMouseMove={handleMouseMove} style={{ transformOrigin }} />
+                        <img className="d-block ImageProd magnify-image" src={Pic.image} alt={`${product.name} Image ${index + 1}`} onMouseMove={handleMouseMove} style={{ transformOrigin }} />
                       </Carousel.Item>
                     ))}
                   </Carousel>

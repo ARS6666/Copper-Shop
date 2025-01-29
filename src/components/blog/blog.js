@@ -33,16 +33,18 @@ const BlogList = (theme) => {
 
     return (
         <>
+            <meta name="description" content="وبلاگ ها و مقالات فروشگاه ظروف مسی" />
+            <meta name="keywords" content="وبلاگ, مقالات, ظروف مسی, فروشگاه" />
             {isLoading ? <Loading /> : null}
             <div className='col-md-12 fontr pb-4' dir="rtl">
                 <div className='col-md-12 pt-3'>
-                    <div className='col-md-12 text-white d-flex justify-content-center align-items-center' style={{ height: "80px", backgroundColor: "#DB5C28" }}>
+                    <header className='col-md-12 text-white d-flex justify-content-center align-items-center' style={{ height: "80px", backgroundColor: "#DB5C28" }}>
                         <h1 className='align-self-center'>وبلاگ ها و مقالات</h1>
-                    </div>
+                    </header>
                 </div>
-                <div className='col-md-12 pt-1 row m-0'>
+                <main className='col-md-12 pt-1 row m-0'>
                     {blogs.map((blog) => (
-                        <div key={blog.id} className='col-md-3 col-12 pt-4'>
+                        <article key={blog.id} className='col-md-3 col-12 pt-4'>
                             <div className="blog border border-2 border-theme cat-hover row m-0">
                                 <div className='col-md-12 col-12 col d-flex justify-content-center'>
                                     <img src={blog.pic} alt={blog.title} style={{ maxHeight: "100%", maxWidth: "100%" }} className='rounded shadow' />
@@ -50,15 +52,15 @@ const BlogList = (theme) => {
                                 <div className='col-md-12 col-12 d-flex justify-content-center row m-0 pt-3'>
                                     <h4 className='text-dark col-md-12 text-center' style={{ lineHeight: "3rem" }}>{blog.title}</h4>
                                 </div>
-                                <a className={theme.theme === 'light' ? "hrefb" : "hrefw"} href={`/blogpage?id=${blog.id}`}>
+                                <a className={theme.theme === 'light' ? "hrefb" : "hrefw"} href={`/blogpage?id=${blog.id}`} aria-label={`View blog ${blog.title}`}>
                                     <div className='col-md-12 col-12 d-flex justify-content-center'>
-                                        <button className=' btn btn-orange'>مشاهده وبلاگ</button>
+                                        <button className='btn btn-orange'>مشاهده وبلاگ</button>
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        </article>
                     ))}
-                </div>
+                </main>
             </div>
         </>
     );
