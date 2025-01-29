@@ -89,7 +89,7 @@ const CustomNavbar = (theme) => {
                 />
               </a>
             </div>
-            <div className="col-8 align-self-center d-flex justify-content-between">
+            <div className="col-8 align-self-center d-flex justify-content-between" style={{marginRight : "3rem"}}>
               <a className="hrefw" href="/"><span className="col-3 h5 ah">خانه</span></a>
               <a className="hrefw" href="/products"><span className="col-3 h5 ah">محصولات</span></a>
               <a className="hrefw" href="/blogs"><span className="col-3 h5 ah">وبلاگ</span></a>

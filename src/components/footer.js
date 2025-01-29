@@ -43,7 +43,7 @@ function Footer(theme) {
                 <i className="bi bi-telephone-fill text-white"></i><span className="text-white">{convertToPersian("09128414413")}</span>
               </p>
               <p className="mb-3">
-                <i className="bi bi-envelope-at-fill"></i><span className="text-white">ساخته شده توسط تیم LARS</span>
+                <i className="bi bi-envelope-at-fill"></i><span className="text-white">ساخته شده توسط تیم </span>
               </p>
             </div>
           </div>
@@ -54,10 +54,7 @@ function Footer(theme) {
                 <a className="hrefw" href="/about">درباره ی ما</a>
               </p>
               <p className="mb-3">
-                <a className="hrefw" href="#faq">پرسش های متداول</a>
-              </p>
-              <p className="mb-3">
-                <a className="hrefw" href="#privacy">حریم خصوصی</a>
+                <a className="hrefw" href="/about#faq">پرسش های متداول</a>
               </p>
             </div>
           </div>
