@@ -54,8 +54,8 @@ body {
 .theme-icon {
   left: 20px;
   top: 5px;
-  position: absolute;
-  z-index: 100001;
+  position: fixed;
+  z-index: 1001;
 }
 
 @media (max-width: 1024px) {
