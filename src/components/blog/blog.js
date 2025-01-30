@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import "../../assets/css/blog/blog.css";
 import url from "../../config.json";
 import Loading from '../../components/loading/loading';
@@ -52,11 +53,11 @@ const BlogList = (theme) => {
                                 <div className='col-md-12 col-12 d-flex justify-content-center row m-0 pt-3'>
                                     <h4 className='text-dark col-md-12 text-center' style={{ lineHeight: "3rem" }}>{blog.title}</h4>
                                 </div>
-                                <a className={theme.theme === 'light' ? "hrefb" : "hrefw"} href={`/blogpage?id=${blog.id}`} aria-label={`View blog ${blog.title}`}>
+                                <Link className={theme.theme === 'light' ? "hrefb" : "hrefw"} to={`/blogpage?id=${blog.id}`} aria-label={`View blog ${blog.title}`}>
                                     <div className='col-md-12 col-12 d-flex justify-content-center'>
                                         <button className='btn btn-orange'>مشاهده وبلاگ</button>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </article>
                     ))}

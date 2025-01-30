@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/css/nav/burger.css';
 
 const BurgerMenu = (theme) => {
@@ -24,19 +25,19 @@ const BurgerMenu = (theme) => {
                 </div>
                 <ul>
                     <li className="col-12 d-flex justify-content-start">
-                        <a className={theme.theme.theme === "dark" ? "hrefw" : "hrefb"} href="/">
+                        <Link className={theme.theme.theme === "dark" ? "hrefw" : "hrefb"} to="/">
                             <span className="col-3 h5 ah">خانه</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="col-12 d-flex justify-content-start">
-                        <a className={theme.theme.theme === "dark" ? "hrefw" : "hrefb"} href="/products">
+                        <Link className={theme.theme.theme === "dark" ? "hrefw" : "hrefb"} to="/products">
                             <span className="col-3 h5 ah">محصولات</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="col-12 d-flex justify-content-start">
-                        <a className={theme.theme.theme === "dark" ? "hrefw" : "hrefb"} href="/about">
+                        <Link className={theme.theme.theme === "dark" ? "hrefw" : "hrefb"} to="/about">
                             <span className="col-3 h5 ah">درباره ما</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="col-12 row m-0">
                         <div className="col-9 align-self-center">
@@ -49,7 +50,7 @@ const BurgerMenu = (theme) => {
                             />
                         </div>
                         <div className="col-1 align-self-center">
-                            <a href={`/products?search=${search}`} className={theme.theme.theme === "dark" ? "hrefw" : "hrefb"}>
+                            <Link to={`/products?search=${search}`} className={theme.theme.theme === "dark" ? "hrefw" : "hrefb"}>
                                 <button
                                     className={theme.theme.theme === "dark" ? "rounded-circle btn bg-transparent align-self-center col-6 text-white" : "rounded-circle btn bg-transparent align-self-center col-6"}
                                     aria-label="Search Button"
@@ -57,7 +58,7 @@ const BurgerMenu = (theme) => {
                                 >
                                     <i className="fa-solid fa-magnifying-glass" style={{ fontSize: "1.1rem" }}></i>
                                 </button>
-                            </a>
+                            </Link>
                         </div>
                     </li>
                 </ul>

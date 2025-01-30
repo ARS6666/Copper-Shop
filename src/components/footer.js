@@ -5,6 +5,7 @@ import eighto from "../assets/media/86.PNG";
 import "../assets/css/href.css";
 import "../assets/css/footer.css";
 import "https://kit.fontawesome.com/6c2a0de8a3.js";
+import { Link } from "react-router-dom";
 
 
   
@@ -51,13 +52,13 @@ function Footer(theme) {
             <div className="pt-4">
               <h5 className="mb-4 text-white brand-name">خدمات مشتریان</h5>
               <p className="mb-3">
-                <a className="hrefw" href="/about">درباره ی ما</a>
+                <Link className="hrefw" to="/about">درباره ی ما</Link>
               </p>
               <p className="mb-3">
-                <a className="hrefw" href="/about#faq">پرسش های متداول</a>
+                <Link className="hrefw" to="/about#faq">پرسش های متداول</Link>
               </p>
               <p className="mb-3">
-                <a className="hrefw" href="/about#contactus">ارتباط با ما</a>
+                <Link className="hrefw" to="/about#contactus">ارتباط با ما</Link>
               </p>
             </div>
           </div>
