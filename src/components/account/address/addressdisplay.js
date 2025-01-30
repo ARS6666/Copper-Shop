@@ -62,8 +62,8 @@ function AddressDisplay(theme) {
         <>
             {IsLoading ? <Loading /> : null}
             {Prop.map((c) => (
-                <div className="col-md-6 p-1 fontr text-end" dir="rtl" style={{ color: theme.theme === "dark" ? "#000000" : "gray" }} key={c.id}>
-                    <div className="border border-3 border-dark text-end" style={{ borderStyle: "double" }}>
+                <div className="col-md-6 p-1 fontr text-end" dir="rtl" key={c.id}>
+                    <div className="border border-3 border-theme text-end" style={{ borderStyle: "double" }}>
                         <div className="col-md-12 p-3">
                             <span className="h3">{convertToPersian(c.name)}</span>
                         </div>
@@ -75,7 +75,7 @@ function AddressDisplay(theme) {
                         </div>
                         <div className="col-md-12 row m-0 fontr pt-2 p-2">
                             <div className="col-md-12 text-start h5">
-                                <button className="btn rounded-0 text-light" style={{ backgroundColor: "#000000" }} onClick={() => removeAddress(c.id)}>حذف</button>
+                                <button className="btn btn-orange rounded-0 text-light" style={{ backgroundColor: "#000000" }} onClick={() => removeAddress(c.id)}>حذف</button>
                             </div>
                         </div>
                     </div>

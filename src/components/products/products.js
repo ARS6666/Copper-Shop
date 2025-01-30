@@ -99,7 +99,7 @@ function Products() {
   const [content, setContent] = useState(
     <div className="col-md-12 pb-3 add">
       <button
-        className="btn btn-outline-primary col-md-12 col-12  d-flex justify-content-center"
+        className="btn btn-orange col-md-12 col-12  d-flex justify-content-center"
         onClick={() => {
           handleClick(); changeContent(
             <div className="col-md-12 col-12">

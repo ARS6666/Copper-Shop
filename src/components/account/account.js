@@ -81,7 +81,7 @@ const Panel = (theme) => {
                         <button onClick={() => { handleClick(); changeContent(<Profile theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
                             style={{ backgroundColor: isChecked ? '#DB5C28' : '', width: "100%" }}>
-                            <h5 className={theme.theme === "dark" ? "p-2 text-white" : "p-2 text-dark"}>
+                            <h5 className={isChecked ? "p-2 text-white" : "p-2 text-dark"}>
                                 <i className="p-1 fa fa-user" aria-hidden="true"></i>
                                 تغییر جزییات حساب کاربری
                             </h5>
@@ -91,7 +91,7 @@ const Panel = (theme) => {
                         <button onClick={() => { handleClick2(); changeContent(<Order theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
                             style={{ backgroundColor: isChecked2 ? '#DB5C28' : '', width: "100%" }}>
-                            <h5 className={theme.theme === "dark" ? "p-2 text-white" : "p-2 text-dark"}>
+                            <h5 className={isChecked2 ? "p-2 text-white" : "p-2 text-dark"}>
                                 <i className="fas fa-shopping-basket p-1"></i>
                                 سفارشات
                             </h5>
@@ -101,7 +101,7 @@ const Panel = (theme) => {
                         <button onClick={() => { handleClick3(); changeContent(<Address theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
                             style={{ backgroundColor: isChecked3 ? '#DB5C28' : '', width: "100%" }}>
-                            <h5 className={theme.theme === "dark" ? "p-2 text-white" : "p-2 text-dark"}>
+                            <h5 className={isChecked3 ? "p-2 text-white" : "p-2 text-dark"}>
                                 <i className="fas fa-map p-1"></i>
                                 آدرس‌ها
                             </h5>
@@ -111,7 +111,7 @@ const Panel = (theme) => {
                         <button onClick={() => { handleClick4(); changeContent(<RPP theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
                             style={{ backgroundColor: isChecked4 ? '#DB5C28' : '', width: "100%" }}>
-                            <h5 className={theme.theme === "dark" ? "p-2 text-white" : "p-2 text-dark"}>
+                            <h5 className={isChecked4? "p-2 text-white" : "p-2 text-dark"}>
                                 <i className="fas fa-folder-open p-1"></i>
                                 سفارشات گذشته
                             </h5>

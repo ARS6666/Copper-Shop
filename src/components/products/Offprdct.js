@@ -106,11 +106,7 @@ const ProductCarousel = () => {
                 {products.map((c) => (
                   <article key={c.id} className={`col-1 col-md-3 productt-card Anim m-0 p-1 ${c.count === 0 ? 'out-of-stock' : ''}`}>
                     <div className="row m-0">
-                      {c.discount !== 0 && c.count !== 0 && (
-                        <div className="discountDisplay">
-                          <span>{c.discount}%</span>
-                        </div>
-                      )}
+                      {c.discount !== 0 && c.count !== 0 ? <div class="discountDisplay fontr">%{convertToPersian(c.discount)}</div> : null}
                       <div className="d-flex justify-content-center">
                         <img src={c.pic} className="Image col-12" alt={c.name} />
                       </div>
