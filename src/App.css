@@ -51,7 +51,19 @@ body {
   display: none;
 }
 
+.theme-icon {
+  left: 20px;
+  top: 5px;
+  position: absolute;
+}
 
+@media (max-width: 1024px) {
+  .theme-icon {
+    left:10px;
+    top: -3px;
+    font-size: .5rem;
+  }
+}
 
 .App-logo {
   height: 40vmin;

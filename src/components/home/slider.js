@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.css';
 import "../../assets/css/home/slider.css"
 import url from "../../config.json"
-import logo from "../../assets/media/logo.jpg"
+import logo from "../../assets/media/logo12.png"
 
 function ImageSlider() {
   const [SliderPic, setSliderPic] = useState([])
@@ -31,7 +31,7 @@ function ImageSlider() {
         {SliderPic.map(Pic =>
           <Carousel.Item key={Pic.id}>
             <div className="carousel-inner">
-              <img src={Pic.image} style={{ height: "500px", width: "100%", objectFit: "cover" }} alt={`sliderpic${Pic.id}`}/>
+              <img src={Pic.image} className="sliderhomepic" alt={`sliderpic${Pic.id}`}/>
               <div className="carousel-title" dir="rtl">
                 <h1 className="fontr fw-bold">فروشگاه زنجان مس</h1>
               </div>

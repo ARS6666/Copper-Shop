@@ -66,8 +66,8 @@ const CustomNavbar = (theme) => {
 
   const convertToPersian = (number) => {
     if (number !== undefined) {
-        const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
-        return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+      const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+      return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
     }
     return null;
   };
@@ -145,7 +145,7 @@ const CustomNavbar = (theme) => {
           </div>
         </div>
       ) : null}
-      <div className="col-12 row m-0 add fontr" dir="rtl">
+      <div className="col-12 row m-0 add fontr bg-orange" dir="rtl">
         <div className="col-12 m-0 d-flex">
           <div className="col-5 d-flex justify-content-start">
             <BurgerMenu theme={theme} />
@@ -154,21 +154,21 @@ const CustomNavbar = (theme) => {
             <span>
               {Login ? (
                 <>
-                  <Link to="/login" className={theme.theme === "dark" ? "hrefw h5 ah" : "hrefb h5 ah"}>ورود</Link>
+                  <Link to="/login" className="hrefw h5 ah">ورود</Link>
                   <span> | </span>
                 </>
               ) : null}
-              <Link to="/account" className={theme.theme === "dark" ? "hrefw h5 ah" : "hrefb h5 ah"}>حساب کاربری</Link>
+              <Link to="/account" className="hrefw h5 ah">حساب کاربری</Link>
               {!Login && (
                 <>
                   <button className="btn border-0 bg-transparent" onClick={logout} aria-label="Logout">
-                    <i className={theme.theme === "dark" ? "text-white fas fa-sign-out-alt ah" : "text-dark fas fa-sign-out-alt ah"}></i>
+                    <i className="text-white fas fa-sign-out-alt ah"></i>
                   </button>
                   <span> | </span>
                   <button className="btn border-0 bg-transparent cart-icon" aria-label="Cart">
                     <Link className="hrefb" to="/cart">
-                      <i className={theme.theme === "dark" ? "text-white fa-solid fa-cart-shopping ah" : "text-dark fa-solid fa-cart-shopping ah"} style={{ fontSize: "1.1rem" }}></i>
-                      <span className="cart-count text-danger">{CartItems?.length}</span>
+                      <i className="text-white fa-solid fa-cart-shopping ah" style={{ fontSize: "1.1rem" }}></i>
+                      <span className="cart-count text-white">{convertToPersian(CartItems?.length)}</span>
                     </Link>
                   </button>
                 </>

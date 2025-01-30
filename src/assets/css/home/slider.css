@@ -4,6 +4,12 @@
   object-fit: cover;
 }
 
+.sliderhomepic {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
 .carousel-inner {
   position: relative;
 
@@ -13,7 +19,7 @@
   position: absolute;
   top: 45%;
   left: 80%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%; -50%);
   color: black;
   padding: 10px;
   display: flex;
@@ -83,9 +89,23 @@
   align-items: center;
   justify-content: center;
   width: auto;
-  height: 160px;
+  height: 200px;
   background-color: rgba(255, 255, 255, 0.8);
   mix-blend-mode: multiply;
+}
+
+@media (max-width: 1024px) {
+  .carousel-title{
+    left: 50%;
+    top: 75%;
+    height: 200px;
+    width: 200px;
+  }
+  .carousel-logo{
+    left: 50%;
+    top: 68%;
+    height: 130px;
+  }
 }
 
 @media (max-width: 756px) {
