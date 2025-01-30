@@ -70,5 +70,5 @@
 .position {
   position: sticky;
   top: 0;
-  z-index: 1000; /* این برای اینه که نوار از محتوای دیگه بالاتر باشه */
+  z-index: 1000; 
 }
