@@ -110,7 +110,7 @@ const RecentOrders = (theme) => {
         <>{selectedOrder ? (
           <div className="recent-order-details">
             <div className="col-md-12 col-12 d-flex justify-content-end">
-              <button className="btn btn-outline-primary" onClick={handleBackClick}>برگشت</button>
+              <button className="btn btn-outline-secondary " onClick={handleBackClick}>برگشت</button>
             </div>
             <ul className="recent-product-list col-12">
               {OrderItems.map((c) => (
