@@ -43,7 +43,7 @@ const Faq = () => {
         <meta name="description" content="پرسش‌های متداول فروشگاه ظروف مسی. در این بخش به سوالات متداول کاربران پاسخ داده شده است." />
         <meta name="keywords" content="ظروف مسی, فروشگاه, پرسش‌های متداول, faq" />
         <div className='col-md-12 col-12 fontr d-flex justify-content-center row m-0 pt-3 pb-3'>
-            <h1 className='col-md-12 col-12 p-4 text-center color-theme fw-bold'>سوالات متداول</h1>
+            <h1 className='col-md-12 col-12 p-4 text-center  fw-bold'>سوالات متداول</h1>
             <div className='container d-flex justify-content-center row m-0'>
                 {faqData.map((item, index) => (
                     <article key={index} className='col-md-12 col-12 row m-0'>
