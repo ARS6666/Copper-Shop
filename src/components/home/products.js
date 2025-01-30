@@ -63,7 +63,7 @@ function HProducts() {
         {Product?.slice(0, 9).map((c) => (
           <div key={c.id} class={`col-md-3 col-sm-8 col-10 m-3 product-cardee Anim pt-5 ${c.count === 0 ? 'out-of-stock' : ''}`}>
             <div class="row m-0">
-              {c.discount !== 0 && c.count !== 0 ? <div class="discountDisplay">{c.discount}%</div> : null}
+              {c.discount !== 0 && c.count !== 0 ? <div class="discountDisplay">%{convertToPersian(c.discount)}</div> : null}
               <div class="d-flex justify-content-center">
                 <img src={c.pic} class="Imgee col-12" alt={c.name} />
               </div>

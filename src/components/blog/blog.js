@@ -7,6 +7,8 @@ import Loading from '../../components/loading/loading';
 const BlogList = (theme) => {
     const [blogs, setBlogs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const blogsPerPage = 4;
 
     useEffect(() => {
         const myHeaders = new Headers();
@@ -32,6 +34,28 @@ const BlogList = (theme) => {
             });
     }, []);
 
+    const indexOfLastBlog = currentPage * blogsPerPage;
+    const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+    const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
+
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(blogs.length / blogsPerPage); i++) {
+        pageNumbers.push(i);
+    }
+
+    const handleClick = (event) => {
+        setCurrentPage(Number(event.target.id));
+    };
+
+    const convertToPersian = (number) => {
+        if (number !== undefined) {
+          const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+          return number.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+        }
+        return null;
+      };
+    
+
     return (
         <>
             <meta name="description" content="وبلاگ ها و مقالات فروشگاه ظروف مسی" />
@@ -44,7 +68,7 @@ const BlogList = (theme) => {
                     </header>
                 </div>
                 <main className='col-md-12 pt-1 row m-0'>
-                    {blogs.map((blog) => (
+                    {currentBlogs.map((blog) => (
                         <article key={blog.id} className='col-md-3 col-12 pt-4'>
                             <div className="blog border border-2 border-theme cat-hover row m-0">
                                 <div className='col-md-12 col-12 col d-flex justify-content-center'>
@@ -62,6 +86,39 @@ const BlogList = (theme) => {
                         </article>
                     ))}
                 </main>
+                <footer className="col-md-12 d-flex justify-content-center pt-4">
+                    <ul className="pagination">
+                        <li className='page-item'>
+                            <button
+                                onClick={() => setCurrentPage(currentPage - 1)}
+                                className=' btn btn-orange rounded-0'
+                                disabled={currentPage === 1}
+                            >
+                                صفحه قبل
+                            </button>
+                        </li>
+                        {pageNumbers.map(number => (
+                            <li key={number} className={`page-item ${number === currentPage ? 'active' : ''}`}>
+                                <button
+                                    id={number}
+                                    onClick={handleClick}
+                                    className='page-link btn rounded-0 bg-orange'
+                                >
+                                    {convertToPersian(number)}
+                                </button>
+                            </li>
+                        ))}
+                        <li className='page-item'>
+                            <button
+                                onClick={() => setCurrentPage(currentPage + 1)}
+                                className=' btn btn-orange rounded-0'
+                                disabled={currentPage === pageNumbers.length}
+                            >
+                                صفحه بعد
+                            </button>
+                        </li>
+                    </ul>
+                </footer>
             </div>
         </>
     );
