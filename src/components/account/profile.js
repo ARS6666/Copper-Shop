@@ -89,7 +89,7 @@ const ProfProp = (theme) => {
             <meta name="description" content="پروفایل کاربری - فروشگاه ظروف مسی" />
             <meta name="keywords" content="پروفایل, کاربری, فروشگاه, ظروف مسی" />
             {IsLoading ? <Loading /> : null}
-            <div className="col-md-12 pt-2 pb-5 mt-3  fontr border border-theme border-2" dir="rtl" style={{ borderRadius: "10px" }}>
+            <div className="col-md-12 pt-2 pb-5 fontr border border-theme border-2" dir="rtl" style={{ borderRadius: "10px" }}>
                 <div className="col-md-12">
                     <header className="col-md-12 p-3 row m-0">
                         <div className="col-md-6 d-flex justify-content-start col-9">

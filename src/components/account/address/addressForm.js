@@ -93,8 +93,8 @@ function Address(theme) {
     return (<>
         {IsLoading ? <Loading /> : null}
         <div class="col-md-12 pt-2 fontr" >
-            <div class="col-md-12" style={{ borderStyle: "dashed" }}>
-                <buttton class="col-md-12 btn btn-lg col-12 border-0" onClick={handleOverlay}><h4 className={theme.theme.theme === "dark" ? "text-light" : "text-dark"}>افزودن آدرس</h4></buttton>
+            <div class="col-md-12 border-theme" style={{ borderStyle: "dashed" }}>
+                <buttton class="col-md-12 btn btn-lg col-12 border-0 border-theme" onClick={handleOverlay}><h4 className="color-theme">افزودن آدرس</h4></buttton>
             </div>
         </div>
         {isOverlayOpen ? <>
@@ -110,14 +110,14 @@ function Address(theme) {
                         <div class="col-md-12 text-end">
                             <span class="text-dark h5 p-4">نام آدرس مورد نظر:*</span>
                             <div class="pt-2 col-md-12 p-4">
-                                <input class="form-control form-control-lg border-dark rounded-0" placeholder='مثال : خانه , محل کار , ...' onChange={handleName}></input>
+                                <input class="form-control form-control-lg border-dark " placeholder='مثال : خانه , محل کار , ...' onChange={handleName}></input>
                             </div>
                         </div>
                         <div class="co-md-12 row m-0">
                             <div class="col-md-6 text-end p-4 pt-2 pb-0">
                                 <span class="text-dark h5 p-3">کد پستی*</span>
                                 <div class="pt-2 col-md-12 p-1">
-                                    <input class="form-control form-control-lg border-dark rounded-0" onChange={HandlePostCode} dir="ltr"></input>
+                                    <input class="form-control form-control-lg border-dark " onChange={HandlePostCode} dir="ltr"></input>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@ function Address(theme) {
                             <span class="text-dark h5 p-2">آدرس پستی*</span>
                             <textarea
                                 rows="4"
-                                class="form-control border-dark rounded-0 textarea pt-3 "
+                                class="form-control border-dark  textarea pt-3 "
                                 placeholder="آدرس به این صورت است : استان ، شهرستان ، خیابان ، کوچه ، پلاک ، واحد,..."
                                 onChange={handleAddress}
                             />
