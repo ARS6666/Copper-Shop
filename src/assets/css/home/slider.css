@@ -64,8 +64,8 @@
   font-size: 18px;
   padding-top: 130px;
   font-weight: bold;
-  width: 300px;
-  height: 300px;
+  width: 330px;
+  height: 330px;
   line-height: 1.2;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.8);
@@ -83,7 +83,7 @@
   align-items: center;
   justify-content: center;
   width: auto;
-  height: 120px;
+  height: 160px;
   background-color: rgba(255, 255, 255, 0.8);
   mix-blend-mode: multiply;
 }

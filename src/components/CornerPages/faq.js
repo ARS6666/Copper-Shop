@@ -15,7 +15,7 @@ const Faq = () => {
         },
         {
             question: 'چگونه می‌توانم وضعیت سفارش خود را ردیابی کنم؟',
-            answer: 'شما می‌توانید با ورود به حساب کاربری خود و مشاهده بخش سفارشات، وضعیت سفارش خود را پیگیری کنید. همچنین، یک ایمیل پیگیری پس از ارسال سفارش دریافت خواهید کرد.'
+            answer: 'شما می‌توانید با ورود به حساب کاربری خود و مشاهده بخش سفارشات، وضعیت سفارش خود را پیگیری کنید.'
         },
         {
             question: 'زمان تحویل محصولات چقدر است؟',
@@ -39,22 +39,22 @@ const Faq = () => {
         }
     ];
 
-    return (
-        <section className='col-md-12 col-12 fontr d-flex justify-content-center row m-0 pt-3 pb-3'>
-            <meta name="description" content="پرسش‌های متداول فروشگاه ظروف مسی. در این بخش به سوالات متداول کاربران پاسخ داده شده است." />
-            <meta name="keywords" content="ظروف مسی, فروشگاه, پرسش‌های متداول, faq" />
+    return (<>
+        <meta name="description" content="پرسش‌های متداول فروشگاه ظروف مسی. در این بخش به سوالات متداول کاربران پاسخ داده شده است." />
+        <meta name="keywords" content="ظروف مسی, فروشگاه, پرسش‌های متداول, faq" />
+        <div className='col-md-12 col-12 fontr d-flex justify-content-center row m-0 pt-3 pb-3'>
             <h1 className='col-md-12 col-12 p-4 text-center color-theme fw-bold'>سوالات متداول</h1>
             <div className='container d-flex justify-content-center row m-0'>
                 {faqData.map((item, index) => (
                     <article key={index} className='col-md-12 col-12 row m-0'>
                         <div className='col-md-3'></div>
                         <div className='col-md-6 col-12 pt-4'>
-                            <button onClick={() => toggleOpen(index)} aria-expanded={openIndex === index} className={`btn btn-lg col-md-12 col-12 text-end row m-0 p-4 bg-orange ${openIndex === index ? 'rounded-bottom-0' : ''}`} style={{ borderRadius: "0.75rem", alignItems: "center" }}>
+                            <button onClick={() => toggleOpen(index)} aria-expanded={openIndex === index} className={`btn btn-lg col-md-12 col-12 text-end row m-0 p-4 bg-orange ${openIndex === index ? 'rounded-bottom-0 pb-0' : 'pb-3'}`} style={{ borderRadius: "0.75rem", alignItems: "center" }}>
                                 <div className='col-md-12 col-12 row m-0'>
                                     <div className='col-md-1 col-1 d-flex justify-centent-start'>
                                         <span style={{ fontSize: "25px" }}>{openIndex === index ? <i className="fa-solid fa-angle-up"></i> : <i className="fa-solid fa-angle-down"></i>}</span>
                                     </div>
-                                    <div className='col-md-11 col-11 d-flex justify-content-end'>
+                                    <div className='col-md-11 col-11 d-flex justify-content-end text-end'>
                                         <span style={{ fontSize: "1.2rem", wordSpacing: "0.2rem" }}>{item.question}</span>
                                     </div>
                                 </div>
@@ -70,8 +70,8 @@ const Faq = () => {
                     </article>
                 ))}
             </div>
-        </section>
-    );
+        </div>
+    </>);
 };
 
 export default Faq;

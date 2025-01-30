@@ -56,10 +56,10 @@ const AppContent = () => {
     <>
       <div className={theme === "dark" ? "main-content scrollable dark" : "main-content scrollable"} style={{ position: "relative" }}>
         <div className='button-container'>
-          <button className="btn btn-lg btn-transparent border-0" onClick={toggleTheme} style={{ left: "20px", top: "5px", position: "absolute" , fontSize:"1.3rem"}}>
+          <button className="btn btn-lg btn-transparent border-0" onClick={toggleTheme} style={{ left: "20px", top: "5px", position: "absolute", fontSize: "1.3rem" }}>
             {theme === 'dark' ? "☀️" : "🌕"}
           </button>
-          <div className="description fontr" dir="rtl">بعد از هر تغییر تم ریلود کنید.</div>
+          <div className="description fontr" dir="rtl">بعد از هر تغییر تم, ریلود کنید.</div>
         </div>
         <Nav theme={theme} />
         {showChatbot ? <Chatbot theme={theme} /> : null
@@ -67,6 +67,7 @@ const AppContent = () => {
         <Routes>
           <Route path='' element={<Home theme={theme} />} />
           <Route path='*' element={<NotFoundPage />} />
+          <Route path='/products/pi' element={<PI theme={theme} />} />
           <Route path='/pi' element={<PI theme={theme} />} />
           <Route path='/products' element={<Products />} />
           <Route path='/account' element={
@@ -89,8 +90,8 @@ const AppContent = () => {
             </PrivateRoute>} />
           <Route path='/about' element={<About />} />
           <Route path='/faq' element={<ContactUs />} />
-          <Route path='/blogs' element={<Blog theme={theme}/>} />
-          <Route path='/blogpage' element={<Blogpage theme={theme}/>} />
+          <Route path='/blogs' element={<Blog theme={theme} />} />
+          <Route path='/blogpage' element={<Blogpage theme={theme} />} />
         </Routes >
         {showFooter ? <Footer theme={theme} /> : null
         }

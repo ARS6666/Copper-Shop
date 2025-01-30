@@ -33,7 +33,7 @@ function ImageSlider() {
             <div className="carousel-inner">
               <img src={Pic.image} style={{ height: "500px", width: "100%", objectFit: "cover" }} alt={`sliderpic${Pic.id}`}/>
               <div className="carousel-title" dir="rtl">
-                <h1 className="fontr fw-bold">فروشگاه مس هنر زنجان</h1>
+                <h1 className="fontr fw-bold">فروشگاه زنجان مس</h1>
               </div>
               <img className="carousel-logo" src={logo}/>
             </div>

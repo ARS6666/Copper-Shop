@@ -35,7 +35,7 @@ function Footer(theme) {
           </div>
           <div className="col-lg-3 col-md-6 col-12 mb-3 fontr">
             <div className="pt-4">
-              <h5 className="mb-4 text-white brand-name">🛒 مس هنر</h5>
+              <h5 className="mb-4 text-white brand-name">🛒 زنجان مس</h5>
               <p className="mb-3">
                 <a className="hrefw" href="https://balad.ir/p/%D8%AA%D9%88%D9%84%DB%8C%D8%AF%DB%8C-%D8%B5%D9%86%D8%A7%DB%8C%D8%B9-%D9%85%D8%B3-%D9%87%D9%86%D8%B1-%D8%B2%D9%86%D8%AC%D8%A7%D9%86_shopping-mall-1Ig31uJf1AYih8#15/36.70521/48.4318"><i className="bi bi-geo-alt-fill"></i> استان زنجان، زنجان، بلوار پرفسور ثبوتی</a>
               </p>

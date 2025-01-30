@@ -23,8 +23,8 @@
   padding: 10px;
   position: absolute;
   z-index: 1;
-  top: 125%;
-  left: 0%;
+  top: 10px;
+  left: 10px;
   margin-left: 50px;
   opacity: 0;
   transition: opacity 0.3s;
@@ -50,6 +50,7 @@ body {
 .scrollable::-webkit-scrollbar {
   display: none;
 }
+
 
 
 .App-logo {

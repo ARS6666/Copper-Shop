@@ -137,7 +137,7 @@ const ChatBot = (theme) => {
                         <div className="col-md-2 col-2 p-2">
                             <img src={pfp} className='aipfp' alt="Profile" />
                         </div>
-                        <div className="col-md-10 col-10 d-flex justify-content-start align-items-center">
+                        <div className="col-md-10 col-10 d-flex justify-content-start align-items-center pt-2">
                             <h4 className='align-self-center'>پشتیبانی خرید</h4>
                         </div>
                     </div>

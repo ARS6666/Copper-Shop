@@ -2,6 +2,7 @@ import "../../assets/css/products/offprdct.css";
 import React, { useRef, useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -120,13 +121,13 @@ const ProductCarousel = () => {
                         <p className="fontr pt-1 product-name">{addCommas(c.price)} تومان</p>
                       </div>
                     </div>
-                    <a href={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
+                    <Link to={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
                       <div className="hoverr-details col-12">
                         <div className="d-flex justify-content-center bp">
                           <button className="btn btn-orange border-0 fontr" aria-label="View Product"><span className="fontr">مشاهده محصول</span></button>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </article>
                 ))}
               </Slider>

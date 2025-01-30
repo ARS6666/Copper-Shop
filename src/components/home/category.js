@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../../assets/css/home/category.css";
 import url from "../../config.json";
 
@@ -69,7 +70,7 @@ const ProductSlider = (theme) => {
           <div className="slider" style={{ transform: `translateX(${currentIndex * (100 / 2)}%)` }}>
             {Categories.map((categories, index) => (
               <div className="col-md-2 col-8 cat-hover" key={index} style={{ minWidth: `(-${(100 / 2)}%)` }}>
-                <a className="hrefb align-self-center" href={"/products?category=" + categories.name}>
+                <Link className="hrefb align-self-center" to={`/products?category=${categories.name}`}>
                   <div className="row m-0">
                     <div className="d-flex justify-content-center ">
                       <img src={categories.image} title={categories.name} className="d-block col-md-11 p-2" style={{ height: "200px", width: "auto" }} alt={categories.name} />
@@ -78,7 +79,7 @@ const ProductSlider = (theme) => {
                       <h4 className="h4 fontr color-theme">{categories.name}</h4>
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -89,4 +90,4 @@ const ProductSlider = (theme) => {
   );
 };
 
-export default ProductSlider; 
+export default ProductSlider;

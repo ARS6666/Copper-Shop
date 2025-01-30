@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Loading from "../loading/loading";
 import "../../assets/css/products/productPage.css";
 import Filter from "./Filter";
@@ -21,7 +21,6 @@ function Products() {
   useEffect(() => {
     document.title = "محصولات";
   }, []);
-
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -69,8 +68,6 @@ function Products() {
 
     fetchProducts();
   }, []);
-
-
 
   const handleFilterChange = (filters) => {
     setSearchTerm(filters.searchTerm);
@@ -200,13 +197,13 @@ function Products() {
                         <span className="fontr pt-1">{addCommas(c.price)} تومان</span>
                       </div>
                     </div>
-                    <a href={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
+                    <Link to={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
                       <div className="hoverr-details col-12">
                         <div className="d-flex justify-content-center bp">
                           <button className="btn btn-orange border-0 fontr" aria-label="View Product">مشاهده محصول</button>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 ))
               )}
@@ -228,4 +225,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Products
