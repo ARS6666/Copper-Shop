@@ -55,6 +55,7 @@ body {
   left: 20px;
   top: 5px;
   position: absolute;
+  z-index: 100001;
 }
 
 @media (max-width: 1024px) {

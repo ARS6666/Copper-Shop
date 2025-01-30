@@ -19,7 +19,7 @@ import About from './components/CornerPages/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
 import ContactUs from './components/CornerPages/contactUs';
-import './assets/css/nav/darkMode.css'
+
 const AppContent = () => {
 
   const location = useLocation();
@@ -56,7 +56,7 @@ const AppContent = () => {
     <>
       <div className={theme === "dark" ? "main-content scrollable dark" : "main-content scrollable"} style={{ position: "relative" }}>
         <div className='button-container'>
-          <button className="btn btn-lg z-index btn-transparent border-0 theme-icon" onClick={toggleTheme} style={{fontSize : "1.3rem"}}>
+          <button className="btn btn-lg btn-transparent border-0 theme-icon" onClick={toggleTheme} style={{fontSize : "1.3rem"}}>
             {theme === 'dark' ? "☀️" : "🌕"}
           </button>
           <div className="description fontr" dir="rtl">بعد از هر تغییر تم, ریلود کنید.</div>
