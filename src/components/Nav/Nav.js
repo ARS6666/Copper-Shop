@@ -75,7 +75,7 @@ const CustomNavbar = (theme) => {
   return (
     <>
       {isVisible ? (
-        <div className="col-12 fontr row m-0" dir="rtl" style={{ backgroundColor: "#DB5C28", height: "60px" }} >
+        <div className="col-12 fontr row m-0 position" dir="rtl" style={{ backgroundColor: "#DB5C28", height: "60px" }} >
           <div className="col-7 row m-0">
             <div className="col-3 pt-1">
               <Link className="hrefb m-0 p-0" to="/">
