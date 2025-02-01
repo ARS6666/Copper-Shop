@@ -97,6 +97,11 @@ function ProductInfo(theme) {
     }
   }
 
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const handleSelect = (selectedIndex) => {
+    setSelectedIndex(selectedIndex);
+  };
+
   const addCommas = (number) => {
     if (number !== undefined) {
       const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
@@ -139,16 +144,22 @@ function ProductInfo(theme) {
           <div className="col-md-6 d-flex flex-column">
             <div className="row m-0">
               <div className="col-md-2 d-flex flex-column align-items-end remove">
-                {IMG?.slice(0, 4).map((c) => (
-                  <img key={c.image} className="img-fluid m-1 remove" src={c.image} alt={`${product.name} Thumbnail`} />
+                {IMG?.slice(0, 4).map((c, index) => (
+                  <img
+                    key={c.image}
+                    className="img-fluid m-1 remove"
+                    src={c.image}
+                    alt={`${product.name} Thumbnail`}
+                    onClick={() => handleSelect(index)}
+                  />
                 ))}
               </div>
               <div className="magnify-container col-md-10 col-12 d-flex justify-content-center">
                 <div className="justify-content-start">{product.discount !== 0 && product.count !== 0 ? <div className="discountDisplay fontr">%{convertToPersian(product.discount)}</div> : null}</div>
                 <div className="col-md-12 col-12">
-                  <Carousel>
+                  <Carousel activeIndex={selectedIndex} onSelect={handleSelect} interval={3000}>
                     {IMG.map((Pic, index) => (
-                      <Carousel.Item key={index} interval={3000}>
+                      <Carousel.Item key={index}>
                         <div className="image-container">
                           <img className="d-block ImageProd magnify-image" src={Pic.image} alt={`${product.name} Image ${index + 1}`} onMouseMove={handleMouseMove} style={{ transformOrigin }} />
                           <img className="logo-overlay" src={logo} alt="Logo" />
@@ -156,6 +167,7 @@ function ProductInfo(theme) {
                       </Carousel.Item>
                     ))}
                   </Carousel>
+
                 </div>
               </div>
             </div>
