@@ -117,13 +117,13 @@ const ProductCarousel = () => {
                         <p className="fontr pt-1 product-name">{addCommas(c.price)} تومان</p>
                       </div>
                     </div>
-                    <Link to={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
+                    <a href={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
                       <div className="hoverr-details col-12">
                         <div className="d-flex justify-content-center bp">
                           <button className="btn btn-orange border-0 fontr" aria-label="View Product"><span className="fontr">مشاهده محصول</span></button>
                         </div>
                       </div>
-                    </Link>
+                    </a>
                   </article>
                 ))}
               </Slider>

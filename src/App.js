@@ -24,9 +24,9 @@ import ContactUs from './components/CornerPages/contactUs';
 const AppContent = () => {
 
   const location = useLocation();
-  const hideFooterPaths = ['/login', '/signin', '/test', '/account ', '/cart'];
+  const hideFooterPaths = ['/login', '/signin', '/test', '/account ', '/cart', '/verify'];
   const showFooter = !hideFooterPaths.includes(location.pathname);
-  const hideChatbotPaths = ['/login', '/signin', '/test', '/account ', '/cart'];
+  const hideChatbotPaths = ['/login', '/signin', '/test', '/account ', '/cart', '/verify'];
   const showChatbot = !hideFooterPaths.includes(location.pathname);
   const [theme, setTheme] = useState(localStorage.getItem('theme'));
 
@@ -57,7 +57,7 @@ const AppContent = () => {
     <>
       <div className={theme === "dark" ? "main-content scrollable dark" : "main-content scrollable"} style={{ position: "relative" }}>
         <div className='button-container'>
-          <button className="btn btn-lg btn-transparent border-0 theme-icon" onClick={toggleTheme} style={{fontSize : "1.3rem"}}>
+          <button className="btn btn-lg btn-transparent border-0 theme-icon" onClick={toggleTheme} style={{ fontSize: "1.3rem" }}>
             {theme === 'dark' ? "☀️" : "🌕"}
           </button>
           <div className="description fontr" dir="rtl">بعد از هر تغییر تم, ریلود کنید.</div>
@@ -81,6 +81,9 @@ const AppContent = () => {
           <Route path='/login' element={
             <Login theme={theme} />
           } />
+          <Route path='/verify' element={
+            <Verification theme={theme} />
+          } />
           <Route path='/cart' element={
             <PrivateRoute>
               <div class="col-md-12 col-12 justify-content-center d-flex">
@@ -90,7 +93,6 @@ const AppContent = () => {
               </div>
             </PrivateRoute>} />
           <Route path='/about' element={<About />} />
-          <Route path='/verify' element={<Verification theme={theme}/>} />
           <Route path='/faq' element={<ContactUs />} />
           <Route path='/blogs' element={<Blog theme={theme} />} />
           <Route path='/blogpage' element={<Blogpage theme={theme} />} />

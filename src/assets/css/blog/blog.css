@@ -3,8 +3,17 @@
     margin: 15px 0;
     border-radius: 5px;
 }
-.blogImg{
+
+.blogImg {
     height: 500px;
     width: 500px;
     object-fit: cover;
 }
+
+.activate {
+    box-shadow: 0 0 10px #DB5C28 !important;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    

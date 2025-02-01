@@ -98,7 +98,7 @@ const BlogList = (theme) => {
                             </button>
                         </li>
                         {pageNumbers.map(number => (
-                            <li key={number} className={`page-item ${number === currentPage ? 'active' : ''}`}>
+                            <li key={number} className={`page-item ${number === currentPage ? 'activate' : ''}`}>
                                 <button
                                     id={number}
                                     onClick={handleClick}

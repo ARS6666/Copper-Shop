@@ -197,13 +197,13 @@ function Products() {
                         <span className="fontr pt-1">{addCommas(c.price)} تومان</span>
                       </div>
                     </div>
-                    <Link to={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
+                    <a href={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
                       <div className="hoverr-details col-12">
                         <div className="d-flex justify-content-center bp">
                           <button className="btn btn-orange border-0 fontr" aria-label="View Product">مشاهده محصول</button>
                         </div>
                       </div>
-                    </Link>
+                    </a>
                   </div>
                 ))
               )}

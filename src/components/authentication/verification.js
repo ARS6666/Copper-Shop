@@ -24,7 +24,7 @@ const CodeInput = (theme) => {
 
     const checkComplete = () => {
         if (code.every(digit => digit !== '')) {
-            alert('Hello!');
+            alert('شماره تلفن همراه شما تایید شد !');
             localStorage.removeItem('phoneNumber');
             navigate('/login');
         }
@@ -32,7 +32,7 @@ const CodeInput = (theme) => {
 
     return (<>
         {IsLoading ? <Loading /> : null}
-        <div className="col-md-12 fontr vh-100 pt-5 " dir="rtl" style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "3D9D9D9" , alignItems:'center' }}>
+        <div className="col-md-12 fontr vh-100 pt-5 " dir="rtl" style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "3D9D9D9" , alignItems:'center'}}>
             <div className="col-md-12 d-flex justify-content-center pt-5">
                 <div className="col-md-4 pt-5">
                     <div className="col-md-12 p-5 shadow bg-light" style={{ borderRadius: "20px" }}>
