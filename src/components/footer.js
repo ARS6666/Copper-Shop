@@ -55,10 +55,10 @@ function Footer(theme) {
                 <Link className="hrefw" to="/about">درباره ی ما</Link>
               </p>
               <p className="mb-3">
-                <Link className="hrefw" to="/about#faq">پرسش های متداول</Link>
+                <a className="hrefw" href="/about#faq">پرسش های متداول</a>
               </p>
               <p className="mb-3">
-                <Link className="hrefw" to="/about#contactus">ارتباط با ما</Link>
+                <a className="hrefw" href="/about#contactus">ارتباط با ما</a>
               </p>
             </div>
           </div>

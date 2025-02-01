@@ -14,6 +14,7 @@ import Footer from './components/footer';
 import Chatbot from './components/chatbot';
 import Blog from "./components/blog/blog";
 import Blogpage from "./components/blog/blogpage";
+import Verification from "./components/authentication/verification"
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import About from './components/CornerPages/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -89,6 +90,7 @@ const AppContent = () => {
               </div>
             </PrivateRoute>} />
           <Route path='/about' element={<About />} />
+          <Route path='/verify' element={<Verification theme={theme}/>} />
           <Route path='/faq' element={<ContactUs />} />
           <Route path='/blogs' element={<Blog theme={theme} />} />
           <Route path='/blogpage' element={<Blogpage theme={theme} />} />

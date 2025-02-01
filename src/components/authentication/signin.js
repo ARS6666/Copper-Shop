@@ -69,10 +69,11 @@ function SignIn(theme) {
             }
 
             setIsLoading(false);
+            localStorage.setItem('phoneNumber', phone);
             setPhone("");
             setPassword("");
             setPassword1("");
-            navigate('/login');
+            navigate('/verify');
         } catch (error) {
             console.error('Error during registration:', error);
             setError("در هنگام ثبت‌نام مشکلی پیش آمد.");
@@ -85,12 +86,12 @@ function SignIn(theme) {
     return (
         <>
             {IsLoading ? <Loading /> : null}
-            <div className="col-md-12 fontr vh-100" dir="rtl" style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "3D9D9D9" }}>
+            <div className="col-md-12 fontr vh-100 pt-4" dir="rtl" style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "3D9D9D9" , alignItems : "center"}}>
                 <form onSubmit={handleSubmit} className="col-md-12 d-flex justify-content-center pt-5">
                     <div className="col-md-4">
                         <div className="col-md-12 p-5 shadow bg-light" style={{ borderRadius: "20px" }}>
                             <div className="d-flex justify-content-center">
-                                <span className="h2 col-md-12 border-bottom border-dark text-center p-1 text-dark">ثبت نام</span>
+                                <span className="h2 col-md-12 border-bottom border-dark text-center p-1 text-dark pb-3">ثبت نام</span>
                             </div>
                             <div className="pt-2 text-dark">
                                 <label className="h5">شماره تلفن همراه:</label>
