@@ -50,7 +50,7 @@
     transform-origin: center center;
 }
 
-.magnify-container:hover .magnify-image {
+.magnify-image:hover {
     transform: scale(1.5);
 }
 
@@ -98,7 +98,7 @@
     pointer-events: none;
 }
 
-.magnify-container:hover .logo-overlay {
+.image-container:hover .logo-overlay{
     display: none;
     opacity: 0;
 }

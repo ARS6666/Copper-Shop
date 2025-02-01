@@ -65,11 +65,6 @@ const CommonProducts = ({ theme }) => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
-  useEffect(() => {
-    const intervalId = setInterval(nextSlide, 20000);
-    return () => clearInterval(intervalId);
-  }, [products]);
-
   const addCommas = (number) => {
     if (number !== undefined) {
       const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
@@ -117,7 +112,7 @@ const CommonProducts = ({ theme }) => {
             <button
               className="btn btn-orange"
               onClick={nextSlide}
-              disabled={currentIndex >= products.length - 1}
+              disabled={currentIndex >= products.length - 4}
               aria-label="Next"
               style={{ borderRadius: ".75rem" }}
             >
