@@ -83,3 +83,22 @@
 
 
 }
+
+.image-container {
+    position: relative;
+}
+
+
+.logo-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: auto;
+    height: 40px;
+    pointer-events: none;
+}
+
+.magnify-container:hover .logo-overlay {
+    display: none;
+    opacity: 0;
+}

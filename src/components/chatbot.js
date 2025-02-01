@@ -66,7 +66,7 @@ const ChatBot = (theme) => {
         }
 
         if (selectedProduct && userInput.includes('بله')|| userInput.includes('اره')|| userInput.includes('آره')) {
-            const botResponse = `توضیحات محصول: ${selectedProduct.description}`;
+            const botResponse = `${selectedProduct.description}`;
             setMessages(prevMessages => [...prevMessages, { sender: 'bot', text: botResponse }]);
             setSelectedProduct(null);
             setInput('');

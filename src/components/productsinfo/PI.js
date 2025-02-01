@@ -5,7 +5,7 @@ import "../../assets/css/productsinfo/PI.css";
 import "../../assets/css/hide.css";
 import Loading from "../loading/loading";
 import url from "../../config.json";
-
+import logo from "../../assets/media/logo11.png"
 function ProductInfo(theme) {
   const navigate = useNavigate();
   const [IsLoading, setIsLoading] = useState(true);
@@ -144,12 +144,15 @@ function ProductInfo(theme) {
                 ))}
               </div>
               <div className="magnify-container col-md-10 col-12 d-flex justify-content-center">
-                <div className="justify-content-start">{product.discount !== 0 && product.count !== 0 ? <div class="discountDisplay fontr">%{convertToPersian(product.discount)}</div> : null}</div>
+                <div className="justify-content-start">{product.discount !== 0 && product.count !== 0 ? <div className="discountDisplay fontr">%{convertToPersian(product.discount)}</div> : null}</div>
                 <div className="col-md-12 col-12">
                   <Carousel>
                     {IMG.map((Pic, index) => (
-                      <Carousel.Item key={index}>
-                        <img className="d-block ImageProd magnify-image" src={Pic.image} alt={`${product.name} Image ${index + 1}`} onMouseMove={handleMouseMove} style={{ transformOrigin }} />
+                      <Carousel.Item key={index} interval={3000}>
+                        <div className="image-container">
+                          <img className="d-block ImageProd magnify-image" src={Pic.image} alt={`${product.name} Image ${index + 1}`} onMouseMove={handleMouseMove} style={{ transformOrigin }} />
+                          <img className="logo-overlay" src={logo} alt="Logo" />
+                        </div>
                       </Carousel.Item>
                     ))}
                   </Carousel>

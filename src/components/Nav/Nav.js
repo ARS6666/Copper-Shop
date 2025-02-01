@@ -101,7 +101,7 @@ const CustomNavbar = (theme) => {
                 className="form-control fontr"
                 placeholder="جست وجو ..."
                 onChange={(e) => setSearch(e.target.value)}
-                style={{ backgroundColor: "#D9D9D9" }}
+                style={{ backgroundColor: "#ffffff" }}
                 aria-label="Search"
               />
             </div>
