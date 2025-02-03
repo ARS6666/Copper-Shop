@@ -59,7 +59,7 @@ const Blog = () => {
             {isLoading ? <Loading /> : null}
             <div className='col-md-12 fontr' dir="rtl">
                 <div className='col-md-12 pt-3'>
-                    <header className='col-md-12 text-white d-flex justify-content-center align-items-center' style={{ height: "80px", backgroundColor: "#DB5C28" }}>
+                    <header className='col-md-12 text-white d-flex justify-content-center align-items-center' style={{ height: "80px", backgroundColor: "#C24C20" }}>
                         <h1 className='align-self-center'>{contents.title || "منتظر باشید ..."}</h1>
                     </header>
                     <div className='container pt-3'>
@@ -68,7 +68,7 @@ const Blog = () => {
                         </article>
                     </div>
                     <footer className='col-md-12 pb-3'>
-                        <div className='col-md-12 d-flex justify-content-center align-content-center' style={{ backgroundColor: "#DB5C28" }}>
+                        <div className='col-md-12 d-flex justify-content-center align-content-center' style={{ backgroundColor: "#C24C20" }}>
                             <h5 className='p-3 text-white' style={{ fontWeight: "bold" }}>نویسنده: ARS</h5>
                         </div>
                     </footer>

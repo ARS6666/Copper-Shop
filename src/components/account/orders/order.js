@@ -100,9 +100,9 @@ function Order(theme) {
     return (
         <div className="col-md-12 fontr" dir="rtl">
             {isOrder ? (
-                <div className="container border-bottom border border-theme fontr" dir="rtl" style={{ borderRadius: "10px" }}>
+                <div className="container border-bottom border fontr" dir="rtl" style={{ borderRadius: "10px" }}>
                     <div className="col-md-12 d-flex justify-content-center">
-                        <h2 className="border-bottom border-4 border-theme p-3 col-md-3 col-9 text-center">سفارش در جریان</h2>
+                        <h2 className="border-bottom border-4  p-3 col-md-3 col-9 text-center">سفارش در جریان</h2>
                     </div>
                     <div className="order-header p-2">
                         <p className="p-1"><i className="fa-solid fa-cart-shopping m-2"></i>آیدی سفارش : {convertToPersian(orderDetail.id)}</p>
@@ -113,16 +113,16 @@ function Order(theme) {
                         <span></span>
                     </div>
 
-                    <div className="pt-4 border-top border-theme">
+                    <div className="pt-4 border-top ">
                         <ul style={{ maxHeight: '400px', overflowY: 'auto' }}>
                             {orderDetail.items.map((c) => (
                                 <a className={theme.theme === "dark" ? "hrefw" : "hrefb"} href={`pi?id=${c.product.id}#${c.product.name}`} key={c.product.id} style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "white" }}>
-                                    <li className="product-item border-theme">
+                                    <li className="product-item ">
                                         <img src={`${url.baseUrl}/${c.product.pic}`} alt={c.product.name} className="product-image" />
                                         <div className="product-details">
                                             <div className="text-container" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
                                                 <h4 className={theme.theme === "dark" ? "text-light" : "text-dark"}>{truncateString(c.product.name)}</h4>
-                                                {show && <span className={theme.theme === "dark" ? "text-light float-text border-theme text-center" : "text-dark float-text border-theme text-center"}>{c.product.name}</span>}
+                                                {show && <span className={theme.theme === "dark" ? "text-light float-text  text-center" : "text-dark float-text  text-center"}>{c.product.name}</span>}
                                             </div>
                                             <p>{c.product.category}</p>
                                             <p>قیمت: {addCommas(c.product.price)} تومان</p>

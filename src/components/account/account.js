@@ -80,9 +80,9 @@ const Panel = (theme) => {
                     <div className="col-md-12 border-top border-bottom border-theme part">
                         <button onClick={() => { handleClick(); changeContent(<Profile theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
-                            style={{ backgroundColor: isChecked ? '#DB5C28' : '', width: "100%" }}>
+                            style={{ backgroundColor: isChecked ? '#C24C20' : '', width: "100%" }}>
                             <h5 className={isChecked ? "p-2 text-white" : "p-2 text-dark"}>
-                                <i className="p-1 fa fa-user" aria-hidden="true"></i>
+                                <i className="p-1 fa fa-user" aria-hidden="true" style={{marginLeft:"10px"}}></i>
                                 تغییر جزییات حساب کاربری
                             </h5>
                         </button>
@@ -90,9 +90,9 @@ const Panel = (theme) => {
                     <div className="col-md-12 border-top border-bottom border-theme part">
                         <button onClick={() => { handleClick2(); changeContent(<Order theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
-                            style={{ backgroundColor: isChecked2 ? '#DB5C28' : '', width: "100%" }}>
+                            style={{ backgroundColor: isChecked2 ? '#C24C20' : '', width: "100%" }}>
                             <h5 className={isChecked2 ? "p-2 text-white" : "p-2 text-dark"}>
-                                <i className="fas fa-shopping-basket p-1"></i>
+                                <i className="fas fa-shopping-basket p-1" style={{marginLeft:"10px"}}></i>
                                 سفارشات
                             </h5>
                         </button>
@@ -100,9 +100,9 @@ const Panel = (theme) => {
                     <div className="col-md-12 border-top border-bottom border-theme part">
                         <button onClick={() => { handleClick3(); changeContent(<Address theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
-                            style={{ backgroundColor: isChecked3 ? '#DB5C28' : '', width: "100%" }}>
+                            style={{ backgroundColor: isChecked3 ? '#C24C20' : '', width: "100%" }}>
                             <h5 className={isChecked3 ? "p-2 text-white" : "p-2 text-dark"}>
-                                <i className="fas fa-map p-1"></i>
+                                <i className="fas fa-map p-1" style={{marginLeft:"10px"}}></i>
                                 آدرس‌ها
                             </h5>
                         </button>
@@ -110,9 +110,9 @@ const Panel = (theme) => {
                     <div className="col-md-12 border-top border-bottom border-theme part">
                         <button onClick={() => { handleClick4(); changeContent(<RPP theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
-                            style={{ backgroundColor: isChecked4 ? '#DB5C28' : '', width: "100%" }}>
+                            style={{ backgroundColor: isChecked4 ? '#C24C20' : '', width: "100%" }}>
                             <h5 className={isChecked4? "p-2 text-white" : "p-2 text-dark"}>
-                                <i className="fas fa-folder-open p-1"></i>
+                                <i className="fas fa-folder-open p-1" style={{marginLeft:"10px"}}></i>
                                 سفارشات گذشته
                             </h5>
                         </button>

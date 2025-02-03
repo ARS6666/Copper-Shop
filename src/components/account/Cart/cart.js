@@ -151,10 +151,10 @@ function Cart(theme) {
         <div class="col-md-12 col-12 fontr d-flex justify-content-center pt-2 pb-5" style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "white" }}>
             <div class="col-md-12 col-12 pt-5 pb-5 text-center" style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "white" }} >
                 <h1 className='text-dark fw-bold pb-3 align-slef-center'>سبد خرید</h1>
-                <div class="col-md-12 col-12 row m-0 border border-3 border-theme" >
-                    <div class="col-md-4 col-12 col-5 pb-4 pt-4" dir="rtl">
+                <div class="col-md-12 col-12 row m-0" >
+                    <div class="col-md-4 col-12 col-5 pb-4" dir="rtl">
                         <div class="col-md-12 col-12 " >
-                            <div class="col-md-12 col-12 border border-2 border-theme" >
+                            <div class="col-md-12 col-12 border border-2 border-secondery" >
                                 <div class="col-md-12 col-12 pt-3 pb-2 d-flex justify-content-center">
                                     <span class="h5">
                                         جمع کل سبد خرید
@@ -199,8 +199,8 @@ function Cart(theme) {
                         </div>
                     </div>
                     <div class="col-md-8 col-12 " dir="rtl">
-                        <div class="col-md-12 col-12 pt-4 ">
-                            <div class="col-md-12 col-12 border border-2 border-theme row m-0">
+                        <div class="col-md-12 col-12">
+                            <div class="col-md-12 col-12 border-bottom border-2 border-theme row m-0">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5 col-2 p-3"><span>محصول</span></div>
                                 <div class="col-md-2 col-3 p-3"><span>قیمت</span></div>
@@ -210,12 +210,12 @@ function Cart(theme) {
                         </div>
                         {CartItems?.map((c) => (<>
                             <div class="col-md-12 col-12">
-                                <div class="col-md-12 col-12 border border-2 border-theme rounded-0 align-items-center row m-0">
+                                <div class="col-md-12 col-12 border-bottom border-2 border-secondery rounded-0 align-items-center row m-0">
                                     <div class="col-md-1 col-1 p-3 "><button className={theme.theme === "dark" ? "btn btn-outline-light rounded-circle btn-circle" : "btn btn-outline-dark rounded-circle btn-circle"} onClick={() => RemoveAll(c.product.id)}><i class="fa-solid fa-trash-can"></i></button></div>
                                     <div class="col-md-2 p-3 remove">
                                         <img src={`${url.baseUrl}/${c.product.pic}`} alt="" class="col-md-12" style={{ height: "80px", objectFit: "cover" }} />
                                     </div>
-                                    <div class="col-md-3 col-2 p-3"><a href={"pi?id=" + c.product.id + c.product.name} className='color-theme'>{(c.product.name)}</a></div>
+                                    <div class="col-md-3 col-2 p-3"><a href={"pi?id=" + c.product.id + c.product.name} className='color-theme' style={{lineHeight:"1.8rem"}}>{(c.product.name)}</a></div>
                                     <div class="col-md-2 col-3 p-3">{addCommas(c.product.price)}تومان</div>
                                     <div class="col-md-1 col-2 p-3 row m-0 text-center d-flex justify-content-center">
                                         <button class="btn-circle btn" onClick={() => AddItem(c.product.id)} disabled={buttonDisabled}><i className={theme.theme === "dark" ? "fa-solid fa-arrow-up text-white" : "fa-solid fa-arrow-up"}></i></button>

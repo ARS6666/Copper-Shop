@@ -63,7 +63,7 @@ function AddressDisplay(theme) {
             {IsLoading ? <Loading /> : null}
             {Prop.map((c) => (
                 <div className="col-md-6 p-1 fontr text-end" dir="rtl" key={c.id}>
-                    <div className="border border-3 border-theme text-end" style={{ borderStyle: "double" }}>
+                    <div className="border border-3 text-end" style={{ borderStyle: "double" }}>
                         <div className="col-md-12 p-3">
                             <span className="h3">{convertToPersian(c.name)}</span>
                         </div>

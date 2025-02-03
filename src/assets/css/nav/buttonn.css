@@ -1,3 +1,7 @@
+.lgo {
+  filter:saturate(6)
+}
+
 .ah {
   text-decoration: none;
   position: relative;
@@ -51,17 +55,18 @@
   flex-wrap: wrap;
 
 }
+
 .add {
   display: none;
 }
 
 @media (max-width: 1024px) {
   .remove {
-      display: none;
+    display: none;
   }
 
   .add {
-      display: flex;
+    display: flex;
 
   }
 
@@ -70,5 +75,5 @@
 .position {
   position: sticky;
   top: 0;
-  z-index: 1000; 
+  z-index: 1000;
 }

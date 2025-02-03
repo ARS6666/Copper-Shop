@@ -93,8 +93,8 @@ function Address(theme) {
     return (<>
         {IsLoading ? <Loading /> : null}
         <div class="col-md-12 pt-2 fontr" >
-            <div class="col-md-12 border-theme" style={{ borderStyle: "dashed" }}>
-                <buttton class="col-md-12 btn btn-lg col-12 border-0 border-theme" onClick={handleOverlay}><h4 className="color-theme">افزودن آدرس</h4></buttton>
+            <div class="col-md-12 border">
+                <buttton class="col-md-12 btn btn-lg col-12 border-0 " onClick={handleOverlay}><h4 className="color-theme">افزودن آدرس</h4></buttton>
             </div>
         </div>
         {isOverlayOpen ? <>

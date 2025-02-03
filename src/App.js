@@ -57,7 +57,7 @@ const AppContent = () => {
     <>
       <div className={theme === "dark" ? "main-content scrollable dark" : "main-content scrollable"} style={{ position: "relative" }}>
         <div className='button-container'>
-          <button className="btn btn-lg btn-transparent border-0 theme-icon" onClick={toggleTheme} style={{ fontSize: "1.3rem" }}>
+          <button className="btn btn-lg btn-transparent border-0 theme-icon" onClick={toggleTheme} style={{ fontSize: "1.5rem" }}>
             {theme === 'dark' ? "☀️" : "🌕"}
           </button>
           <div className="description fontr" dir="rtl">بعد از هر تغییر تم, ریلود کنید.</div>

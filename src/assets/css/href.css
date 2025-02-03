@@ -21,32 +21,32 @@
 }
 
 .btn-orange {
-    background-color: #DB5C28 !important;
+    background-color: #B34722 !important;
     color: white !important;
 }
 
 .bg-orange {
-    background-color: #DB5C28 !important;
+    background-color: #B34722 !important;
     color: white !important;
 }
 
 .btn-orange:hover {
     background-color: white !important;
-    color: #DB5C28 !important;
-    border-color: #DB5C28 !important;
+    color: #B34722 !important;
+    border-color: #B34722 !important;
 }
 
 
 .border-theme {
-    border-color: #DB5C28 !important;
+    border-color: #bdbab3 !important;
 }
 
 .color-theme {
-    color: #DB5C28 !important;
+    color: #000000 !important;
 }
 
 .color-theme::placeholder {
-    color: #DB5C28 !important;
+    color: #000000 !important;
 }
 
 @keyframes smooth {

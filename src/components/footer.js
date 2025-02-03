@@ -20,7 +20,7 @@ function Footer(theme) {
 
 
   return (
-    <div className="container-fluid pt-3" style={{ backgroundColor: "#DB5C28" }} dir="rtl" >
+    <div className="container-fluid pt-3" style={{ backgroundColor: "#C24C20" }} dir="rtl" >
       <div className="row m-0">
         <div className="col-lg-8 col-md-9 col-12 row m-0">
           <div className="col-lg-3 col-md-6 col-12 mb-3">
