@@ -72,6 +72,15 @@ const CustomNavbar = (theme) => {
     return null;
   };
 
+  const links = document.querySelectorAll('.ah');
+
+  links.forEach(link => {
+    link.addEventListener('click', function () {
+      links.forEach(link => link.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
   return (
     <>
       {isVisible ? (
@@ -88,7 +97,7 @@ const CustomNavbar = (theme) => {
               </Link>
             </div>
             <div className="col-8 align-self-center d-flex justify-content-between" style={{ marginRight: "3rem" }}>
-              <Link className="hrefw" to="/"><span className="col-3 h5 ah">خانه</span></Link>
+              <Link className="hrefw" to="/"><span className="col-3 h5 ah active">خانه</span></Link>
               <Link className="hrefw" to="/products"><span className="col-3 h5 ah">محصولات</span></Link>
               <Link className="hrefw" to="/blogs"><span className="col-3 h5 ah">وبلاگ</span></Link>
               <Link className="hrefw" to="/about"><span className="col-3 h5 ah">خدمات مشتریان</span></Link>
