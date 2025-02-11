@@ -102,7 +102,7 @@ function Order(theme) {
             {isOrder ? (
                 <div className="container border-bottom border fontr" dir="rtl" style={{ borderRadius: "10px" }}>
                     <div className="col-md-12 d-flex justify-content-center">
-                        <h2 className="border-bottom border-4  p-3 col-md-3 col-9 text-center">سفارش در جریان</h2>
+                        <span className="h4 border-bottom border-4 border-danger pt-4 p-2 col-md-3 col-9 text-center">سفارش در جریان</span>
                     </div>
                     <div className="order-header p-2">
                         <p className="p-1"><i className="fa-solid fa-cart-shopping m-2"></i>آیدی سفارش : {convertToPersian(orderDetail.id)}</p>

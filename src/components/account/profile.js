@@ -93,7 +93,7 @@ const ProfProp = (theme) => {
                 <div className="col-md-12">
                     <header className="col-md-12 p-3 row m-0">
                         <div className="col-md-6 d-flex justify-content-start col-9">
-                            <span className="h4 col-md-2 border-bottom border-3 border-dark p-2">پروفایل</span>
+                            <span className="h4 col-md-2 border-bottom border-danger border-3 p-2">پروفایل</span>
                         </div>
                         <div className="col-md-6 d-flex justify-content-end col-3">
                             <button className="btn btn-orange btn-sm" onClick={reset}>بازیابی</button>

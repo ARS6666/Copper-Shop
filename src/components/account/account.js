@@ -69,7 +69,7 @@ const Panel = (theme) => {
     };
     return (
         <div className="fontr col-md-12 row m-0 pb-2 pt-2" dir="rtl">
-            <div className="col-md-3 border border-theme" style={{ borderRadius: "10px", height: "100%" }}>
+            <div className="col-md-3 border " style={{ borderRadius: "10px", height: "100%" }}>
                 <div className="d-flex justify-content-center pt-4">
                     <img src={Prop.image || pfp} alt="Profile" className="pfp rounded-circle" />
                 </div>
@@ -77,7 +77,7 @@ const Panel = (theme) => {
                     <span className="h4">{Prop.name}</span>
                 </div>
                 <div className="pt-3">
-                    <div className="col-md-12 border-top border-bottom border-theme part">
+                    <div className="col-md-12 border-top border-bottom  part">
                         <button onClick={() => { handleClick(); changeContent(<Profile theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
                             style={{ backgroundColor: isChecked ? '#C24C20' : '', width: "100%" }}>
@@ -87,7 +87,7 @@ const Panel = (theme) => {
                             </h5>
                         </button>
                     </div>
-                    <div className="col-md-12 border-top border-bottom border-theme part">
+                    <div className="col-md-12 border-top border-bottom  part">
                         <button onClick={() => { handleClick2(); changeContent(<Order theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
                             style={{ backgroundColor: isChecked2 ? '#C24C20' : '', width: "100%" }}>
@@ -97,7 +97,7 @@ const Panel = (theme) => {
                             </h5>
                         </button>
                     </div>
-                    <div className="col-md-12 border-top border-bottom border-theme part">
+                    <div className="col-md-12 border-top border-bottom  part">
                         <button onClick={() => { handleClick3(); changeContent(<Address theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
                             style={{ backgroundColor: isChecked3 ? '#C24C20' : '', width: "100%" }}>
@@ -107,7 +107,7 @@ const Panel = (theme) => {
                             </h5>
                         </button>
                     </div>
-                    <div className="col-md-12 border-top border-bottom border-theme part">
+                    <div className="col-md-12 border-top border-bottom  part">
                         <button onClick={() => { handleClick4(); changeContent(<RPP theme={theme.theme} />); }}
                             className="btn col-md-12 btn-lg hover d-flex justify-content-start border-0"
                             style={{ backgroundColor: isChecked4 ? '#C24C20' : '', width: "100%" }}>

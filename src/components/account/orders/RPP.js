@@ -105,7 +105,7 @@ const RecentOrders = (theme) => {
   }
 
   return (
-    <div className={ISOrderhistory ? "p-3 shadow-0 fontr" : " p-3 shadow-0 fontr border border-theme"} dir="rtl" style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "white", borderRadius: "10px" }}>
+    <div className={ISOrderhistory ? "p-3 pt-0 shadow-0 fontr" : " p-3 shadow-0 fontr border"} dir="rtl" style={{ backgroundColor: theme.theme === "dark" ? "#121212" : "white", borderRadius: "10px" }}>
       {ISOrderhistory ?
         <>{selectedOrder ? (
           <div className="recent-order-details">
@@ -132,11 +132,11 @@ const RecentOrders = (theme) => {
             </ul>
           </div>
         ) : (
-          <div className="recent-orders-list col-12">
-            <h2 style={{ marginBottom: "20px" }} className='border-bottom border-4  col-md-3 col-12 pb-2'>سفارشات گذشته</h2>
-            <ul className="recent-order-summary-list col-12">
+          <div className="recent-orders-list col-12 border">
+            <span style={{ marginBottom: "20px" }} className='h4 pt-0 border-bottom border-4 border-danger col-md-3 col-12 pb-2'>سفارشات گذشته</span>
+            <ul className="recent-order-summary-list col-12 pt-4">
               {Orderhistory?.map((order) => (
-                <li key={order.id} className="recent-order-summary  col-12" onClick={() => handleOrderClick(order.id)}>
+                <li key={order.id} className="recent-order-summary border col-12" onClick={() => handleOrderClick(order.id)}>
                   <div className="col pt-1"><p>آیدی سفارش: <span className="order-id">{convertToPersian(order.id)}</span></p></div>
                   <div className="col pt-1"><p>قیمت کل: <span className="order-amount">{addCommas(order.total)} تومان</span></p></div>
                   <div className="col pt-1"><p>تاریخ سفارش: <span className="order-date " dir="ltr">{convertToPersian(convertToIranianDate(order.created_at))}</span></p></div>

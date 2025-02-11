@@ -24,10 +24,10 @@ import ContactUs from './components/CornerPages/contactUs';
 const AppContent = () => {
 
   const location = useLocation();
-  const hideFooterPaths = ['/login', '/signin', '/test', '/account ', '/cart', '/verify'];
+  const hideFooterPaths = ['/login', '/signin', '/test', '/cart', '/verify'];
   const showFooter = !hideFooterPaths.includes(location.pathname);
   const hideChatbotPaths = ['/login', '/signin', '/test', '/account ', '/cart', '/verify'];
-  const showChatbot = !hideFooterPaths.includes(location.pathname);
+  const showChatbot = !hideChatbotPaths.includes(location.pathname);
   const [theme, setTheme] = useState(localStorage.getItem('theme'));
 
   useEffect(() => {
