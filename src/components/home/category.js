@@ -35,7 +35,7 @@ const ProductSlider = (theme) => {
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
-
+ console.log(theme.theme.theme)
 
   return (<>
     <div className="col-md-12 col-12 p-3 pb-3 m-0 ">
@@ -63,20 +63,20 @@ const ProductSlider = (theme) => {
               </button>
             </div>
           </div>
-          <div className="align-self-center text-end h3 d-flex justify-content-end col-md-6 col-5 color-theme">دسته بندی ها</div>
+          <div className={theme.theme.theme === "dark" ? "text-white align-self-center text-end h3 d-flex justify-content-end col-md-6 col-5" : "text-dark align-self-center text-end h3 d-flex justify-content-end col-md-6 col-5"}>دسته بندی ها</div>
         </div>
 
         <div className="slider-container col-md-12 row m-0 pt-2" dir="rtl">
           <div className="slider" style={{ transform: `translateX(${currentIndex * (100 / 2)}%)` }}>
             {Categories.map((categories, index) => (
               <div className="col-md-2 col-8 cat-hover" key={index} style={{ minWidth: `(-${(100 / 2)}%)` }}>
-                <Link className="hrefb align-self-center" to={`/products?category=${categories.name}`}>
+                <Link className={theme.theme.theme === "dark" ? "hrefw align-self-center" : "hrefb align-self-center"} to={`/products?category=${categories.name}`}>
                   <div className="row m-0">
                     <div className="d-flex justify-content-center ">
                       <img src={categories.image} title={categories.name} className="d-block col-md-11 p-2" style={{ height: "200px", width: "auto" }} alt={categories.name} />
                     </div>
                     <div className="d-flex justify-content-center pt-2">
-                      <h4 className="h4 fontr color-theme">{categories.name}</h4>
+                      <h4 className="h4 fontr">{categories.name}</h4>
                     </div>
                   </div>
                 </Link>

@@ -63,7 +63,7 @@ const Blog = () => {
                         <h1 className='align-self-center'>{contents.title || "منتظر باشید ..."}</h1>
                     </header>
                     <div className='container pt-3'>
-                        <article className='h5 text-dark' style={{ lineHeight: "2rem", wordSpacing: "0.4rem", fontSize: "1.4rem" }}>
+                        <article className='h5' style={{ lineHeight: "2rem", wordSpacing: "0.4rem", fontSize: "1.4rem" }}>
                             {contents.content ? parser(contents.content) : "منتظر باشید ..."}
                         </article>
                     </div>

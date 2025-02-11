@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../../assets/css/products/productPage.css";
 import url from "../../config.json";
 
-const ProductCarousel = () => {
+const ProductCarousel = (theme) => {
   const sliderRef = useRef(null);
   const [products, setProducts] = useState([]);
   const [OffDis, setOffDis] = useState(false);
@@ -91,17 +91,10 @@ const ProductCarousel = () => {
           <div className="col-md-11 col-12">
             <div className="col-md-12 col-12 remove p-3 justify-content-center">
               <div className="d-flex justify-content-end col-md-12 col-12 border-bottom border-2 border-theme remove">
-                <h2 className="fontr h3 align-self-center color-theme">تخفیف ها</h2>
+                <h2 className={theme.theme.theme === "dark" ? "fontr h3 align-self-center text-white" : " fontr h3 align-self-center text-dark"}>تخفیف ها</h2>
               </div>
             </div>
             <div className="carousel-container m-0">
-              <Button
-                className="carousel-button border-0 left color-theme"
-                onClick={() => sliderRef.current.slickPrev()}
-                aria-label="Previous"
-              >
-                {"<"}
-              </Button>
               <Slider ref={sliderRef} {...settings}>
                 {products.map((c) => (
                   <article key={c.id} className={`col-1 col-md-3 productt-card Anim m-0 p-1 ${c.count === 0 ? 'out-of-stock' : ''}`}>
@@ -111,7 +104,7 @@ const ProductCarousel = () => {
                         <img src={c.pic} className="Image col-12" alt={c.name} />
                       </div>
                       <div className="d-flex justify-content-center pt-3">
-                        <h3 className="fontr text-dark text-center product-name">{convertToPersian(c.name)}</h3>
+                        <h3 className="fontr text-center product-name">{convertToPersian(c.name)}</h3>
                       </div>
                       <div className="d-flex justify-content-center">
                         <p className="fontr pt-1 product-name">{addCommas(c.price)} تومان</p>
@@ -127,13 +120,6 @@ const ProductCarousel = () => {
                   </article>
                 ))}
               </Slider>
-              <Button
-                className="carousel-button border-0 right color-theme"
-                onClick={() => sliderRef.current.slickNext()}
-                aria-label="Next"
-              >
-                {">"}
-              </Button>
             </div>
           </div>
         </div>
