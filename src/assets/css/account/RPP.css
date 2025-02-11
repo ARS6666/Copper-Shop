@@ -12,7 +12,6 @@
     padding: 20px;
     border-radius: 12px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-    background-color: #ffffff;
 }
 
 .recent-order-summary:hover {
@@ -36,7 +35,6 @@
 .recent-order-summary .order-amount,
 .recent-order-summary .order-date {
     font-weight: bold;
-    color: #111827;
 }
 
 .recent-product-list {
