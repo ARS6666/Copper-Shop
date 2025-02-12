@@ -121,7 +121,7 @@
 
 @media (max-width: 1200px) {
   .Image {
-    height: 220px;
+    height: 320px;
   }
 
   .product-name {
@@ -131,7 +131,7 @@
 
 @media (max-width: 992px) {
   .Image {
-    height: 190px;
+    height: 290px;
   }
 
   .product-name {
@@ -141,7 +141,7 @@
 
 @media (max-width: 768px) {
   .Image {
-    height: 180px;
+    height: 280px;
   }
 
   .product-name {
@@ -151,7 +151,7 @@
 
 @media (max-width: 480px) {
   .Image {
-    height: 170px;
+    height: 270px;
   }
 
   .product-name {
