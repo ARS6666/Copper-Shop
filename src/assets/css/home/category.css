@@ -1,48 +1,15 @@
-.Image {
-    object-fit: cover;
-    height: auto;
-    width: 100%;
-    max-height: 300px;
-}
-
-@media (max-width: 1400px) and (min-width: 1200px) {
-    .Image {
-        max-height: 280px;
-    }
-}
-
-@media (max-width: 1200px) and (min-width: 992px) {
-    .Image {
-        max-height: 260px;
-    }
-}
-
-@media (max-width: 992px) and (min-width: 800px) {
-    .Image {
-        max-height: 240px;
-    }
-}
-
-@media (max-width: 800px) and (min-width: 576px) {
-    .Image {
-        max-height: 320px;
-    }
-}
-
-@media (max-width: 576px) {
-    .Image {
-        max-height: 400px;
-    }
-
-}
-
-
-.cat-hover{
+.cat-hover {
     transition: transform 0.3s ease-in-out;
 }
-.cat-hover:hover{
+
+.cat-hover:hover {
     transform: scale(1.03);
 
+}
+
+.cat-img {
+    height: 200px;
+    width: 200px;
 }
 
 .slider-container {
@@ -53,4 +20,40 @@
 .slider {
     display: flex;
     transition: transform 0.5s ease;
+}
+
+@media (max-width: 1400px) and (min-width: 1200px) {
+    .cat-img {
+        height: 180px;
+        width: 180px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    .cat-img {
+        height: 160px;
+        width: 160px;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 800px) {
+    .cat-img {
+        height: 140px;
+        width: 140px;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 576px) {
+    .cat-img {
+        height: 180px;
+        width: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cat-img {
+        height: 160px;
+        width: 160px;
+    }
+
 }

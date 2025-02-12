@@ -69,11 +69,11 @@ const ProductSlider = (theme) => {
         <div className="slider-container col-md-12 row m-0 pt-2" dir="rtl">
           <div className="slider" style={{ transform: `translateX(${currentIndex * (100 / 2)}%)` }}>
             {Categories.map((categories, index) => (
-              <div className="col-md-2 col-8 cat-hover" key={index} style={{ minWidth: `(-${(100 / 2)}%)` }}>
+              <div className="col-md-2 col-6 cat-hover" key={index} style={{ minWidth: `(-${(100 / 2)}%)` }}>
                 <Link className={theme.theme.theme === "dark" ? "hrefw align-self-center" : "hrefb align-self-center"} to={`/products?category=${categories.name}`}>
                   <div className="row m-0">
                     <div className="d-flex justify-content-center ">
-                      <img src={categories.image} title={categories.name} className="d-block col-md-11 p-2" style={{ height: "200px", width: "auto" }} alt={categories.name} />
+                      <img src={categories.image} title={categories.name} className="d-block col-md-11 p-2 cat-img" alt={categories.name} />
                     </div>
                     <div className="d-flex justify-content-center pt-2">
                       <h4 className="h4 fontr">{categories.name}</h4>
