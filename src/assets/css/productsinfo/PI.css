@@ -60,7 +60,7 @@
 }
 
 .magnify-image:hover {
-    transform: scale(1.5);
+    transform: scale(2.9);
 }
 
 @media (max-width: 1024px) {
@@ -74,29 +74,13 @@
     .ImageProdB {
         object-fit: cover;
         background-color: white;
+        height: 400px;
         width: 100%;
-        height: 500px;
     }
 
     .proddescription {
         justify-content: center;
     }
-
-    .magnify-container {
-        position: static;
-        overflow: visible;
-        cursor: zoom-in;
-    }
-
-    .magnify-image {
-        transition: none;
-        transform: none;
-    }
-
-    .magnify-container:hover .magnify-image {
-        transform: none;
-    }
-
 
 }
 

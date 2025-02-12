@@ -111,10 +111,10 @@ const CommonProducts = ({ theme }) => {
           <span className="fontr h3 align-self-center color-theme">محصولات مشابه</span>
         </div>
       </div>
-      <div className="slider-container position-relative m-0" style={{ overflowX: 'hidden' }}>
+      <div className="slider-container position-relative m-0 pb-5" style={{ overflowX: 'hidden' }}>
         <div className="product-sl">
           <div className="col-md-12 row m-0" dir="rtl">
-            <div className="slider" style={{ transform: `translateX(${currentIndex * slideWidth}%)` }}>
+            <div className="slider" style={{ transform: `translateX(${currentIndex * 95}%)` }}>
               {products?.map((product) => (
                 <div key={product.id} className="p-3 col-md-3 position-relative" style={{ minWidth: `${slideWidth}%` }}>
                   <div className={product.count === 0 ? 'out-of-stock col-md-12' : 'product-carde'}>
