@@ -15,7 +15,7 @@ const BurgerMenu = (theme) => {
         <div dir="rtl" className="fontr bg-orange">
             <div className={`overlayy ${isOpen ? 'show' : ''}`}></div>
             <button className="btn btn-transparent" onClick={toggleMenu} aria-label="Toggle Menu">
-                <i className={theme.theme.theme === "dark" ? "text-white fa-solid fa-bars" : "text-dark fa-solid fa-bars"} style={{ fontSize: "1.4rem" }}></i>
+                <i className="text-white fa-solid fa-bars" style={{ fontSize: "1.4rem" }}></i>
             </button>
             <div className={theme.theme.theme === "dark" ? `menu ${isOpen ? 'open' : ''}` : `text-dark menu ${isOpen ? 'open' : ''}`} style={{ backgroundColor: theme.theme.theme === "dark" ? "#121212" : "white" }}>
                 <div className="col-12 d-flex justify-content-start">

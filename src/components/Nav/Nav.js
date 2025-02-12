@@ -154,7 +154,7 @@ const CustomNavbar = (theme) => {
           </div>
         </div>
       ) : null}
-      <div className="col-12 row m-0 add fontr bg-orange" dir="rtl">
+      <div className="col-12 row m-0 add fontr bg-orange position" dir="rtl">
         <div className="col-12 m-0 d-flex">
           <div className="col-5 d-flex justify-content-start">
             <BurgerMenu theme={theme} />
