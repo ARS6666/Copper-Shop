@@ -105,77 +105,69 @@ const CommonProducts = ({ theme }) => {
 
 
   return (
-    <div className="slider-container pt-5 p-4 fontr">
+    <div className="slider-container pt-5 p-4 fontr" style={{height: "500px"}}>
       <div className="border-bottom border-2 border-theme col-md-12 col-12 row m-0">
-        <div className="d-flex justify-content-start col-md-6 col-6">
-          <div className="m-1 fontr">
-            <button
-              className="btn btn-orange"
-              onClick={nextSlide}
-              disabled={currentIndex >= products.length - 4}
-              aria-label="Next"
-              style={{ borderRadius: ".75rem" }}
-            >
-              {"<"}
-            </button>
-          </div>
-          <div className="m-1 fontr">
-            <button
-              className="btn btn-orange"
-              onClick={prevSlide}
-              disabled={currentIndex === 0}
-              aria-label="Previous"
-              style={{ borderRadius: ".75rem" }}
-            >
-              {">"}
-            </button>
-          </div>
-        </div>
-        <div className="d-flex justify-content-end col-md-6 col-6">
+        <div className="d-flex justify-content-end col-md-12 col-12">
           <span className="fontr h3 align-self-center color-theme">محصولات مشابه</span>
         </div>
       </div>
-      <div className="product-sl">
-        <div className="col-md-12 row m-0" dir="rtl">
-          <div className="slider" style={{ transform: `translateX(${currentIndex * slideWidth}%)` }}>
-            {products?.map((product) => (
-              <div key={product.id} className="p-3 col-md-3" style={{ minWidth: `${slideWidth}%` }}>
-                <div className={product.count === 0 ? 'out-of-stock col-md-12' : 'product-carde'}>
-                  <div className="row m-0 d-flex justify-content-end">
-                    {product.discount !== 0 && (
-                      <div className="discountDisplay">
-                        <span>%{convertToPersian(product.discount)}</span>
+      <div className="slider-container position-relative m-0" style={{ overflowX: 'hidden' }}>
+        <div className="product-sl">
+          <div className="col-md-12 row m-0" dir="rtl">
+            <div className="slider" style={{ transform: `translateX(${currentIndex * slideWidth}%)` }}>
+              {products?.map((product) => (
+                <div key={product.id} className="p-3 col-md-3 position-relative" style={{ minWidth: `${slideWidth}%` }}>
+                  <div className={product.count === 0 ? 'out-of-stock col-md-12' : 'product-carde'}>
+                    <div className="row m-0 d-flex justify-content-end">
+                      {product.discount !== 0 && (
+                        <div className="discountDisplay">
+                          <span>%{convertToPersian(product.discount)}</span>
+                        </div>
+                      )}
+                      <div className="d-flex justify-content-center">
+                        <img
+                          src={product.pic}
+                          className="Img col-md-11 p-2"
+                          alt={product.name}
+                        />
                       </div>
-                    )}
-                    <div className="d-flex justify-content-center">
-                      <img
-                        src={product.pic}
-                        className="Img col-md-11 p-2"
-                        alt={product.name}
-                      />
+                      <div className="d-flex justify-content-center pt-2">
+                        <span className="h5 fontr text-center product-name">{convertToPersian(product.name)}</span>
+                      </div>
+                      <div className="d-flex justify-content-center">
+                        <span className="h5 fontr pt-1 product-name" dir="rtl">
+                          {addCommas(product.price)} هزار تومن
+                        </span>
+                      </div>
                     </div>
-                    <div className="d-flex justify-content-center pt-2">
-                      <span className="h5 fontr text-center product-name">{convertToPersian(product.name)}</span>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                      <span className="h5 fontr pt-1 product-name" dir="rtl">
-                        {addCommas(product.price)} هزار تومن
-                      </span>
-                    </div>
+                    <a className="hrefb align-self-center" href={`pi?id=${product.id}`} aria-label={`View ${product.name}`}>
+                      <div className="hover-detailse col-md-12">
+                        <div className="d-flex justify-content-center" style={{ paddingTop: "45%" }}>
+                          <button className="btn btn-orange fontr" aria-label="View Product">
+                            مشاهده محصول
+                          </button>
+                        </div>
+                      </div>
+                    </a>
                   </div>
-                  <a className="hrefb align-self-center" href={`pi?id=${product.id}`} aria-label={`View ${product.name}`}>
-                    <div className="hover-detailse col-md-12">
-                      <div className="d-flex justify-content-center" style={{ paddingTop: "45%" }}>
-                        <button className="btn btn-orange fontr" aria-label="View Product">
-                          مشاهده محصول
-                        </button>
-                      </div>
-                    </div>
-                  </a>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+          <button
+            className="btn btn-orange position-absolute"
+            style={{ left: 0, top: '50%', transform: 'translateY(-50%)' }}
+            onClick={nextSlide}
+            aria-label="Previous">
+            {"<"}
+          </button>
+          <button
+            className="btn btn-orange position-absolute"
+            style={{ right: 0, top: '50%', transform: 'translateY(-50%)' }}
+            onClick={prevSlide}
+            aria-label="Next">
+            {">"}
+          </button>
         </div>
       </div>
     </div>
