@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Modal } from "react-bootstrap";
 import "../../assets/css/productsinfo/PI.css";
 import "../../assets/css/hide.css";
 import Loading from "../loading/loading";
 import url from "../../config.json";
-import logo from "../../assets/media/logo11.png"
+import logo from "../../assets/media/logo11.png";
+
 function ProductInfo(theme) {
   const navigate = useNavigate();
   const [IsLoading, setIsLoading] = useState(true);
@@ -16,16 +17,10 @@ function ProductInfo(theme) {
   const [product, setProduct] = useState({});
   const location = useLocation();
   const [id, setId] = useState('');
-
   const myHeaders = new Headers();
   myHeaders.append("accept", "application/json");
   myHeaders.append("X-CSRFToken", "KyZ2IoH4Fwq3gYd5NsZ7481BNovNb1aJDsL38cuGmcoFPcgf8j3PKYRTvrRx5HWU");
-
-  const requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    redirect: "follow"
-  };
+  const requestOptions = { method: "GET", headers: myHeaders, redirect: "follow" };
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -51,44 +46,28 @@ function ProductInfo(theme) {
   function AddItem(productId, event) {
     if (token) {
       setAdded(true);
-
       const dot = document.createElement('div');
       dot.className = 'dot';
       document.body.appendChild(dot);
-
       const x = event.clientX;
       const y = event.clientY;
-
       dot.style.left = `${x}px`;
       dot.style.top = `${y}px`;
-
       setTimeout(() => {
         dot.style.transform = 'translate(-50vh , -100vh)';
       }, 10);
-
       setTimeout(() => {
         document.body.removeChild(dot);
         setAdded(false);
       }, 1900);
       setButtonDisabled(true);
-
       const myHeaders = new Headers();
       myHeaders.append("accept", "application/json");
       myHeaders.append("X-CSRFToken", "5teHG5lzFJM4CD8QwLdXzrrvjxmRqWl91abWUh2YcbHKJ1NVq5s3g9B3KrcKmR8L");
       myHeaders.append("Content-Type", "application/json");
       myHeaders.append("Authorization", `Bearer ${token}`);
-
-      const raw = JSON.stringify({
-        "product_id": productId
-      });
-
-      const requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow"
-      };
-
+      const raw = JSON.stringify({ "product_id": productId });
+      const requestOptions = { method: "POST", headers: myHeaders, body: raw, redirect: "follow" };
       fetch(`${url.baseUrl}/cart/cart/add_item/`, requestOptions)
         .then((response) => response.text())
         .catch((error) => console.error(error));
@@ -98,8 +77,19 @@ function ProductInfo(theme) {
   }
 
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndexB, setSelectedIndexB] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+
   const handleSelect = (selectedIndex) => {
     setSelectedIndex(selectedIndex);
+  };
+
+  const handleImageClick = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   const addCommas = (number) => {
@@ -133,7 +123,6 @@ function ProductInfo(theme) {
     document.title = product.name;
   }, [product.name]);
 
-
   return (
     <>
       <meta name="description" content={`مشخصات ${product.name} - فروشگاه ظروف مسی`} />
@@ -145,13 +134,7 @@ function ProductInfo(theme) {
             <div className="row m-0">
               <div className="col-md-2 d-flex flex-column align-items-end remove">
                 {IMG?.slice(0, 4).map((c, index) => (
-                  <img
-                    key={c.image}
-                    className="img-fluid m-1 remove"
-                    src={c.image}
-                    alt={`${product.name} Thumbnail`}
-                    onClick={() => handleSelect(index)}
-                  />
+                  <img key={c.image} className="img-fluid m-1 remove" src={c.image} alt={`${product.name} Thumbnail`} onClick={() => handleSelect(index)} />
                 ))}
               </div>
               <div className="magnify-container col-md-10 col-12 d-flex justify-content-center">
@@ -161,13 +144,12 @@ function ProductInfo(theme) {
                     {IMG.map((Pic, index) => (
                       <Carousel.Item key={index}>
                         <div className="image-container">
-                          <img className="d-block ImageProd magnify-image" src={Pic.image} alt={`${product.name} Image ${index + 1}`} onMouseMove={handleMouseMove} style={{ transformOrigin }} />
+                          <img className="d-block ImageProd magnify-image" src={Pic.image} alt={`${product.name} Image ${index + 1}`} onMouseMove={handleMouseMove} onClick={handleImageClick} style={{ transformOrigin }} />
                           <img className="logo-overlay" src={logo} alt="Logo" />
                         </div>
                       </Carousel.Item>
                     ))}
                   </Carousel>
-
                 </div>
               </div>
             </div>
@@ -196,16 +178,30 @@ function ProductInfo(theme) {
                 </div>
               </div>
               <div className="pt-4">
-                <button className="btn rounded-0 btn-lg btn-orange w-100 add-to-cart" onClick={(event) => AddItem(product.id, event)} disabled={buttonDisabled}>
-                  {buttonDisabled ?
-                    <span className="text-white">به سبد خرید اضافه شد!</span>
-                    :
-                    <span>افزودن به سبد خرید</span>}</button>
+                <button className="btn rounded-0 btn-lg btn-orange w-100 add-to-cart" onClick={(event) => AddItem(product.id, event)}
+                  disabled={buttonDisabled}>
+                  {buttonDisabled ? <span className="text-white">به سبد خرید اضافه شد!</span> : <span>افزودن به سبد خرید</span>}
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <Modal show={showModal} onHide={handleCloseModal} centered>
+        <Modal.Body className="p-0">
+          <Carousel interval={3000}>
+            {IMG.map((Pic, index) => (
+              <Carousel.Item key={index}>
+                <div className="image-container">
+                  <img className="d-block ImageProdB magnify-image" src={Pic.image} alt={`${product.name} Image ${index + 1}`} onMouseMove={handleMouseMove} style={{ transformOrigin }} />
+                  <img className="logo-overlay" src={logo} alt="Logo" />
+                </div>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </Modal.Body>
+      </Modal>
     </>
   );
 }
