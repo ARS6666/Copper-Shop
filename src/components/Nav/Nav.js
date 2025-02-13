@@ -92,7 +92,7 @@ const CustomNavbar = (theme) => {
                   style={{ height: "50px" }}
                   src={logo}
                   alt="Company Logo"
-                  className="col lgo"
+                  className="col"
                 />
               </Link>
             </div>

@@ -107,8 +107,8 @@ const AppContent = () => {
 function App() {
   return (
     <Router>
-      <AppContent />
-      <RefreshToken />
+          <AppContent />
+          <RefreshToken />  
     </Router>
   );
 }

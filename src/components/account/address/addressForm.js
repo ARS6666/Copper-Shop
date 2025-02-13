@@ -92,7 +92,7 @@ function Address(theme) {
 
     return (<>
         {IsLoading ? <Loading /> : null}
-        <div class="col-md-12 pt-2 fontr" >
+        <div class="col-md-12 fontr" >
             <div class="col-md-12 rounded">
                 <buttton class="col-md-12 btn btn-lg btn-orange col-12" onClick={handleOverlay}><h4>افزودن آدرس</h4></buttton>
             </div>

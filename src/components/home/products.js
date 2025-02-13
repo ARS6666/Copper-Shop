@@ -65,7 +65,7 @@ function HProducts() {
             <div class="row m-0">
               {c.discount !== 0 && c.count !== 0 ? <div class="discountDisplay">%{convertToPersian(c.discount)}</div> : null}
               <div class="d-flex justify-content-center">
-                <img src={c.pic} class="Imgee col-12" alt={c.name} />
+                <img src={c.pic} class="Imgee col-12 col-md-12 rounded-4" alt={c.name} />
               </div>
               <div class="d-flex justify-content-center pt-3">
                 <h4 class="fontr text-center col-md-8" style={{ wordSpacing: "0.2rem" }}>{convertToPersian(c.name)}</h4>

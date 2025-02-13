@@ -126,7 +126,7 @@ const ChatBot = (theme) => {
 
     return (<>
         <div className='fontr'>
-            <button className='btn btn-orange abtn' onClick={toggleChatVisibility}>
+            <button className='btn btn-orange abtn border border-white' onClick={toggleChatVisibility}>
                 {isChatVisible ? <i class="fa-solid fa-xmark"></i> : <i class="fas fa-comment-alt align-self-center"></i>}
             </button>
         </div>
@@ -148,7 +148,7 @@ const ChatBot = (theme) => {
                             </div>
                         ))}
                     </div>
-                    <div className="input-box fontr col-md-12 row m-0 col-12 p-2 pt-1">
+                    <div className="input-box fontr col-md-12 row m-0 col-12 p-2 pt-0">
                         <div className='col-md-9 col-9'>
                             <input
                                 type="text"

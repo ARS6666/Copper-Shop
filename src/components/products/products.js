@@ -188,7 +188,7 @@ function Products() {
                         </div>
                       )}
                       <div className="d-flex justify-content-center">
-                        <img src={c.pic} className="Img col-12" alt={c.name} />
+                        <img src={c.pic} className="Img col-12 col-md-12 rounded-4" alt={c.name} />
                       </div>
                       <div className="d-flex justify-content-center pt-3">
                         <span className="h5 fontr text-center" style={{ wordSpacing: "0.3rem", lineHeight: "2rem" }}>{convertToPersian(c.name)}</span>
@@ -200,7 +200,7 @@ function Products() {
                     <a href={`pi?id=${c.id}#${c.name}`} className="hrefb align-self-center" aria-label={`View ${c.name}`}>
                       <div className="hoverr-details col-12">
                         <div className="d-flex justify-content-center bp">
-                          <button className="btn btn-orange border-0 fontr" aria-label="View Product">مشاهده محصول</button>
+                          <button className="btn btn-orange fontr" aria-label="View Product">مشاهده محصول</button>
                         </div>
                       </div>
                     </a>

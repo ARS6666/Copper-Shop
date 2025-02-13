@@ -29,6 +29,8 @@
 .bg-orange {
     background-color: #C24C20 !important;
     color: white !important;
+    border: white !important;
+    border: 5px;
 }
 
 .btn-orange:hover {

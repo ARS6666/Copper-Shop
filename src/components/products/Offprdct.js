@@ -100,7 +100,7 @@ const ProductCarousel = ({ theme }) => {
                     <div className="row m-0">
                       {c.discount !== 0 && c.count !== 0 ? <div className="discountDisplay fontr">%{convertToPersian(c.discount)}</div> : null}
                       <div className="d-flex justify-content-center">
-                        <img src={c.pic} className="Image col-12 align-self-center" alt={c.name} style={{ width: "auto" }} />
+                        <img src={c.pic} className="Image col-12 align-self-center col-md-12 rounded-4" alt={c.name} style={{ width: "auto" }} />
                       </div>
                       <div className="d-flex justify-content-center pt-3">
                         <h3 className="fontr text-center product-name">{convertToPersian(c.name)}</h3>
@@ -119,18 +119,18 @@ const ProductCarousel = ({ theme }) => {
                   </article>
                 ))}
               </Slider>
-              <Button
-                className="btn btn-orange position-absolute"
-                style={{ left: 0, top: '50%', transform: 'translateY(-50%)' }}
-                onClick={() => sliderRef.current.slickPrev()}
-                aria-label="Previous">
-                {"<"}
-              </Button>
               <button
-                className="btn btn-orange position-absolute"
-                style={{ right: 0, top: '50%', transform: 'translateY(-50%)' }}
-                onClick={() => sliderRef.current.slickNext()}
+                className="btn btn-transparent position-absolute fontr"
+                style={{ left: 0, top: '50%', transform: 'translateY(-50%)', height: "100%", fontSize: "2rem" }}
+                onClick={() => sliderRef.current.slickPrev()}
                 aria-label="Next">
+                {"<"}
+              </button>
+              <button
+                className="btn btn-transparent position-absolute fontr"
+                style={{ right: 0, top: '50%', transform: 'translateY(-50%)', height: "100%", fontSize: "2rem" }}
+                onClick={() => sliderRef.current.slickNext()}
+                aria-label="Previous">
                 {">"}
               </button>
             </div>

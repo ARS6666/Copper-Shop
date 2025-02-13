@@ -103,15 +103,15 @@ const CommonProducts = ({ theme }) => {
     };
   }, []);
 
-
+  console.log(theme.theme)
   return (
-    <div className="slider-container pt-5 p-4 fontr" style={{height: "500px"}}>
+    <div className="slider-container fontr container pt-3 pb-3 p-5">
       <div className="border-bottom border-2 border-theme col-md-12 col-12 row m-0">
         <div className="d-flex justify-content-end col-md-12 col-12">
-          <span className="fontr h3 align-self-center color-theme">محصولات مشابه</span>
+          <span className="fontr h3 align-self-center">محصولات مشابه</span>
         </div>
       </div>
-      <div className="slider-container position-relative m-0 pb-5" style={{ overflowX: 'hidden' }}>
+      <div className="slider-container position-relative m-0" style={{ overflowX: 'hidden' }}>
         <div className="product-sl">
           <div className="col-md-12 row m-0" dir="rtl">
             <div className="slider" style={{ transform: `translateX(${currentIndex * 95}%)` }}>
@@ -127,7 +127,7 @@ const CommonProducts = ({ theme }) => {
                       <div className="d-flex justify-content-center">
                         <img
                           src={product.pic}
-                          className="Img col-md-11 p-2"
+                          className="Img col-md-11 p-2 rounded-4"
                           alt={product.name}
                         />
                       </div>
@@ -155,15 +155,15 @@ const CommonProducts = ({ theme }) => {
             </div>
           </div>
           <button
-            className="btn btn-orange position-absolute"
-            style={{ left: 0, top: '50%', transform: 'translateY(-50%)' }}
+            className="btn btn-transparent position-absolute fontr"
+            style={{ left: 0, top: '50%', transform: 'translateY(-50%)', height: "100%", fontSize: "2rem" }}
             onClick={nextSlide}
             aria-label="Previous">
             {"<"}
           </button>
           <button
-            className="btn btn-orange position-absolute"
-            style={{ right: 0, top: '50%', transform: 'translateY(-50%)' }}
+            className="btn btn-transparent position-absolute fontr"
+            style={{ right: 0, top: '50%', transform: 'translateY(-50%)', height: "100%", fontSize: "2rem" }}
             onClick={prevSlide}
             aria-label="Next">
             {">"}

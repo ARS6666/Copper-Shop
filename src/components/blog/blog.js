@@ -63,7 +63,7 @@ const BlogList = (theme) => {
             {isLoading ? <Loading /> : null}
             <div className='col-md-12 fontr pb-4' dir="rtl">
                 <div className='col-md-12 pt-3'>
-                    <header className='col-md-12 text-white d-flex justify-content-center align-items-center' style={{ height: "80px", backgroundColor: "#C24C20" }}>
+                    <header className='col-md-12 text-white d-flex justify-content-center align-items-center border-top border-bottom' style={{ height: "80px", backgroundColor: "#C24C20" }}>
                         <h1 className='align-self-center'>وبلاگ ها و مقالات</h1>
                     </header>
                 </div>
@@ -72,7 +72,7 @@ const BlogList = (theme) => {
                         <article key={blog.id} className='col-md-3 col-12 pt-4'>
                             <div className="blog border border-2 border-theme cat-hover row m-0">
                                 <div className='col-md-12 col-12 col d-flex justify-content-center'>
-                                    <img src={blog.pic} alt={blog.title} style={{ maxHeight: "100%", maxWidth: "100%" }} className='rounded shadow' />
+                                    <img src={blog.pic} alt={blog.title} style={{ maxHeight: "100%", maxWidth: "100%" }} className="rounded shadow border border-white" />
                                 </div>
                                 <div className='col-md-12 col-12 d-flex justify-content-center row m-0 pt-3'>
                                     <h4 className='col-md-12 text-center' style={{ lineHeight: "3rem" }}>{blog.title}</h4>
@@ -102,7 +102,7 @@ const BlogList = (theme) => {
                                 <button
                                     id={number}
                                     onClick={handleClick}
-                                    className='page-link btn rounded-0 bg-orange'
+                                    className='page-link btn rounded-0 bg-orange border border-white'
                                 >
                                     {convertToPersian(number)}
                                 </button>

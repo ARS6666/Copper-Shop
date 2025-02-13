@@ -37,7 +37,7 @@ const ContactUs = () => {
     return (<>
         {IsLoading ? <Loading/> : null}
             <div className="col-md-12 col-12 fontr" dir="rtl">
-                <h1 className='col-md-12 col-12 p-4 pb-0 text-center color-theme fw-bold'>ارتباط با ما</h1>
+                <h1 className='col-md-12 col-12 p-4 pb-0 text-center fw-bold'>ارتباط با ما</h1>
                 <div className='col-md-12 d-flex justify-content-center row m-0'>
                     <div className='col-md-12 row m-0'>
                         <div className='col-md-3'></div>

@@ -44,7 +44,7 @@ const ProductSlider = (theme) => {
           <div className="d-flex justify-content-start col-md-6 col-7">
             <div className="m-1 fontr">
               <button
-                className="btn border-0 color-theme"
+                className="btn border-0"
                 onClick={nextSlide}
                 disabled={currentIndex === Categories.length - 1}
                 aria-label="Next"
@@ -54,7 +54,7 @@ const ProductSlider = (theme) => {
             </div>
             <div className="m-1 fontr">
               <button
-                className="btn border-0 color-theme"
+                className="btn border-0"
                 onClick={prevSlide}
                 disabled={currentIndex === 0}
                 aria-label="Previous"
