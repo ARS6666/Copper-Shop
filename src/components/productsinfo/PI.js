@@ -123,6 +123,20 @@ function ProductInfo(theme) {
     document.title = product.name;
   }, [product.name]);
 
+  function renderDescription(description) {
+    if (!description) {
+      return null;
+    }
+
+    return description.split('.').map((sentence, index) => (
+      <React.Fragment key={index}>
+        {sentence.trim()}
+        {index < description.split('.').length - 1 && <br />}
+      </React.Fragment>
+    ));
+  }
+
+
   return (
     <>
       <meta name="description" content={`مشخصات ${product.name} - فروشگاه ظروف مسی`} />
@@ -140,7 +154,7 @@ function ProductInfo(theme) {
               <div className="magnify-container col-md-10 col-12 d-flex justify-content-center">
                 <div className="justify-content-start">{product.discount !== 0 && product.count !== 0 ? <div className="discountDisplay fontr">%{convertToPersian(product.discount)}</div> : null}</div>
                 <div className="col-md-12 col-12">
-                  <Carousel activeIndex={selectedIndex} onSelect={handleSelect} interval={3000}>
+                  <Carousel activeIndex={selectedIndex} onSelect={handleSelect} interval={3000} >
                     {IMG.map((Pic, index) => (
                       <Carousel.Item key={index}>
                         <div className="image-container">
@@ -163,7 +177,9 @@ function ProductInfo(theme) {
               </div>
               <div className="pt-4">
                 <span className="h4">توضیحات:</span>
-                <p className="h5" style={{ lineHeight: "1.9rem" }}>{product.description}</p>
+                <p className="h5" style={{ lineHeight: "1.9rem" }}>
+                  {renderDescription(product.description)}
+                </p>
               </div>
               <div className="pt-4">
                 <span className="h4">دسته بندی:</span>

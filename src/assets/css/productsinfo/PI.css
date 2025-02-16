@@ -63,6 +63,16 @@
     transform: scale(2.9);
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color: black !important;
+    background-color: #C24C20;
+    border-radius: 50%;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 1024px) {
     .ImageProd {
         object-fit: cover;
