@@ -32,7 +32,7 @@ const AboutUs = () => {
               />
             </div>
             <div className="col-12 col-lg-6 p-4">
-              <h2 className="display-4 mb-4 fw-bold" style={{ color: '#DB5C45' }}>درباره ی ما</h2>
+              <h2 className="display-4 mb-4 fw-bold" style={{ color: '#C24C20' }}>درباره ی ما</h2>
               <p className="lead mb-4 fw-bold" style={{ color: '#C24C20', fontSize: "1.2rem", wordSpacing: "0.1rem" }}>
                 به فروشگاه ما خوش آمدید! ما تخصصی در زمینه فروش ظروف مسی با کیفیت بالا داریم. محصولات ما با دقت ساخته شده و با طراحی‌های متنوع عرضه می‌شوند.
               </p>
